@@ -60,6 +60,10 @@ Below is the image of the final bar chart created by sample data in Tableu of th
 
 *What is the URL of your Google Colab notebook?*
 
+Below the link of my Google Colab notebook can be found:
+
+[Maaz Hasnain Khan Google Colab Notebook](https://colab.research.google.com/drive/1Z52wqm4rczN8ldFTFQ5oDMSaJKDDVQTO?usp=sharing)
+
 ## Python/Seaborn
 
 *Insert the first penguin chart here*
