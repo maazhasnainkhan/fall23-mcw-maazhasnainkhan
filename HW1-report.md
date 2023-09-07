@@ -44,7 +44,9 @@ Below is a level 3 heading in Markdown:
 
 *Insert an image of an animal, sized appropriately*
 
-![This is the picture of a dog](Animal.png)
+Below is the picture of a dog:
+
+<img src="Animal.png" height="100" alt="This is a picture of a dog.">
 
 ## Tableau
 
