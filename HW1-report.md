@@ -46,7 +46,7 @@ Below is a level 3 heading in Markdown:
 
 Below is the picture of a dog:
 
-<img src="Animal.png" height="100" alt="This is a picture of a dog.">
+<img src="Animal.png" height="300" alt="This is a picture of a dog.">
 
 ## Tableau
 
