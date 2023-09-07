@@ -54,7 +54,7 @@ Below is the picture of a dog:
 
 Below is the image of the final bar chart created by sample data in Tableu of the sum of sales for each sub-category broken down by Order Date Year and Category vs. Region. The image shows the data from the East Region.
 
-
+![Sales in the East](Sales in the East.png)
 
 ## Google Colab
 
