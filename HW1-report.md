@@ -24,7 +24,17 @@ Although I committed a change and then push it live in my remote personal accoun
 
 *Create a bulleted list with at least 3 items*
 
+Following are the list of fruits:
+
+- Apple
+- Banana
+- Orange
+
 *Write a single paragraph that demonstrates the use of italics, bold, bold italics, code, and includes a link. The paragraph does not have to make sense.*
+
+The following paragraph demostrates the use of italics, bold, bold italics, code, and includes a link:
+
+**My name is Maaz H Khan.** *My UIN is 01244465.* ***I am taking CS625 in my first semester.*** My Github profile is [here](https://github.com/maazhasnainkhan?tab=repositories)
 
 *Create a level 3 heading*
 
