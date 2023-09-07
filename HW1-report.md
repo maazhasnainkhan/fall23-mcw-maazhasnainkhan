@@ -44,6 +44,8 @@ Below is a level 3 heading in Markdown:
 
 *Insert an image of an animal, sized appropriately*
 
+![This is the picture of a dog](Animal.png)
+
 ## Tableau
 
 *Insert your the image of your final bar chart here. Reminder, this should show data from a region other than the South.*
