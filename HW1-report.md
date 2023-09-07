@@ -38,6 +38,10 @@ The following paragraph demostrates the use of italics, bold, bold italics, code
 
 *Create a level 3 heading*
 
+Below is a level 3 heading in Markdown:
+
+### CS625 - Data Visualization
+
 *Insert an image of an animal, sized appropriately*
 
 ## Tableau
