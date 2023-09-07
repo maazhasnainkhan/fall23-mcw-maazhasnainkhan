@@ -34,7 +34,7 @@ Following are the list of fruits:
 
 The following paragraph demostrates the use of italics, bold, bold italics, code, and includes a link:
 
-**My name is Maaz H Khan.** *My UIN is 01244465.* ***I am taking CS625 in my first semester.*** My Github profile is [here](https://github.com/maazhasnainkhan?tab=repositories)
+**My name is Maaz H Khan.** *My UIN is 01244465.* ***I am taking CS625 in my first semester.*** `This sentence is written in code type` My Github profile is [here.](https://github.com/maazhasnainkhan?tab=repositories)
 
 *Create a level 3 heading*
 
@@ -88,9 +88,13 @@ Below is the Second Peguin Chart:
 
 *What happens when you replace `markCircle()` with `markSquare()`?*
 
+When we replace the `markCircle()` with `markSquare()` the plot chart using circle points was replaced with square points.
+
 *What happens when you replace `markCircle()` with `markPoint()`?*
 
 *What change do you need to make to swap the x and y axes on the scatterplot?*
+
+The following code should be used to swap the x and y on the scatterplot:
 
 *Insert the bar chart image here*
 
