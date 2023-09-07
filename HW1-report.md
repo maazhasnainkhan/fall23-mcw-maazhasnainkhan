@@ -120,7 +120,7 @@ The resulting lines will look something like this:
 
 Below is the Horizontal Bar Chart image after deleting the `vl.y().fieldN("Origin")` line:
 
-
+![Horizontal Bar Chart](HorizontalBarChart.png)
 
 *Why do you think this chart is the result of this code change?*
 
