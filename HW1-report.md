@@ -52,6 +52,10 @@ Below is the picture of a dog:
 
 *Insert your the image of your final bar chart here. Reminder, this should show data from a region other than the South.*
 
+Below is the image of the final bar chart created by sample data in Tableu of the sum of sales for each sub-category broken down by Order Date Year and Category vs. Region. The image shows the data from the East Region.
+
+
+
 ## Google Colab
 
 *What is the URL of your Google Colab notebook?*
