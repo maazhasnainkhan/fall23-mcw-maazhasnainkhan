@@ -89,6 +89,7 @@ The second image is the bar chart. It shows the body mass of three different spe
 *What happened when you removed the outer parentheses from the code? Why?*
 
 When we removed the outer parentheses from the code, the program throwed an exception related to the parentheses. This is because the parentheses are required to be balanced for a program to run smoothly. The error given is mentioned below:
+
 `SyntaxError: incomplete input`
 
 ## Observable and Vega-Lite
