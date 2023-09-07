@@ -113,12 +113,19 @@ For *x,* use Mile_per_Gallon field
 The code would be rewritten as:
 
 `v1.markCircle()
+
 .data(cars)
+
 .data(encode
+
 v1.y().fieldQ("Horsepower"),
+
 v1.x().fieldQ("Miles_per_Gallon"),
+
 v1.tooltip().fieldN("Name")
+
 )
+
 .render()`
 
 
