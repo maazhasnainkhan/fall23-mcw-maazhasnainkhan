@@ -1,15 +1,24 @@
 # HW 1 - CS 625, Fall 2023
 
-Insert Your Name Here  
+Maaz Hasnain Khan 
 Due: September 6, 2023
 
 ## Git, GitHub
 
 *What is the URL of the GitHub repo that you created in your personal account?*
+
+Below is the URL of the Github repo that I created in my personal account. I have also made my new repository publicly available so that it can be accessible to everyone.
+
+### Github URL
+https://github.com/maazhasnainkhan/CS625-HW1.git
    
 *In which direction does the 'pull' command work (send local changes to remote OR send remote changes to local)?*
+
+The 'pull' command send remote changes to local. I created a file2.txt in my personal account repository and made changes to it remotely and pulled that change to my local machine. This way I got to know about this command in a more practical way.
    
 *If you have committed a change on your local machine, but do not see the update on GitHub.com, what step might have you forgotten?*
+
+Although I committed a change and then push it live in my remote personal account repository and then checked updates on Github.com and it went through. What I believe is if only I commit and forgot to push the code, that commit will only be available locally and I could not see that change on Github.com.
 
 ## Markdown
 
