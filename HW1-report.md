@@ -108,28 +108,19 @@ We should make the following changes to swap the x and y on the scatterplot:
 
 For *y,* use Horsepower field.
 
-For *x,* use Mile_per_Gallon field
+For *x,* use Miles_per_Gallon field
 
-The code would be rewritten as:
+The resulting lines will look something like this:
 
-`v1.markCircle()
+`v1.y().fieldQ("Horsepower"),`
 
-.data(cars)
-
-.data(encode
-
-v1.y().fieldQ("Horsepower"),
-
-v1.x().fieldQ("Miles_per_Gallon"),
-
-v1.tooltip().fieldN("Name")
-
-)
-
-.render()`
-
+`v1.x().fieldQ("Miles_per_Gallon"),`
 
 *Insert the bar chart image here*
+
+Below is the Horizontal Bar Chart image after deleting the `vl.y().fieldN("Origin")` line:
+
+
 
 *Why do you think this chart is the result of this code change?*
 
