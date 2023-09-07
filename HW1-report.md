@@ -96,13 +96,31 @@ When we removed the outer parentheses from the code, the program throwed an exce
 
 *What happens when you replace `markCircle()` with `markSquare()`?*
 
-When we replace the `markCircle()` with `markSquare()` the plot chart using circle points was replaced with square points.
+When we replace the `markCircle()` with `markSquare()` the plot chart using circle points were replaced with square points.
 
 *What happens when you replace `markCircle()` with `markPoint()`?*
 
+When we replace the `markCircle()` with `markPoint()` the plot chart using circle points were replaced with hollow circle points.
+
 *What change do you need to make to swap the x and y axes on the scatterplot?*
 
-The following code should be used to swap the x and y on the scatterplot:
+We should make the following changes to swap the x and y on the scatterplot:
+
+For *y,* use Horsepower field.
+
+For *x,* use Mile_per_Gallon field
+
+The code would be rewritten as:
+
+`v1.markCircle()`
+`.data(cars)`
+`.data(encode`
+`v1.y().fieldQ("Horsepower"),`
+`v1.x().fieldQ("Miles_per_Gallon"),`
+`v1.tooltip().fieldN("Name")`
+`)`
+`.render()`
+
 
 *Insert the bar chart image here*
 
@@ -112,5 +130,5 @@ The following code should be used to swap the x and y on the scatterplot:
 
 *Every report must list the references (including the URL) that you consulted while completing the assignment. Replace the items below with the references you consulted*
 
-* Reference 1, <https://www.example.com>
+* Reference 1, [Animal Image](https://www.cnet.com/a/img/resize/20d6844768bd3f5f0df41deee97897423bcaf3c5/hub/2021/11/03/3c2a7d79-770e-4cfa-9847-66b3901fb5d7/c09.jpg?auto=webp&fit=crop&height=1200&width=1200)
 * Reference 2, <https://www.example.com/reallyreallyreally-extra-long-URI/>
