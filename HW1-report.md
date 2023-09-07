@@ -34,7 +34,7 @@ Following are the list of fruits:
 
 The following paragraph demostrates the use of italics, bold, bold italics, code, and includes a link:
 
-**My name is Maaz H Khan.** *My UIN is 01244465.* ***I am taking CS625 in my first semester.*** `This sentence is written in code type` My Github profile is [here.](https://github.com/maazhasnainkhan?tab=repositories)
+**My name is Maaz H Khan.** *My UIN is 01244465.* ***I am taking CS625 in my first semester.*** `This sentence is written in code type.` My Github profile is [here.](https://github.com/maazhasnainkhan?tab=repositories)
 
 *Create a level 3 heading*
 
@@ -68,21 +68,28 @@ Below the link of my Google Colab notebook can be found:
 
 *Insert the first penguin chart here*
 
-Below is the first Peguin Chart:
+Below is the first Penguin Chart:
 
 <img src="Seaborn1.png" height="400" alt="First Penguin Chart.">
 
 *Describe what the figure is showing.*
 
+The first figure is a scattered plot chart. The scattered plot chart shows the relationship between Penguins bill length and bill depth.
+
 *Insert the second penguin chart here*
 
-Below is the Second Peguin Chart:
+Below is the Second Penguin Chart:
 
 <img src="Seaborn2.png" height="400" alt="Second Penguin Chart.">
 
 *Describe what the figure is showing.*
 
+The second image is the bar chart. It shows the body mass of three different species of penguins. It shows that the Gentoo species has the highest body mass compared to the other two species.
+
 *What happened when you removed the outer parentheses from the code? Why?*
+
+When we removed the outer parentheses from the code, the program throwed an exception related to the parentheses. This is because the parentheses are required to be balanced for a program to run smoothly. The error given is mentioned below:
+`SyntaxError: incomplete input`
 
 ## Observable and Vega-Lite
 
