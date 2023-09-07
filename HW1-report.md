@@ -70,7 +70,7 @@ Below the link of my Google Colab notebook can be found:
 
 Below is the first Peguin Chart:
 
-![First Penguin Chart](Seaborn1.png)
+<img src="Seaborn1.png" height="400" alt="First Penguin Chart.">
 
 *Describe what the figure is showing.*
 
@@ -78,7 +78,7 @@ Below is the first Peguin Chart:
 
 Below is the Second Peguin Chart:
 
-![Second Penguin Chart](Seaborn2.png)
+<img src="Seaborn2.png" height="400" alt="Second Penguin Chart.">
 
 *Describe what the figure is showing.*
 
