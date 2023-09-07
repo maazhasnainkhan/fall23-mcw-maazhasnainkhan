@@ -68,9 +68,17 @@ Below the link of my Google Colab notebook can be found:
 
 *Insert the first penguin chart here*
 
+Below is the first Peguin Chart:
+
+![First Penguin Chart](Seaborn1.png)
+
 *Describe what the figure is showing.*
 
 *Insert the second penguin chart here*
+
+Below is the Second Peguin Chart:
+
+![Second Penguin Chart](Seaborn2.png)
 
 *Describe what the figure is showing.*
 
