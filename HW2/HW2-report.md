@@ -7,13 +7,41 @@ Due: September 20, 2023
 
 Following steps were taken to clean the data:
 
+*The steps are explained according to columns*
+
 - #### What Kind of Pet is this? (Dog, Cat, Bird, Other)
 
-    * First, we selected the *'What kind of pet is this?'* column and applied Text Facet on it.
+    * First, we selected the *'What Kind of Pet is this?'* column and applied Text Facet on it.
     * Then, we fixed some typos, white spaces, capitalization, spelling etc. using text facet.
-    * Some breeds and species were mixed up e.g. Lizard / Gecko, which was also corrected.
+    * Some breeds and species were mixed up e.g. Lizard / Gecko, which were also corrected.
     * Some assumptions were made. For example, some enteries were incomplete like *'Ca'*, which was assumed to be corrected as cat.
     * We had to do some manual cleaning as well in the breed and kind of pet in some cases as the mixup was really obvious.
+
+- #### Pet's Full Name (you don't have to include your last name. Think "Winston Churchill" and not "Winston Churchill MYLASTNAME")
+
+    * Secondly, we selected *'Pet's Full Name'* column and applied Text Facet to it as well.
+    * Now, we used the cluster attribute and applied different techniques. For example, we fixed typos with fingerprint function, fixed multiple spelling issue with Beider-Morse function.
+
+- #### Pet's everyday name (e.g. "Church")
+
+    * Thirdly, we selected *'Pet's Everyday Name'* column and applied Text Facet on it.
+    * Then, we used the cluster attribute and applied different techniques. For example, fixed Typos with Fingerprint function, fixed multiple spelling issue with Beider-Morse fucntion & Multiple Neighbour function.
+
+- #### Pet's Breed
+
+    * Fourthly, we selected the *'Pet's Breed'* column and applied Text Facet.
+    * After that, we used the cluster attribute and applied different techniques. For example, fixed Typos with fingerprint function, fixed multiple spelling issue with Cologne Phonetic function.
+
+- #### Pet's Age
+
+    * Moreover, we selected the *'Pet's Age'* column and applied Common Transform to the cells of this column using toNumber function to convert all the strings as numeric values in the column to numbers.
+    * Then, apply the Text Facet to the *'Pet's Age'* column, and apply different techniques and functions to merge similar cells.
+    * The column of age was really messy, as many people had entered age in years, some in months and others in weeks. We had to assume that the numeric values that didn't contained any string specifying it as years, months or weeks, were years. Then we had to use GREL to clean this column and we removed all the string in this column such as years, months etc using Regex. We also converted all the months into years and ignored the weeks as it wouldn't have helped in answering the questions in part 2.
+    * The GREL used to remove the string values year / years is:
+        + `if(value.contains('year'), toNumber(value.match(/.*?(\d+\.?\d*).*/)[0]), value)`
+    * The GREL used to remove the string values months / mos are:
+        + `if(value.toLowercase().contains('month'), ceil(toNumber(value.match(/.*?(\d+\.?\d*).*/)[0]) / 12.00), value)`
+        + `if(value.toLowercase().contains('mos'), ceil(toNumber(value.match(/.*?(\d+\.?\d*).*/)[0]) / 12.00), value)`
 
 ## Part 2: Analyze Cleaned Data
 
