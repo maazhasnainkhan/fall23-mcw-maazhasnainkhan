@@ -5,7 +5,15 @@ Due: September 20, 2023
 
 ## Part 1: Data Cleaning
 
+Following steps were taken to clean the data:
 
+- #### What Kind of Pet is this? (Dog, Cat, Bird, Other)
+
+    * First, we selected the *'What kind of pet is this?'* column and applied Text Facet on it.
+    * Then, we fixed some typos, white spaces, capitalization, spelling etc. using text facet.
+    * Some breeds and species were mixed up e.g. Lizard / Gecko, which was also corrected.
+    * Some assumptions were made. For example, some enteries were incomplete like *'Ca'*, which was assumed to be corrected as cat.
+    * We had to do some manual cleaning as well in the breed and kind of pet in some cases as the mixup was really obvious.
 
 ## Part 2: Analyze Cleaned Data
 
@@ -49,11 +57,11 @@ Following are the top 5 most popular dog breeds:
 
 ### *What's the most popular everyday name for a dog?*
 
-Charlie is the most popular everyday name for a dog. 15 dogs in the list are named Charlie. I'd also like to mention that the second most popular everyday name for a dog is Daisy. 14 dogs are named Daisy in the list.
+Charlie is the most popular everyday name for a dog. 15 dogs in the list are named Charlie. I'd also like to mention that the second most popular everyday name for a dog is Daisy. 14 dogs are named Daisy in the list. However, the names are prounounced and spelled very differently from each other, so we also have to take this into account.
 
 ### *What's the most popular full name any pet?*
 
-The most popular full name of any pet is Sophie. 10 pets have the full name Sophie.
+The most popular full name of any pet is Sophie. 10 pets have the full name Sophie. However, the names are prounounced and spelled very differently from each other, so we also have to take this into account.
 
 ## References
 
