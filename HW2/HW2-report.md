@@ -9,46 +9,51 @@ Due: September 20, 2023
 
 ## Part 2: Analyze Cleaned Data
 
-*How many types (kinds) of pets are there?*
+### *How many types (kinds) of pets are there?*
 
+After cleaning the data it was found that there are approximately 35 kinds of pets. We cannot say their numbers with certainity as there are some pets under *'other'* category.
 
+### *How many cats?*
 
-*How many cats?*
+The number of cats is 499.
 
+### *How many breeds of cats?*
 
+There are more than a hundred breeds of cats. Many of the entries in the data are blank therefore, we cannot be sure of their exact number. According to the cleaned data there are almost more than 85 breeds but there are a significant number of entries that are blank. Hence, we come to the conclusion that there are more than a hundred breeds of cats.
 
-*How many breeds of cats?*
+### *What's the most popular cat breed? How many cats are in that breed?*
 
+The Domestic Short Hair is the most popular breed. There are around 82 Domestic Short Hair cats in the data.
 
+### *What's the age range of the cats?*
 
-*What's the most popular cat breed? How many cats are in that breed?*
+There is a wide range of age among the cats. Starting from a few weeks upto 24 years. It is to be noted that the average age of domesticated cats is around 12-20 years. However, in rare cases a cat may live upto around 25-28 years.
 
+### *What's the age range of the rabbits? (Don't forget to look for bunny, too.)*
 
+The age range of rabbits is from upto 1 year to upto 13 years.
 
-*What's the age range of the cats?*
+### *What is the oldest pet? Give the pet's name, kind, and age.*
 
+The oldest pet is a cat named Bruce Springsteen. The breed of that cat is not specified.
 
+### *What are the top 5 most popular dog breeds? List the breed and number.*
 
-*What's the age range of the rabbits? (Don't forget to look for bunny, too.)*
+Following are the top 5 most popular dog breeds:
 
+- Golden Retriever (165)
+- Mutt (35)
+- Labrador Retriever (25)
+- Shih Tzu (22)
+- Beagle (19)
 
+### *What's the most popular everyday name for a dog?*
 
-*What is the oldest pet? Give the pet's name, kind, and age.*
+Charlie is the most popular everyday name for a dog. 15 dogs in the list are named Charlie. I'd also like to mention that the second most popular everyday name for a dog is Daisy. 14 dogs are named Daisy in the list.
 
+### *What's the most popular full name any pet?*
 
-
-*What are the top 5 most popular dog breeds? List the breed and number.*
-
-
-
-*What's the most popular everyday name for a dog?*
-
-
-
-*What's the most popular full name any pet?*
-
-
-
+The most popular full name of any pet is Sophie. 10 pets have the full name Sophie.
 
 ## References
 
