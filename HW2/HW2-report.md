@@ -110,6 +110,8 @@ The most popular full name of any pet is Sophie. 10 pets have the full name Soph
 
 ## References
 
+* HW2-petnames.csv, [HW2-petnames.csv](HW2-petnames.csv)
+* HW2-petnames.csv, [HW2-petnames.json](HW2-petnames.json)
 * Wag Walking, <https://wagwalking.com/breed/staffy-bull-pit#:~:text=The%20American%20Staffordshire%20Terrier%20and,written%20as%20such%20that%20some>
 * American Kennel Club, <https://www.akc.org/dog-breeds/american-staffordshire-terrier/>
 * National Geographic Kids, <https://kids.nationalgeographic.com/animals/reptiles/facts/gecko>
