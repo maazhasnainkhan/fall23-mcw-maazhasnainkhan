@@ -29,6 +29,7 @@ Following steps were taken to clean the data:
 - #### Pet's Breed
 
     * Fourthly, we selected the *'Pet's Breed'* column and applied Text Facet.
+    * Then, we merged some entries that were separate such as, short haired cats were entered in many different ways.
     * After that, we used the cluster attribute and applied different techniques. For example, fixed Typos with fingerprint function, fixed multiple spelling issue with Cologne Phonetic function.
 
 - #### Pet's Age
@@ -46,6 +47,7 @@ Following steps were taken to clean the data:
 
     * There were some instances where we had to clean some data manually. This was due to either the complexity of the data or it was too obvious. For example, we had to do some manual cleaning in the breed and kind of pet in some cases as the mixup was really obvious.
     * In the *'What Kind of Pet is this?'* column, there was an entry which contained multiple pets. This entry became complex as the entire row had multiple entries. To tackle this entry, I split one of the columns into multiple rows. What this did however, was it separated only that particular column into multiple rows, but still the other columns had multiple entries so we had to manually fix those.
+
     ![Multiple Entries](Multiple_Entries.png)
 
 ## Part 2: Analyze Cleaned Data
@@ -62,13 +64,15 @@ The number of cats is 499.
 
 ### *How many breeds of cats?*
 
-There are more than a hundred breeds of cats. Many of the entries in the data are blank therefore, we cannot be sure of their exact number. According to the cleaned data there are almost more than 85 breeds but there are a significant number of entries that are blank. Hence, we come to the conclusion that there are more than a hundred breeds of cats.
+There are more than a hundred breeds of cats. Many of the entries in the data are blank therefore, we cannot be sure of their exact number. According to the cleaned data there are almost more than 80 breeds but there are a significant number of entries that are blank. Hence, we come to the conclusion that there are more than a hundred breeds of cats.
 
 ### *What's the most popular cat breed? How many cats are in that breed?*
 
-The Domestic Short Hair is the most popular breed. There are around 82 Domestic Short Hair cats in the data.
+The Domestic Short Hair is the most popular breed. There are around 110 Domestic Short Hair cats in the data.
 
-There were alot of other Short Haired cats entries as well like, American Short Hair or British Short, but upon investigating it was found that these are different from Domestic Short Hair Cats.
+There were alot of other Short Haired cats entries as well like, American Short Hair or British Short, but upon investigating it was found that these are different from each other. But we also had alot of entries in which Short Haired Cats were not specified as American or British, therefore, we merged all of the Short Haired Cats.
+
+![Short Haired Cats](Short_Haired_Cats.png)
 
 ### *What's the age range of the cats?*
 
@@ -80,7 +84,7 @@ The age range of rabbits is from upto 1 year to upto 13 years.
 
 ### *What is the oldest pet? Give the pet's name, kind, and age.*
 
-The oldest pet is a cat named Bruce Springsteen. The breed of that cat is not specified.
+The oldest pet is a cat named Bruce Springsteen who is 24 years old. The breed of that cat is not specified. 
 
 ### *What are the top 5 most popular dog breeds? List the breed and number.*
 
@@ -102,14 +106,16 @@ The most popular full name of any pet is Sophie. 10 pets have the full name Soph
 
 ## References
 
-* Reference 1, <https://wagwalking.com/breed/staffy-bull-pit#:~:text=The%20American%20Staffordshire%20Terrier%20and,written%20as%20such%20that%20some>
-* Reference 2, <https://www.akc.org/dog-breeds/american-staffordshire-terrier/>
-* Reference 3, <https://kids.nationalgeographic.com/animals/reptiles/facts/gecko>
-* Reference 4, <https://dogtime.com/dog-breeds/mutt>
-* Reference 5, <https://www.coopsandcages.com.au/blog/guinea-pig-vs-hamster/#:~:text=Many%20people%20confuse%20Guinea%20Pigs%20and%20Hamsters&text=They%20are%20both%20from%20the,hamsters%20in%20the%20Cricetinae%20genus.>
-* Reference 6, <https://animaldiversity.org/accounts/Abrocomidae/>
-* Reference 7, <https://openrefine.org/docs/manual/grelfunctions>
-* Reference 8, <https://www.youtube.com/watch?v=OJSRJNF_cHM>
-* Reference 9, <https://stackoverflow.com/questions/35276841/openrefine-extracting-a-number-from-a-text-column-using-regex>
-* Reference 10, <https://guides.library.illinois.edu/openrefine/grel>
-* Reference 11 <https://vickysteeves.gitlab.io/2018-uutah-repro/>
+* Wag Walking, <https://wagwalking.com/breed/staffy-bull-pit#:~:text=The%20American%20Staffordshire%20Terrier%20and,written%20as%20such%20that%20some>
+* American Kennel Club, <https://www.akc.org/dog-breeds/american-staffordshire-terrier/>
+* National Geographic Kids, <https://kids.nationalgeographic.com/animals/reptiles/facts/gecko>
+* Dog Time, <https://dogtime.com/dog-breeds/mutt>
+* Coops & Cages, <https://www.coopsandcages.com.au/blog/guinea-pig-vs-hamster/#:~:text=Many%20people%20confuse%20Guinea%20Pigs%20and%20Hamsters&text=They%20are%20both%20from%20the,hamsters%20in%20the%20Cricetinae%20genus.>
+* Animal Diversity Web, <https://animaldiversity.org/accounts/Abrocomidae/>
+* OpenRefine, <https://openrefine.org/docs/manual/grelfunctions>
+* YouTube, <https://www.youtube.com/watch?v=OJSRJNF_cHM>
+* Stack Overflow, <https://stackoverflow.com/questions/35276841/openrefine-extracting-a-number-from-a-text-column-using-regex>
+* Illinois Library, <https://guides.library.illinois.edu/openrefine/grel>
+* Reproducibility Immersive Course, <https://vickysteeves.gitlab.io/2018-uutah-repro/>
+* Excited Cats, <https://excitedcats.com/american-shorthair-cat-vs-british-shorthair-cat/>
+* Cat Care for Life, <https://www.catcare4life.org/cat-owners/lifestages/#:~:text=The%20average%20lifespan%20for%20a,or%2030%20years%20of%20age.>
