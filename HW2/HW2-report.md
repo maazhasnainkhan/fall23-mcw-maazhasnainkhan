@@ -80,11 +80,11 @@ There is a wide range of age among the cats. Starting from a few weeks upto 24 y
 
 ### *What's the age range of the rabbits? (Don't forget to look for bunny, too.)*
 
-The age range of rabbits is from upto 1 year to upto 13 years.
+The age range of rabbits is from upto 1 year to upto 13 years. The average lifespan of domesticated rabbit is around 7-12 years. However, in rare cases a rabbit may live longer than 12 years.
 
 ### *What is the oldest pet? Give the pet's name, kind, and age.*
 
-The oldest pet is a cat named Bruce Springsteen who is 24 years old. The breed of that cat is not specified. 
+The oldest pet is a cat named Bruce Springsteen who is 24 years old. The breed of that cat is not specified. A cat's average lifespan is upto 20 years, however, in rare cases a cat may live upto 28 years
 
 ### *What are the top 5 most popular dog breeds? List the breed and number.*
 
@@ -119,3 +119,4 @@ The most popular full name of any pet is Sophie. 10 pets have the full name Soph
 * Reproducibility Immersive Course, <https://vickysteeves.gitlab.io/2018-uutah-repro/>
 * Excited Cats, <https://excitedcats.com/american-shorthair-cat-vs-british-shorthair-cat/>
 * Cat Care for Life, <https://www.catcare4life.org/cat-owners/lifestages/#:~:text=The%20average%20lifespan%20for%20a,or%2030%20years%20of%20age.>
+* Blue Cross, <https://www.bluecross.org.uk/advice/rabbit/wellbeing-and-care/how-long-do-rabbits-live>
