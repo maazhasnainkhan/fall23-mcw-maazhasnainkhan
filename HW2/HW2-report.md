@@ -98,6 +98,8 @@ Following are the top 5 most popular dog breeds:
 - Shih Tzu (22)
 - Beagle (19)
 
+There were also some breeds that were mixed. They were kept as separate entries as they were not pure breeds.
+
 ### *What's the most popular everyday name for a dog?*
 
 Charlie is the most popular everyday name for a dog. 15 dogs in the list are named Charlie. I'd also like to mention that the second most popular everyday name for a dog is Daisy. 14 dogs are named Daisy in the list. However, the names are prounounced and spelled very differently from each other, so we also have to take this into account.
