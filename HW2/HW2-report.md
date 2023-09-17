@@ -1,6 +1,7 @@
 # HW 2 - CS 625, Fall 2023
 
 Maaz Hasnain Khan 
+
 Due: September 20, 2023
 
 ## Part 1: Data Cleaning
@@ -58,11 +59,11 @@ This data was really messy. While cleaning this data we had to make some assumpt
 
 After cleaning the data it was found that there are approximately 35 kinds of pets. We cannot say their numbers with certainity as there are some pets under *'other'* category.
 
-Some of the entries however, were ignored as they had included robots or virus in the *'What Kind of Pet is this?'* column which did'nt made any sense.
+Some of the entries however, were ignored as they had included robots or virus in the *'What Kind of Pet is this?'* column which didn't made any sense.
 
 ### *How many cats?*
 
-The number of cats is 499.
+There are 499 cats in the data provided.
 
 ### *How many breeds of cats?*
 
