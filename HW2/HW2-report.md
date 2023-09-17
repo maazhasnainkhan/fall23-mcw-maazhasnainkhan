@@ -15,7 +15,6 @@ Following steps were taken to clean the data:
     * Then, we fixed some typos, white spaces, capitalization, spelling etc. using text facet.
     * Some breeds and species were mixed up e.g. Lizard / Gecko, which were also corrected.
     * Some assumptions were made. For example, some enteries were incomplete like *'Ca'*, which was assumed to be corrected as cat.
-    * We had to do some manual cleaning as well in the breed and kind of pet in some cases as the mixup was really obvious.
 
 - #### Pet's Full Name (you don't have to include your last name. Think "Winston Churchill" and not "Winston Churchill MYLASTNAME")
 
@@ -43,11 +42,19 @@ Following steps were taken to clean the data:
         + `if(value.toLowercase().contains('month'), ceil(toNumber(value.match(/.*?(\d+\.?\d*).*/)[0]) / 12.00), value)`
         + `if(value.toLowercase().contains('mos'), ceil(toNumber(value.match(/.*?(\d+\.?\d*).*/)[0]) / 12.00), value)`
 
+- #### Other Steps Taken To Clean The Data
+
+    * There were some instances where we had to clean some data manually. This was due to either the complexity of the data or it was too obvious. For example, we had to do some manual cleaning in the breed and kind of pet in some cases as the mixup was really obvious.
+    * In the *'What Kind of Pet is this?'* column, there was an entry which contained multiple pets. This entry became complex as the entire row had multiple entries. To tackle this entry, I split one of the columns into multiple rows. What this did however, was it separated only that particular column into multiple rows, but still the other columns had multiple entries so we had to manually fix those.
+    ![Multiple Entries](Multiple_Entries.png)
+
 ## Part 2: Analyze Cleaned Data
 
 ### *How many types (kinds) of pets are there?*
 
 After cleaning the data it was found that there are approximately 35 kinds of pets. We cannot say their numbers with certainity as there are some pets under *'other'* category.
+
+Some of the entries however, were ignored as they had included robots or virus in the *'What Kind of Pet is this?'* column which did'nt made any sense.
 
 ### *How many cats?*
 
@@ -60,6 +67,8 @@ There are more than a hundred breeds of cats. Many of the entries in the data ar
 ### *What's the most popular cat breed? How many cats are in that breed?*
 
 The Domestic Short Hair is the most popular breed. There are around 82 Domestic Short Hair cats in the data.
+
+There were alot of other Short Haired cats entries as well like, American Short Hair or British Short, but upon investigating it was found that these are different from Domestic Short Hair Cats.
 
 ### *What's the age range of the cats?*
 
