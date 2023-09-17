@@ -50,6 +50,8 @@ Following steps were taken to clean the data:
 
     ![Multiple Entries](Multiple_Entries.png)
 
+This data was really messy. While cleaning this data we had to make some assumption and had to exclude some entries as they would've caused unnecessary problems.
+
 ## Part 2: Analyze Cleaned Data
 
 ### *How many types (kinds) of pets are there?*
