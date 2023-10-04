@@ -105,7 +105,8 @@ The charts in the report and Google Colab might be different as we have used dat
 
 ###### Code
 
-<code>import pandas as pd
+```
+import pandas as pd
 from pandas import DataFrame
 from google.colab import drive
 import seaborn.objects as so
@@ -128,7 +129,8 @@ cancer_data_state= cancer_data_state.sort_values(by=['New cases Total'])
     .theme({**axes_style("ticks")})
     .add(so.Text(halign="left"))
     .plot()
-)</code>
+)
+```
 
 #### Scatter Plot
 
@@ -136,7 +138,8 @@ cancer_data_state= cancer_data_state.sort_values(by=['New cases Total'])
 
 ###### Code
 
-<code>import pandas as pd
+```
+import pandas as pd
 from pandas import DataFrame
 from google.colab import drive
 import seaborn.objects as so
@@ -155,7 +158,8 @@ cases_death_cancer_data_25 = cases_death_cancer_data.sample(25)
     color='State',).layout(size=(10, 6))
     .add(so.Dots(pointsize=15,fillcolor="white", stroke=2.5))
     .theme({**axes_style("ticks")})
-)</code>
+)
+```
 
 #### Multiple Line Chart
 
@@ -163,7 +167,8 @@ cases_death_cancer_data_25 = cases_death_cancer_data.sample(25)
 
 ###### Code
 
-<code>from matplotlib.lines import Line2D
+```
+from matplotlib.lines import Line2D
 import pandas as pd
 from pandas import DataFrame
 from google.colab import drive
@@ -202,6 +207,7 @@ legend_elements = [
 plt.legend(handles=legend_elements)
 
 plt.show()</code>
+```
 
 ### Excel
 
