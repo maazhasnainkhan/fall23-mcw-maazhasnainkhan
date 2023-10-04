@@ -94,29 +94,141 @@ Idiom: Multiple Line Chart / Mark: Line
 
 ### Python Seaborn (Google Colab)
 
+[Python Seaborn Google Colab Link Click Here](https://colab.research.google.com/drive/1UxMiY20it_1Xdh4Mt9IV2-k6mYPyUJRu?usp=sharing)
+
 #### Bar Chart
 
-<img src="./Bar-Chart-Seaborn.png" style="height:500;">
 ![Bar Chart Seaborn](Bar-Chart-Seaborn.png)
+
+###### Code
+
+`import pandas as pd
+from pandas import DataFrame
+from google.colab import drive
+import seaborn.objects as so
+import seaborn as sns
+import matplotlib.pyplot as plt
+from seaborn import axes_style
+
+drive.mount("/content/drive", force_remount = True)
+cancer_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW3/Cancer-Data-Cleaned.csv")
+
+cancer_data_wo_us = cancer_data.drop(0, axis=0)
+cancer_data_10_samples = cancer_data_wo_us.sample(10)
+cancer_data_state = cancer_data_10_samples.iloc[:,[0,1]]
+
+cancer_data_state= cancer_data_state.sort_values(by=['New cases Total'])
+
+(
+    so.Plot(data=cancer_data_state, x='State', y='New cases Total').layout(size=(15, 6))
+    .add(so.Bar())
+    .theme({**axes_style("ticks")})
+    .add(so.Text(halign="left"))
+    .plot()
+)
+`
 
 #### Scatter Plot
 
 ![Scatter Plot Seaborn](Scatter-Plot-Seaborn.png)
 
+###### Code
+
+`import pandas as pd
+from pandas import DataFrame
+from google.colab import drive
+import seaborn.objects as so
+import seaborn as sns
+import matplotlib.pyplot as plt
+from seaborn import axes_style
+
+drive.mount("/content/drive", force_remount = True)
+cancer_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW3/Cancer-Data-Cleaned.csv")
+cases_death_cancer_data = cancer_data.drop(0, axis=0)
+cases_death_cancer_data_25 = cases_death_cancer_data.sample(25)
+(
+    so.Plot(data=cases_death_cancer_data_25,
+    x='New cases Total',
+    y='Deaths Total',
+    color='State',).layout(size=(10, 6))
+    .add(so.Dots(pointsize=15,fillcolor="white", stroke=2.5))
+    .theme({**axes_style("ticks")})
+)
+`
+
 #### Multiple Line Chart
 
 ![Multiple Line Chart Seaborn](Multiple-Line-Chart-Seaborn.png)
 
+###### Code
+
+`from matplotlib.lines import Line2D
+import pandas as pd
+from pandas import DataFrame
+from google.colab import drive
+import seaborn.objects as so
+import seaborn as sns
+import matplotlib.pyplot as plt
+from seaborn import axes_style
+
+organ_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW3/Organ-Transplant.csv")
+organ_data = organ_data.T
+organ_data.index.name = 'Year'
+
+cleaned_organ_data = organ_data.drop('Procedure', axis=0)
+
+plt.figure(figsize=(12, 6))
+sns.set(style="whitegrid")
+
+line_styles = ['-', '-', '-', '-', '-', '-', '-', '-']
+line_colors = ['blue', 'green', 'red', 'purple', 'orange', 'brown', 'pink', 'gray']
+
+legend_labels = ["Heart", "Heart & Lung", "Lung", "Liver",
+                 "Kidney", "Kidney & Pancreas", "Pancreas", "Intestine"]
+
+for i, (label, color, style) in enumerate(zip(legend_labels, line_colors, line_styles)):
+    sns.lineplot(data=cleaned_organ_data[i], label=label, color=color, linestyle=style)
+
+plt.xlabel("Year")
+plt.ylabel("Number of Procedures")
+plt.title("Organ Transplants Over the Years")
+
+legend_elements = [
+    Line2D([0], [0], color=color, linestyle=style, label=label)
+    for label, color, style in zip(legend_labels, line_colors, line_styles)
+]
+
+plt.legend(handles=legend_elements)
+
+plt.show()
+`
+
 ### Excel
+
+[Cancer-Data-Cleaned.xlsx](Cancer-Data-Cleaned.xlsx)
 
 #### Bar Chart
 
-<img src="./Bar-Chart-Excel.png" style="width:1000px; height:500;">
+![Bar Chart Seaborn Excel](Bar-Chart-Excel.png)
 
+Below is the table used in making the above bar chart in Excel.
+
+| State          | New Cases Total |
+|----------------|-----------------|
+| Idaho          | 7.52            |
+| New Hampshire  | 8.21            |
+| Iowa           | 17.5            |
+| Alabama        | 25.53           |
+| Maryland       | 28.89           |
+| Ohio           | 65.06           |
+| Illinois       | 65.61           |
+| Texas          | 105             |
+| New York       | 107.26          |
+| Florida        | 113.4           |
 
 ## Reflection
 
-Personally, I thought plotting the chart in Excel was really easy. This might be due to my non-CS background as I faced many challenges while working with seaborn. However, this dataset was simple and there was not much to be cleaned, this might also be one of the reason Excel seemed easy.
+Personally, I thought plotting the chart in Excel was really easy. This might be due to my non-CS background as I faced many challenges while working with seaborn. However, this dataset was simple and there was not much to be cleaned, this might also be one of the reason Excel seemed easy. In my opinion, if the dataset is simple and small Excel might prove to be the winner, however,  if advanced customization, automation, or are working on data analysis tasks is required, Python would provide more flexibility and control, although it may require more initial effort to learn and set up.
 
 ## References
 
