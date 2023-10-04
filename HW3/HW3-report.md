@@ -206,7 +206,7 @@ legend_elements = [
 
 plt.legend(handles=legend_elements)
 
-plt.show()</code>
+plt.show()
 ```
 
 ### Excel
