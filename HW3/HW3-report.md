@@ -96,6 +96,9 @@ Idiom: Multiple Line Chart / Mark: Line
 
 [Python Seaborn Google Colab Link Click Here](https://colab.research.google.com/drive/1UxMiY20it_1Xdh4Mt9IV2-k6mYPyUJRu?usp=sharing)
 
+##### Note:
+The charts in the report and google colab might be different as we have used data in random form. For bar chart, we have used data from 10 random States and similarly for scatter plot, we have used data from 25 random states. So, upon running the code again the chart might come out different than the original one.
+
 #### Bar Chart
 
 ![Bar Chart Seaborn](Bar-Chart-Seaborn.png)
