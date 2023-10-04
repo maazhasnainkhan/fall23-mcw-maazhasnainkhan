@@ -48,7 +48,7 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 * After that, we loop through the legend labels, line colors, and line styles, and for each organ type:
     + Use Seaborn's lineplot to plot the data for that organ type with the specified label, color, and line style.
 * Then, add labels to the x-axis and y-axis and set a title for the plot and create legend elements based on the legend labels, line colors, and line styles.
-* Finally, we display the legend using plt.legend() and finally, show the plot using plt.show()
+* Finally, we display the legend using *'plt.legend()'* and finally, show the plot using *'plt.show()'*
 
 ## References
 
