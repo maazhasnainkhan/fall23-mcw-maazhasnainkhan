@@ -90,6 +90,28 @@ Idiom: Multiple Line Chart / Mark: Line
 | Number of Procedures | Value, Quantitative | Vertical Position (Y-axis) |
 | Procedure Type | Key, Categorical | Line (Third Channel) |
 
+## Creating Charts
+
+### Python Seaborn (Google Colab)
+
+#### Bar Chart
+
+![Bar Chart Seaborn](Bar-Chart-Seaborn.png)
+
+#### Scatter Plot
+
+![Scatter Plot Seaborn](Scatter-Plot-Seaborn.png)
+
+#### Multiple Line Chart
+
+![Multiple Line Chart Seaborn](Multiple-Line-Chart-Seaborn.png)
+
+### Excel
+
+#### Bar Chart
+
+![Bar Chart Seaborn Excel](Bar-Chart-Excel.png)
+
 ## References
 
 * First Data Set CSV File, [Cancer-Data-Cleaned.csv](Cancer-Data-Cleaned.csv)
