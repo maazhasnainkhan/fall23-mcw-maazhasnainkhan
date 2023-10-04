@@ -165,7 +165,7 @@ cases_death_cancer_data_25 = cases_death_cancer_data.sample(25)
 
 ###### Code
 
-``from matplotlib.lines import Line2D``
+<code>from matplotlib.lines import Line2D
 import pandas as pd
 from pandas import DataFrame
 from google.colab import drive
@@ -203,8 +203,7 @@ legend_elements = [
 
 plt.legend(handles=legend_elements)
 
-plt.show()
-``
+plt.show()</code>
 
 ### Excel
 
