@@ -56,11 +56,15 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 
 #### Bar Chart
 
+A bar chart is a suitable choice when you want to compare discrete categories (in this case, U.S. states) and their corresponding values (New Cases). Bar charts allow for easy visual comparison between categories and are particularly useful for showing differences in quantities.
 
+I used a bar chart to represent the *'New Cases'* data for different U.S. states. Each state is a distinct category, and the height of each bar represents the number of *'new cancer cases'* in that state. This choice allows viewers to quickly see which states have the highest and lowest numbers of new cases, making it effective for comparing states' cancer incidence.
 
 #### Scatter Plot
 
+A scatter plot is appropriate when you want to explore the relationship or correlation between two continuous variables (New Cases and Total Deaths) for different categories (U.S. states). Scatter plots allow you to identify patterns, trends, or clusters in data points.
 
+I used a scatter plot to visualize the relationship between the number of New Cases and Total Deaths for different U.S. states. Each data point represents a state, with the y-axis showing the number of New Cases and the x-axis showing the Total Deaths. This choice allows viewers to assess if there is a correlation between the number of new cancer cases and the total number of deaths, helping to identify states where the impact of cancer may be more severe or less severe based on these two variables.
 
 #### Multiple Line Chart
 
@@ -82,3 +86,5 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 * PyData (Seaborn), <https://seaborn.pydata.org/generated/seaborn.objects.Dot.html>
 * PyData (Pandas),<https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html>
 * Markdown Guide, <https://www.markdownguide.org/basic-syntax/#links>
+* From Data to Viz, <https://www.data-to-viz.com/graph/barplot.html#:~:text=Definition,bar%20represents%20its%20numeric%20value.>
+* Visme, <https://visme.co/blog/scatter-plot/>
