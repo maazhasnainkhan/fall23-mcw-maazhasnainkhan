@@ -12,10 +12,10 @@ Due: October 4, 2023
 
 ### Data Wrangling
 
-First we used open refine to clean the data and get rid of any unnecessary headers and footers in the *.xls* file and converted it into *.csv* file. There wasn't much worng with the data, therefore, there was not much data to be cleaned. After getting the *.csv* file, we used python to further manipulate and process the data. This was a complex process, hence, will be discussed in points:
+First, we used Open Refine to clean the data and get rid of any unnecessary headers and footers in the *.xls* file and converted it into a *.csv* file. There wasn't much wrong with the data, therefore, there was not much data to be cleaned. After getting the *.csv* file, we used Python to further manipulate and process the data. This was a complex process, hence, will be discussed in points:
 
 #### For Bar Chart
-* First, we mount Google Drive to access files, and then read a CSV file named *"Cancer-Data-Cleaned.csv"* into a Pandas DataFrame.
+* First, we mount Google Drive to access files and then read a CSV file named *"Cancer-Data-Cleaned.csv"* into a Pandas DataFrame.
 * Then, we remove the first row (index 0) from the DataFrame.
 * After that, we randomly select 10 rows from the DataFrame as a subset.
 * Then, we create a new DataFrame named *'cancer_data_state'* that contains only the *'State'* and *'New cases Total'* columns from the subset.
@@ -30,7 +30,7 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 * Finally, we format the plot with a specified size, adjust the size and appearance of the dots, and set ticks on the axes for better readability.
 
 ##### Note:
-The charts in the report and google colab might be different as we have used data in random form. For bar chart, we have used data from 10 random States and similarly for scatter plot, we have used data from 25 random states. So, upon running the code again the chart might come out different than the original one.
+The charts in the report and Google Colab might be different as we have used data in random form. For the bar chart, we have used data from 10 random States and similarly, for scatter plot, we have used data from 25 random states. So, upon running the code again the chart might come out different than the original one.
 
 ##  Second Data
 - The second data set is from Table 181 Section 3 Health Conditions, Diseases
@@ -39,7 +39,7 @@ The charts in the report and google colab might be different as we have used dat
 
 ### Data Wrangling
 
-First we used open refine to clean the data and get rid of any unnecessary headers and footers in the *.xls* file and converted it into *.csv* file. Then we extracted the two columns *'Procedure'* and *'Number of Procedures'* as only these columns were required for the plotting the Multiple Line Chart. After getting the *.csv* file, we used python to further manipulate and process the data. This was a complex process, hence, will be discussed in points:
+First, we used Open Refine to clean the data and get rid of any unnecessary headers and footers in the *.xls* file and converted it into a *.csv* file. Then we extracted the two columns *'Procedure'* and *'Number of Procedures'* as only these columns were required for plotting the Multiple Line Chart. After getting the *.csv* file, we used Python to further manipulate and process the data. This was a complex process, hence, will be discussed in points:
 
 #### For Multiple Line Chart:
 
@@ -47,7 +47,7 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 * Then, we create a cleaned DataFrame called cleaned_organ_data by dropping the *'Procedure'* row from *'organ_data'*. Then, set up the figure and style for the Seaborn plot. Define line styles, line colors, and legend labels.
 * After that, we loop through the legend labels, line colors, and line styles, and for each organ type:
     + Use Seaborn's lineplot to plot the data for that organ type with the specified label, color, and line style.
-* Then, add labels to the x-axis and y-axis and set a title for the plot and create legend elements based on the legend labels, line colors, and line styles.
+* Then, add labels to the x-axis and y-axis and, set a title for the plot and, create legend elements based on the legend labels, line colors, and line styles.
 * Finally, we display the legend using *'plt.legend()'* and finally, show the plot using *'plt.show()'*
 
 ## Visualization Idioms
@@ -56,7 +56,7 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 
 A bar chart is a suitable choice when you want to compare discrete categories (in this case, U.S. states) and their corresponding values (New Cases). Bar charts allow for easy visual comparison between categories and are particularly useful for showing differences in quantities.
 
-I used a bar chart to represent the New Cases data for different U.S. states. Each state is a distinct category, and the height of each bar represents the number of new cancer cases'in that state. This choice allows viewers to quickly see which states have the highest and lowest numbers of new cases, making it effective for comparing states' cancer incidence.
+I used a bar chart to represent the New Cases data for different U.S. states. Each state is a distinct category, and the height of each bar represents the number of new cancer cases in that state. This choice allows viewers to quickly see which states have the highest and lowest numbers of new cases, making it effective for comparing states' cancer incidence.
 
 Idiom: Bar Chart / Mark: Line
 | Data: Attribute | Data: Attribute Type  | Encode: Channel | 
@@ -97,7 +97,7 @@ Idiom: Multiple Line Chart / Mark: Line
 [Python Seaborn Google Colab Link Click Here](https://colab.research.google.com/drive/1UxMiY20it_1Xdh4Mt9IV2-k6mYPyUJRu?usp=sharing)
 
 ##### Note:
-The charts in the report and google colab might be different as we have used data in random form. For bar chart, we have used data from 10 random States and similarly for scatter plot, we have used data from 25 random states. So, upon running the code again the chart might come out different than the original one.
+The charts in the report and Google Colab might be different as we have used data in random form. For the bar chart, we have used data from 10 random States and similarly, for scatter plot, we have used data from 25 random states. So, upon running the code again the chart might come out different than the original one.
 
 #### Bar Chart
 
@@ -165,7 +165,7 @@ cases_death_cancer_data_25 = cases_death_cancer_data.sample(25)
 
 ###### Code
 
-<code>from matplotlib.lines import Line2D
+from matplotlib.lines import Line2D
 import pandas as pd
 from pandas import DataFrame
 from google.colab import drive
@@ -203,7 +203,7 @@ legend_elements = [
 
 plt.legend(handles=legend_elements)
 
-plt.show()</code>
+plt.show()
 
 ### Excel
 
@@ -230,7 +230,7 @@ Below is the table used in making the above bar chart in Excel.
 
 ## Reflection
 
-Personally, I thought plotting the chart in Excel was really easy. This might be due to my non-CS background as I faced many challenges while working with seaborn. However, this dataset was simple and there was not much to be cleaned, this might also be one of the reason Excel seemed easy. In my opinion, if the dataset is simple and small Excel might prove to be the winner, however,  if advanced customization, automation, or are working on data analysis tasks is required, Python would provide more flexibility and control, although it may require more initial effort to learn and set up.
+Personally, for me, plotting the chart in Excel was easy. This might be due to my non-CS background as I faced many challenges while working with Seaborn. However, this dataset was simple and there was not much to be cleaned, this might also be one of the reasons Excel seemed easy. In my opinion, if the dataset is simple and small Excel might prove to be the winner, however,  if advanced customization, automation, or working on data analysis tasks is required, Python would provide more flexibility and control, although it may require more initial effort to learn and set up.
 
 ## References
 
