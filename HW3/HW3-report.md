@@ -96,7 +96,7 @@ Idiom: Multiple Line Chart / Mark: Line
 
 #### Bar Chart
 
-<img src="./Bar-Chart-Seaborn.png" style="height:600px;">
+<img src="./Bar-Chart-Seaborn.png" style="height:500;">
 ![Bar Chart Seaborn](Bar-Chart-Seaborn.png)
 
 #### Scatter Plot
@@ -111,7 +111,7 @@ Idiom: Multiple Line Chart / Mark: Line
 
 #### Bar Chart
 
-<img src="./Bar-Chart-Excel.png" style="width:1000px; height:600px;">
+<img src="./Bar-Chart-Excel.png" style="width:1000px; height:500;">
 
 
 ## Reflection
