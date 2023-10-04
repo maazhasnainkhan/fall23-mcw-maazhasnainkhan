@@ -96,16 +96,15 @@ Idiom: Multiple Line Chart / Mark: Line
 
 #### Bar Chart
 
-<!-- <img src="./Bar-Chart-Seaborn.png" style="width:1000px; height:600px;"> -->
+<img src="./Bar-Chart-Seaborn.png" style="width:1000px; height:600px;">
 ![Bar Chart Seaborn](Bar-Chart-Seaborn.png)
 
 #### Scatter Plot
-<img src="./Scatter-Plot-Seaborn.png" style="width:1000px; height:600px;">
+
 ![Scatter Plot Seaborn](Scatter-Plot-Seaborn.png)
 
 #### Multiple Line Chart
 
-<img src="./Multiple-Line-Chart-Seaborn.png" style="width:1000px; height:600px;">
 ![Multiple Line Chart Seaborn](Multiple-Line-Chart-Seaborn.png)
 
 ### Excel
@@ -113,7 +112,11 @@ Idiom: Multiple Line Chart / Mark: Line
 #### Bar Chart
 
 <img src="./Bar-Chart-Excel.png" style="width:1000px; height:600px;">
-![Bar Chart Seaborn Excel](Bar-Chart-Excel.png)
+
+
+## Reflection
+
+Personally, I thought plotting the chart in Excel was really easy. This might be due to my non-CS background as I faced many challenges while working with seaborn. However, this dataset was simple and there was not much to be cleaned, this might also be one of the reason Excel seemed easy.
 
 ## References
 
@@ -127,3 +130,9 @@ Idiom: Multiple Line Chart / Mark: Line
 * Markdown Guide, <https://www.markdownguide.org/basic-syntax/#links>
 * From Data to Viz, <https://www.data-to-viz.com/graph/barplot.html#:~:text=Definition,bar%20represents%20its%20numeric%20value.>
 * Visme, <https://visme.co/blog/scatter-plot/>
+* Python Charts, <https://python-charts.com/seaborn/grid/>
+* Anaconda, <https://anaconda.cloud/seaborn-objects-system>
+* Github, <https://github.com/mwaskom/seaborn/issues/3146>
+* SaturnCloud, <https://saturncloud.io/blog/adding-text-relative-to-axes-in-seaborn-and-matplotlib-a-guide/>
+* Stackoverflow, <https://stackoverflow.com/questions/41511334/adding-text-to-each-subplot-in-seaborn>
+* United States Census Bureau, <https://www.census.gov/library/publications/2011/compendia/statab/131ed.html>
