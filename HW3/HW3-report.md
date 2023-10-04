@@ -100,7 +100,7 @@ Idiom: Multiple Line Chart / Mark: Line
 ![Bar Chart Seaborn](Bar-Chart-Seaborn.png)
 
 #### Scatter Plot
-<img src="./Scatter-Plot-Seaborn.png" style= "width:200, height:200"></img>
+<img src="./Scatter-Plot-Seaborn.png", style= "width:200, height:200"></img>
 ![Scatter Plot Seaborn](Scatter-Plot-Seaborn.png)
 
 #### Multiple Line Chart
