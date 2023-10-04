@@ -239,7 +239,8 @@ Personally, I thought plotting the chart in Excel was really easy. This might be
 * Second Data Set CSV File, [Organ-Transplant-Cleaned.csv](Organ-Transplant-Cleaned.csv)
 * First Data Set Raw File, [Cancer-Data-Raw.xls](Cancer-Data-Raw.xls)
 * Second Data Set Raw File, [Organ-Transplant-Raw.xls](Organ-Transplant-Data-Raw.xls)
-* Google Colab Jupyter Source File, [CS_625_HW3.ipynb](CS_625_HW3.ipynb) 
+* Google Colab Jupyter Source File, [CS_625_HW3.ipynb](CS_625_HW3.ipynb)
+* Bar Chart in Excel XLSX File, [Cancer-Data-Cleaned.xlsx](Cancer-Data-Cleaned.xlsx)
 * PyData (Seaborn), <https://seaborn.pydata.org/generated/seaborn.objects.Dot.html>
 * PyData (Pandas),<https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html>
 * Markdown Guide, <https://www.markdownguide.org/basic-syntax/#links>
