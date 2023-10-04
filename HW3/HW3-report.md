@@ -96,23 +96,23 @@ Idiom: Multiple Line Chart / Mark: Line
 
 #### Bar Chart
 
-<img src="./Bar-Chart-Seaborn.png" style="width:200px; height:200px;">
+<img src="./Bar-Chart-Seaborn.png" style="width:2000px; height:2000px;">
 ![Bar Chart Seaborn](Bar-Chart-Seaborn.png)
 
 #### Scatter Plot
-<img src="./Scatter-Plot-Seaborn.png" style="width:200px; height:200px;">
+<img src="./Scatter-Plot-Seaborn.png" style="width:2000px; height:2000px;">
 ![Scatter Plot Seaborn](Scatter-Plot-Seaborn.png)
 
 #### Multiple Line Chart
 
-<img src="./Multiple-Line-Chart-Seaborn.png" style="width:200px; height:200px;">
+<img src="./Multiple-Line-Chart-Seaborn.png" style="width:2000px; height:2000px;">
 ![Multiple Line Chart Seaborn](Multiple-Line-Chart-Seaborn.png)
 
 ### Excel
 
 #### Bar Chart
 
-<img src="./Bar-Chart-Excel.png" style="width:200px; height:200px;">
+<img src="./Bar-Chart-Excel.png" style="width:2000px; height:2000px;">
 ![Bar Chart Seaborn Excel](Bar-Chart-Excel.png)
 
 ## References
