@@ -110,6 +110,7 @@ Idiom: Multiple Line Chart / Mark: Line
 
 #### Bar Chart
 
+<img src="/assets/images/Bar-Chart-Excel.png" style= "width:200, height:200"></img>
 ![Bar Chart Seaborn Excel](Bar-Chart-Excel.png)
 
 ## References
