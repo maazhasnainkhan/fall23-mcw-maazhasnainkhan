@@ -39,7 +39,16 @@ The charts in the report and google colab might be different as we have used dat
 
 ### Data Wrangling
 
+First we used open refine to clean the data and get rid of any unnecessary headers and footers in the *.xls* file and converted it into *.csv* file. Then we extracted the two columns *'Procedure'* and *'Number of Procedures'* as only these columns were required for the plotting the Multiple Line Chart. After getting the *.csv* file, we used python to further manipulate and process the data. This was a complex process, hence, will be discussed in points:
 
+#### For Multiple Line Chart:
+
+* First, we read a CSV file named *"Organ-Transplant.csv"* into a Pandas DataFrame called organ_data. Then, transpose the DataFrame using *.T* to make years the index and set the index name to *'Year'*.
+* Then, we create a cleaned DataFrame called cleaned_organ_data by dropping the *'Procedure'* row from *'organ_data'*. Then, set up the figure and style for the Seaborn plot. Define line styles, line colors, and legend labels.
+* After that, we loop through the legend labels, line colors, and line styles, and for each organ type:
+    + Use Seaborn's lineplot to plot the data for that organ type with the specified label, color, and line style.
+* Then, add labels to the x-axis and y-axis and set a title for the plot and create legend elements based on the legend labels, line colors, and line styles.
+* Finally, we display the legend using plt.legend() and finally, show the plot using plt.show()
 
 ## References
 
