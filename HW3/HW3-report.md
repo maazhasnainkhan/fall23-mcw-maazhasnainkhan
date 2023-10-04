@@ -29,10 +29,17 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 * Then, we create a scatterplot (dot plot) using the Seaborn library. The plot displays *'New cases Total'* on the x-axis and *'Deaths Total'* on the y-axis, with each dot colored based on the *'State'* column.
 * Finally, we format the plot with a specified size, adjust the size and appearance of the dots, and set ticks on the axes for better readability.
 
+##### Note:
+The charts in the report and google colab might be different as we have used data in random form. For bar chart, we have used data from 10 random States and similarly for scatter plot, we have used data from 25 random states. So, upon running the code again the chart might come out different than the original one.
+
 ##  Second Data
 - The second data set is from Table 181 Section 3 Health Conditions, Diseases
 
     [Organ Transplant](https://www2.census.gov/library/publications/2011/compendia/statab/131ed/tables/12s0181.xls)
+
+### Data Wrangling
+
+
 
 ## References
 
@@ -40,6 +47,7 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 * Second Data Set CSV File, [Organ-Transplant-Cleaned.csv](Organ-Transplant-Cleaned.csv)
 * First Data Set Raw File, [Cancer-Data-Raw.xls](Cancer-Data-Raw.xls)
 * Second Data Set Raw File, [Organ-Transplant-Raw.xls](Organ-Transplant-Data-Raw.xls)
+* Google Colab Jupyter Source File, [CS_625_HW3.ipynb](CS_625_HW3.ipynb) 
 * PyData (Seaborn), <https://seaborn.pydata.org/generated/seaborn.objects.Dot.html>
 * PyData (Pandas),<https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html>
 * Markdown Guide, <https://www.markdownguide.org/basic-syntax/#links>
