@@ -136,7 +136,7 @@ The charts in the report and Google Colab might be different as we have used dat
 
 ###### Code
 
-`import pandas as pd`
+<code>`import pandas as pd`
 `from pandas import DataFrame`
 `from google.colab import drive`
 `import seaborn.objects as so`
@@ -155,7 +155,7 @@ The charts in the report and Google Colab might be different as we have used dat
     `color='State',).layout(size=(10, 6))`
     `.add(so.Dots(pointsize=15,fillcolor="white", stroke=2.5))`
     `.theme({**axes_style("ticks")})`
-`)`
+`)`</code>
 
 #### Multiple Line Chart
 
