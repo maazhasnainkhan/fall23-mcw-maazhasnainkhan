@@ -52,29 +52,43 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 
 ## Visualization Idioms
 
-### Python Seaborn (Google Colab)
-
-#### Bar Chart
+### Bar Chart
 
 A bar chart is a suitable choice when you want to compare discrete categories (in this case, U.S. states) and their corresponding values (New Cases). Bar charts allow for easy visual comparison between categories and are particularly useful for showing differences in quantities.
 
-I used a bar chart to represent the *'New Cases'* data for different U.S. states. Each state is a distinct category, and the height of each bar represents the number of *'new cancer cases'* in that state. This choice allows viewers to quickly see which states have the highest and lowest numbers of new cases, making it effective for comparing states' cancer incidence.
+I used a bar chart to represent the New Cases data for different U.S. states. Each state is a distinct category, and the height of each bar represents the number of new cancer cases'in that state. This choice allows viewers to quickly see which states have the highest and lowest numbers of new cases, making it effective for comparing states' cancer incidence.
 
-#### Scatter Plot
+Idiom: Bar Chart / Mark: Line
+| Data: Attribute | Data: Attribute Type | Encode: Channel |
+| ---             | ---                 | ---             |
+| State Name      | Key, Categorical     | Vertical Spatial Region (Y-axis) |
+| New Cases       | Value, Quantitative  | Horizontal Position on a Common Scale (X-axis) |
+
+### Scatter Plot
 
 A scatter plot is appropriate when you want to explore the relationship or correlation between two continuous variables (New Cases and Total Deaths) for different categories (U.S. states). Scatter plots allow you to identify patterns, trends, or clusters in data points.
 
 I used a scatter plot to visualize the relationship between the number of New Cases and Total Deaths for different U.S. states. Each data point represents a state, with the y-axis showing the number of New Cases and the x-axis showing the Total Deaths. This choice allows viewers to assess if there is a correlation between the number of new cancer cases and the total number of deaths, helping to identify states where the impact of cancer may be more severe or less severe based on these two variables.
 
-#### Multiple Line Chart
+Idiom: Scatter Plot / Mark: Dots
+| Data: Attribute | Data: Attribute Type | Encode: Channel |
+| ---             | ---                 | ---             |
+| State Name      | Key, Categorical     | Horizontal Position (X-axis) |
+| New Cases       | Value, Quantitative  | Vertical Position (Y-axis) |
+| Total Deaths    | Value, Quantitative  | Color or Size (Third Encoding Channel) |
 
+### Multiple Line Chart
 
+A multiple line chart is well-suited for representing time series data, where the dataset includes a temporal component. In this case, the dataset contains years, indicating a time-based dataset. This dataset contains several different types of organ transplant procedures (e.g., heart transplant, kidney transplant). Using a multiple line chart allows for a simultaneous comparison of these different categories over time.
 
-### Excel
+A multiple line chart for this organ transplant dataset is appropriate because it effectively conveys the changes in the number of procedures for different organ types over time. It allows for easy comparison between categories and helps viewers identify trends and patterns in the data, making it a valuable visualization for understanding the dynamics of organ transplant procedures.
 
-#### Bar Chart
-
-
+Idiom: Multiple Line Chart / Mark: Line
+| Data: Attribute | Data: Attribute Type | Encode: Channel |
+| ---             | ---                 | ---             |
+| Year            | Key, Categorical     | Horizontal Position (X-axis) |
+| Procedure Type  | Key, Categorical     | Vertical Position (Y-axis) |
+| Number of Procedures | Value, Quantitative | Line (Third Encoding Channel) |
 
 ## References
 
