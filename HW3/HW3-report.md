@@ -103,7 +103,7 @@ Idiom: Multiple Line Chart / Mark: Line
 ![Scatter Plot Seaborn](Scatter-Plot-Seaborn.png)
 
 #### Multiple Line Chart
-
+<img src="./Scatter-Plot-Seaborn.png" style= "width:200, height:200"></img>
 ![Multiple Line Chart Seaborn](Multiple-Line-Chart-Seaborn.png)
 
 ### Excel
