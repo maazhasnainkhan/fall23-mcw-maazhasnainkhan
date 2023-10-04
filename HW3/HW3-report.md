@@ -50,6 +50,28 @@ First we used open refine to clean the data and get rid of any unnecessary heade
 * Then, add labels to the x-axis and y-axis and set a title for the plot and create legend elements based on the legend labels, line colors, and line styles.
 * Finally, we display the legend using *'plt.legend()'* and finally, show the plot using *'plt.show()'*
 
+## Visualization Idioms
+
+### Python Seaborn (Google Colab)
+
+#### Bar Chart
+
+
+
+#### Scatter Plot
+
+
+
+#### Multiple Line Chart
+
+
+
+### Excel
+
+#### Bar Chart
+
+
+
 ## References
 
 * First Data Set CSV File, [Cancer-Data-Cleaned.csv](Cancer-Data-Cleaned.csv)
