@@ -8,7 +8,7 @@ Due: October 4, 2023
 
 The first data set is from Table 183 Section 3 Health Conditions, Diseases
 
-    [Cancer--Estimated New Cases and Deaths by State](https://www2.census.gov/library/publications/2011/compendia/statab/131ed/tables/12s0183.xls)
+[Cancer--Estimated New Cases and Deaths by State](https://www2.census.gov/library/publications/2011/compendia/statab/131ed/tables/12s0183.xls)
 
 ### Data Wrangling
 
@@ -35,7 +35,7 @@ The charts in the report and Google Colab might be different as we have used dat
 ##  Second Data
 The second data set is from Table 181 Section 3 Health Conditions, Diseases
 
-    [Organ Transplant](https://www2.census.gov/library/publications/2011/compendia/statab/131ed/tables/12s0181.xls)
+[Organ Transplant](https://www2.census.gov/library/publications/2011/compendia/statab/131ed/tables/12s0181.xls)
 
 ### Data Wrangling
 
