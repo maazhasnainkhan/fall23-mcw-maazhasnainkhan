@@ -83,12 +83,12 @@ A multiple line chart is well-suited for representing time series data, where th
 
 A multiple line chart for this organ transplant dataset is appropriate because it effectively conveys the changes in the number of procedures for different organ types over time. It allows for easy comparison between categories and helps viewers identify trends and patterns in the data, making it a valuable visualization for understanding the dynamics of organ transplant procedures.
 
-Idiom: Multiple Line Chart / Mark: Line
+Idiom: Multiple Line Chart / Mark: Dots
 | Data: Attribute | Data: Attribute Type  | Encode: Channel | 
 | --- |---| --- |
-| Year | Key, Categorical | Horizontal Position (X-axis) |
+| Year | Key, Temporal | Horizontal Position (X-axis) |
 | Number of Procedures | Value, Quantitative | Vertical Position (Y-axis) |
-| Procedure Type | Key, Categorical | Line (Third Channel) |
+| Procedure Type | Key, Categorical | Color Hue (Third Channel) |
 
 ## Creating Charts
 
