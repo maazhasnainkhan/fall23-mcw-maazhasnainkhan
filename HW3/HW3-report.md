@@ -6,7 +6,7 @@ Due: October 4, 2023
 
 ##  First Data
 
-- The first data set is from Table 183 Section 3 Health Conditions, Diseases
+The first data set is from Table 183 Section 3 Health Conditions, Diseases
 
     [Cancer--Estimated New Cases and Deaths by State](https://www2.census.gov/library/publications/2011/compendia/statab/131ed/tables/12s0183.xls)
 
@@ -33,7 +33,7 @@ First, we used Open Refine to clean the data and get rid of any unnecessary head
 The charts in the report and Google Colab might be different as we have used data in random form. For the bar chart, we have used data from 10 random States and similarly, for scatter plot, we have used data from 25 random states. So, upon running the code again the chart might come out different than the original one.
 
 ##  Second Data
-- The second data set is from Table 181 Section 3 Health Conditions, Diseases
+The second data set is from Table 181 Section 3 Health Conditions, Diseases
 
     [Organ Transplant](https://www2.census.gov/library/publications/2011/compendia/statab/131ed/tables/12s0181.xls)
 
