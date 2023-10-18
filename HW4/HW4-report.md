@@ -4,6 +4,9 @@ Maaz Hasnain Khan
 
 Due: October 25, 2023
 
+### NOTE:
+It has to be noted that the data was cleaned before plotting of charts and only meaningful data was extracted from each dataset for specific questions. The cleaned data are located in separate files named with the dataset and question number.
+
 ## Dataset 1
 
 Table 91 - Women Who Have Had a Child in the Last Year by Age
@@ -25,8 +28,6 @@ Table 91 - Women Who Have Had a Child in the Last Year by Age
 **40 to 44 years old:** In 1990, 1,200 women in this age group gave birth, and in 2008, this increased to 3,500. This signifies that more women in this age group are having their first child, suggesting a shift towards later first childbirth in this age group.
 
 The analysis of the data indicates that women in the United States were, on average, waiting longer to have their first child between 1990 and 2008, particularly in the younger age groups (15 to 24). There is evidence of a decrease in the number of younger women having their first child, while the older age groups (35 to 44) show an increase, implying a shift in childbirth trends towards later ages in some cases.
-
-It's important to consider that various societal, cultural, and economic factors may contribute to these trends.
 
 **Q2:** How does this compare to the number of women in each age group who had a child (not necessarily their first) in that year? What does this say about the age of women giving birth in the US?
 
