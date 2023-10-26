@@ -44,7 +44,15 @@ Table 107 - Death Rates by Age, Sex, and Race
 
 ![Multiple Line Chart Dataset 3 Question 2](dataset3_q2_excel.png)
 
-**Further Questions:** What further questions does this prompt?  What hypotheses do you have about what the answers might be?  Are there other tables that might help you address these questions?  
+**Further Questions:** What further questions does this prompt?  What hypotheses do you have about what the answers might be?  Are there other tables that might help you address these questions?
+
+***Question:*** Why have life expectancy and infant mortality rates changed over time? What factors have contributed to these changes?
+
+***Hypotheses:*** Improved healthcare, advancements in medical technology, and public health initiatives likely contributed to increased life expectancy and decreased infant mortality. To test this hypothesis, we would need data on healthcare infrastructure and accessibility, medical advancements, public health policies and interventions, and how they have evolved over time.
+
+***Question:*** Are there regional variations in life expectancy and infant mortality within the United States? Do certain regions show different trends?
+
+***Hypotheses:*** Regions with better access to healthcare and more robust public health systems may exhibit higher life expectancy and lower infant mortality. To investigate  this hypothesis, you would need regional or state-level data on healthcare infrastructure, public health expenditures, and the availability of healthcare facilities.
 
 **Extra Credit [2 points]:** Combine the data from Tables 102 and 107 to investigate how infant mortality might affect overall life expectancy.
 
@@ -73,3 +81,30 @@ Table 107 - Death Rates by Age, Sex, and Race
 https://stackoverflow.com/questions/76644454/is-there-an-alternate-for-palette-while-plotting-barplot-through-seaborn-objec
 https://stackoverflow.com/questions/74715767/how-to-rotate-the-xticks-with-seaborn-objects
 https://stackoverflow.com/questions/53694724/how-to-prevent-matplotlib-from-showing-decimal-years-in-horizontal-axis
+
+
+
+
+
+
+
+
+***FIRST CHART USING SEABORN***
+The dataset is read into a Pandas DataFrame and grouped by year, calculating the mean life expectancy values for each category per year. This grouping allows for a more structured analysis of how life expectancy has changed over time for different demographic groups.
+
+The line chart is crafted with Seaborn and Matplotlib, featuring categories with distinct colors: "Total Male" (blue), "Total Female" (orange), "Total White" (green), and "Total Black" (red). The chart visually conveys the life expectancy trends over the years, emphasizing the variations in life expectancy for these different categories. Each category is represented by a line connecting data points, and markers indicate specific data points for each year.
+
+The custom legend is added to the chart, enhancing its readability by associating each line with its category label and marker. The x-axis labels are rotated for better visibility, and labels for the x-axis, y-axis, and the chart title are included to provide context for the data.
+
+
+
+***SECOND CHART USING SEABORN***
+The provided Python code generates a line chart that serves as a visual representation for comparing infant mortality rates across various demographic categories from the years 1980 to 1999. The data used in this analysis is sourced from a dataset stored in a Google Drive file named "dataset3_q2.csv." The code leverages Python libraries, including Pandas, Seaborn, Matplotlib, and Google Colab, to read the data, manipulate it, and create the visual chart.
+
+The initial steps involve mounting Google Drive to access the dataset, and then reading this data into a Pandas DataFrame, which is named deaths_data. To facilitate the subsequent visualization, the 'Year' column is converted to strings to ensure proper formatting and interpretation.
+
+The style of the chart is set using Seaborn, which creates a white grid background, contributing to the chart's clarity. Matplotlib is employed to define the dimensions of the chart, ensuring that it is appropriately sized for viewing and analysis.
+
+Distinct categories, including "Total Male," "Total Female," "Total White," and "Total Black," are assigned specific colors for easy differentiation. The code creates custom legend elements that are associated with lines and markers, enhancing the chart's readability and interpretability. A loop is used to plot the infant mortality rates for each category, creating lines that connect data points for each year, with markers highlighting specific data points.
+
+To provide context for the chart, labels are added for the x-axis (representing the years), y-axis (reflecting the infant mortality rate per 100,000 population), and the chart's title. Additionally, a custom legend is included to identify each line with its corresponding category label and marker, simplifying the interpretation of the chart.
