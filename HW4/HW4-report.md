@@ -22,7 +22,7 @@ Idiom: Multiple Line Chart / Mark: Dots
 | --- |---| --- |
 | Year | Key, Temporal | Horizontal Position (X-axis) |
 | Life Expectancy (Years) | Value, Quantitative | Vertical Position (Y-axis) |
-| Sex | Key, Categorical | Color Hue (Third Channel) |
+| Demographics | Key, Categorical | Color Hue (Third Channel) |
 
 The x-axis denotes the years, spanning from 1970 to 1999, facilitating a temporal analysis. On the y-axis, life expectancy is represented, offering insight into the average expected age at birth for individuals in each of the specified categories.
 
@@ -43,6 +43,27 @@ In conclusion, the chart effectively presents the changing trends in life expect
 Table 107 - Death Rates by Age, Sex, and Race
 
 ![Multiple Line Chart Dataset 3 Question 2](dataset3_q2_excel.png)
+
+The line chart created displays the trends in infant mortality rates for different categories between the years 1980 and 1999. The categories represented in the chart are 'Total Male,' 'Total Female,' 'Total White,' and 'Total Black.' The infant mortality rates are presented in terms of deaths per 100,000 population.  A line chart is a suitable choice for this data because it effectively displays the changes in mortality rates for infants born between 1980 and 1999, allowing for clear comparisons between different categories.
+
+Idiom: Multiple Line Chart / Mark: Dots
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| Year | Key, Temporal | Horizontal Position (X-axis) |
+| Infant Mortality Rate (per 100,000 population) | Value, Quantitative | Vertical Position (Y-axis) |
+| Demographics | Key, Categorical | Color Hue (Third Channel) |
+
+The x-axis of the chart represents the years from 1980 to 1999. While the y-axis represents the infant mortality rate. This rate is calculated as the number of infant deaths per 100,000 population within each category.
+
+The chart's key findings are as follows:
+
+- The chart shows a general trend of decreasing infant mortality rates across all categories over the two decades. This is a positive outcome and suggests improvements in healthcare and public health efforts during this period.
+- There is a consistent difference in infant mortality rates between males and females. In all years, the infant mortality rate for males is higher than that for females. This suggests that male infants had a higher risk of mortality during this period.
+- The chart also highlights significant disparities in infant mortality rates between different racial groups, specifically White and Black. Black infants consistently had a higher infant mortality rate compared to White infants. This racial disparity is a cause for concern and may indicate disparities in healthcare access and quality.
+
+In conclusion, the chart illustrates a positive overall trend of decreasing infant mortality rates from 1980 to 1999. However, it also highlights disparities based on gender and race, with males and Black infants experiencing higher mortality rates.
+
+**The Excel File for this chart, [dataset3_q2_excel.xlsx](dataset3_q2_excel.xlsx)**
 
 **Further Questions:** What further questions does this prompt?  What hypotheses do you have about what the answers might be?  Are there other tables that might help you address these questions?
 
