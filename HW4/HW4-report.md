@@ -7,27 +7,29 @@ Due: October 25, 2023
 ### NOTE:
 It has to be noted that the data was cleaned before plotting of charts and only meaningful data was extracted from each dataset for specific questions. The cleaned data are located in separate files named with the dataset and question number.
 
-## Dataset 1
+## Dataset 3
 
-Table 91 - Women Who Have Had a Child in the Last Year by Age
+Table 102 - Expectation of Life at Birth, and Projections
 
-**Q1:** Compare the ages of women at the time of the birth of their first child between 1990-2008. For instance, is there any evidence that women in the US are waiting longer to have their first child?
+**Q1:** Using Table 102, compare life expectancy for people born between 1970-1999 for the four categories, "Male", "Female", "White", "Black".
 
-![Multiple Line Chart Dataset 1 Question 1](d1_q1_py.png)
+![Multiple Line Chart Dataset 3 Question 1](dataset3_q1_excel.png)
 
-**15 to 19 years old:** The number of women in this age group giving birth decreased from 30,100 in 1990 to 23,100 in 2008, signifying a significant decline. This suggests that women in this age group are waiting longer to have their first child.
+The line chart effectively illustrates how life expectancy has changed between 1970 and 1999 for various demographic categories: "Total Male," "Total Female," "Total White," and "Total Black." The chart primarily highlights the overall trends in life expectancy within this 30-year timeframe.
 
-**20 to 24 years old:** In 1990, 51,800 women in this age group gave birth, which reduced to 46,800 in 2008. This indicates a decrease in the number of women in this age group having their first child, suggesting a trend of waiting longer.
+The x-axis denotes the years, spanning from 1970 to 1999, facilitating a temporal analysis. On the y-axis, life expectancy is represented, offering insight into the average expected age at birth for individuals in each of the specified categories.
 
-**25 to 29 years old:** The data shows that the number of women giving birth in this age group slightly decreased from 46,200 in 1990 to 42,700 in 2008, implying that some women in this age group may be waiting longer to have their first child.
+The chart's key findings are as follows:
 
-**30 to 34 years old:** In 1990, 21,900 women in this age group gave birth, and in 2008, the number increased to 27,600. This suggests an increase in the number of women in this age group having their first child, indicating a mixed trend of waiting longer.
+- "Total Female" consistently exhibits higher life expectancy compared to "Total Male," indicating that, on average, females tend to live longer than males.
 
-**35 to 39 years old:** The number of women giving birth in this age group increased from 6,500 in 1990 to 9,500 in 2008, indicating a trend of waiting longer to have the first child within this age group.
+- "Total White" generally demonstrates a higher life expectancy than "Total Black," reflecting disparities in life expectancy along racial lines.
 
-**40 to 44 years old:** In 1990, 1,200 women in this age group gave birth, and in 2008, this increased to 3,500. This signifies that more women in this age group are having their first child, suggesting a shift towards later first childbirth in this age group.
+- The chart reveals the variations in life expectancy from year to year. It shows a constant upward trend as the years go by indicating the increase in life expectancy for all demographics. This maybe due to several factors including betterment of the healthcare facilities and modern medicine.
 
-The analysis of the data indicates that women in the United States were, on average, waiting longer to have their first child between 1990 and 2008, particularly in the younger age groups (15 to 24). There is evidence of a decrease in the number of younger women having their first child, while the older age groups (35 to 44) show an increase, implying a shift in childbirth trends towards later ages in some cases.
+In conclusion, the chart effectively presents the changing trends in life expectancy over a 30-year period, offering valuable insights into the differences among demographic groups and changes in life expectancy during this time frame.
+
+**The Excel File for this chart, [dataset3_q1_excel.xlsx](dataset3_q1_excel.xlsx)
 
 **Q2:** How does this compare to the number of women in each age group who had a child (not necessarily their first) in that year? What does this say about the age of women giving birth in the US?
 
@@ -57,3 +59,6 @@ The analysis of the data indicates that women in the United States were, on aver
 * SaturnCloud, <https://saturncloud.io/blog/adding-text-relative-to-axes-in-seaborn-and-matplotlib-a-guide/>
 * Stackoverflow, <https://stackoverflow.com/questions/41511334/adding-text-to-each-subplot-in-seaborn>
 * United States Census Bureau, <https://www.census.gov/library/publications/2011/compendia/statab/131ed.html>
+https://stackoverflow.com/questions/76644454/is-there-an-alternate-for-palette-while-plotting-barplot-through-seaborn-objec
+https://stackoverflow.com/questions/74715767/how-to-rotate-the-xticks-with-seaborn-objects
+https://stackoverflow.com/questions/53694724/how-to-prevent-matplotlib-from-showing-decimal-years-in-horizontal-axis
