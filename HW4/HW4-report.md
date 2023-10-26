@@ -15,7 +15,14 @@ Table 102 - Expectation of Life at Birth, and Projections
 
 ![Multiple Line Chart Dataset 3 Question 1](dataset3_q1_excel.png)
 
-The line chart effectively illustrates how life expectancy has changed between 1970 and 1999 for various demographic categories: "Total Male," "Total Female," "Total White," and "Total Black." The chart primarily highlights the overall trends in life expectancy within this 30-year timeframe.
+The line chart effectively illustrates how life expectancy has changed between 1970 and 1999 for various demographic categories: "Total Male," "Total Female," "Total White," and "Total Black." The chart primarily highlights the overall trends in life expectancy within this 30-year timeframe. A line chart is a suitable choice for this data because it effectively displays the changes in life expectancy for individuals born between 1970 and 1999, allowing for clear comparisons between different categories.
+
+Idiom: Multiple Line Chart / Mark: Dots
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| Year | Key, Temporal | Horizontal Position (X-axis) |
+| Life Expectancy (Years) | Value, Quantitative | Vertical Position (Y-axis) |
+| Sex | Key, Categorical | Color Hue (Third Channel) |
 
 The x-axis denotes the years, spanning from 1970 to 1999, facilitating a temporal analysis. On the y-axis, life expectancy is represented, offering insight into the average expected age at birth for individuals in each of the specified categories.
 
