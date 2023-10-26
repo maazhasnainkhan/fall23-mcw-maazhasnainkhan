@@ -29,7 +29,7 @@ The chart's key findings are as follows:
 
 In conclusion, the chart effectively presents the changing trends in life expectancy over a 30-year period, offering valuable insights into the differences among demographic groups and changes in life expectancy during this time frame.
 
-**The Excel File for this chart, [dataset3_q1_excel.xlsx](dataset3_q1_excel.xlsx)
+**The Excel File for this chart, [dataset3_q1_excel.xlsx](dataset3_q1_excel.xlsx)**
 
 **Q2:** How does this compare to the number of women in each age group who had a child (not necessarily their first) in that year? What does this say about the age of women giving birth in the US?
 
