@@ -9,9 +9,9 @@ It has to be noted that the data was cleaned before plotting of charts and only 
 
 ## Dataset 3
 
-Table 102 - Expectation of Life at Birth, and Projections
-
 **Q1:** Using Table 102, compare life expectancy for people born between 1970-1999 for the four categories, "Male", "Female", "White", "Black".
+
+Table 102 - Expectation of Life at Birth, and Projections
 
 ![Multiple Line Chart Dataset 3 Question 1](dataset3_q1_excel.png)
 
@@ -38,11 +38,15 @@ In conclusion, the chart effectively presents the changing trends in life expect
 
 **The Excel File for this chart, [dataset3_q1_excel.xlsx](dataset3_q1_excel.xlsx)**
 
-**Q2:** How does this compare to the number of women in each age group who had a child (not necessarily their first) in that year? What does this say about the age of women giving birth in the US?
+**Q2:** Using Table 107, compare infant mortality rates (under 1 year) for these same categories between 1980-1999.
+
+Table 107 - Death Rates by Age, Sex, and Race
+
+![Multiple Line Chart Dataset 3 Question 2](dataset3_q2_excel.png)
 
 **Further Questions:** What further questions does this prompt?  What hypotheses do you have about what the answers might be?  Are there other tables that might help you address these questions?  
 
-**Extra Credit [2 points]:** Combine the data from Tables 91 and 92 (Women Who Have Had a Child in the Last Year By Selected Characteristics) to investigate other factors that affect this.
+**Extra Credit [2 points]:** Combine the data from Tables 102 and 107 to investigate how infant mortality might affect overall life expectancy.
 
 
 
