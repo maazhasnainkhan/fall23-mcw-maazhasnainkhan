@@ -154,9 +154,13 @@ The datasets were merged based on the 'Year' column and converted to string data
 
 **The Excel File for this chart, [dataset3_ec_excel.xlsx](dataset3_ec_excel.xlsx)**
 
-### [4 points] Re-create the charts you created for your chosen dataset using Python or Vega-Lite.
+## [4 points] Re-create the charts you created for your chosen dataset using Python or Vega-Lite.
+
+### Question 1:
 
 **Using Table 102, compare life expectancy for people born between 1970-1999 for the four categories, "Male", "Female", "White", "Black".**
+
+Table 102 - Expectation of Life at Birth, and Projections
 
 ![Multiple Line Chart Dataset 3 Question 1](dataset3_q1_python.png)
 
@@ -211,7 +215,11 @@ The line chart is created with Seaborn and Matplotlib, featuring categories with
 
 The custom legend is added to the chart, enhancing its readability by associating each line with its category label and marker. The x-axis labels are rotated for better visibility, and labels for the x-axis, y-axis, and the chart title are included to provide context for the data.
 
+### Question 2:
+
 **Using Table 107, compare infant mortality rates (under 1 year) for these same categories between 1980-1999.**
+
+Table 107 - Death Rates by Age, Sex, and Race
 
 ![Multiple Line Chart Dataset 3 Question 2](dataset3_q2_python.png)
 
@@ -265,7 +273,13 @@ The style of the chart is set using Seaborn, which creates a white grid backgrou
 
 Distinct categories, including "Total Male," "Total Female," "Total White," and "Total Black," are assigned specific colors for easy differentiation. The code creates custom legend elements that are associated with lines and markers, enhancing the chart's readability and interpretability. A loop is used to plot the infant mortality rates for each category, creating lines that connect data points for each year, with markers highlighting specific data points.
 
+### Extra Credit [2 Points]
+
 **Combine the data from Tables 102 and 107 to investigate how infant mortality might affect overall life expectancy.**
+
+Table 102 - Expectation of Life at Birth, and Projections
+
+Table 107 - Death Rates by Age, Sex, and Race
 
 ![Dual Axis Line Chart Dataset 3 Question EC](dataset3_ec_python.png)
 
@@ -331,6 +345,18 @@ Two datasets are read from Google Drive, namely, 'life_expectancy_data' and 'mor
 A custom scaling function, 'scale_data', is defined. This function scales data to a common range, ensuring that both life expectancy and infant mortality data are on an equal footing for comparison. The data for life expectancy and infant mortality is normalized using the 'scale_data' function. This normalization process helps to standardize the data for fair and meaningful comparison.
 
 The first subplot ('ax1') is used to plot the normalized life expectancy data and the second subplot ('ax2') is created using 'ax1.twinx()'. This function creates a second Y-axis on the right side of the chart while sharing the same X-axis. The normalized infant mortality rate data is plotted in the second subplot ('ax2').
+
+## [5 points] Complete the full assignment with one of the other datasets.
+
+## Dataset 2
+
+### Question 1
+
+**Which states had the highest death rates over all causes in 2006?**
+
+Table 118 - Death Rates for Major Causes of Death--States and Island Areas
+
+![Multiple Line Chart Dataset 2 Question 1](dataset2_q1_excel.png)
 
 ## References
 
