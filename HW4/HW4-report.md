@@ -101,6 +101,15 @@ Table 107 - Death Rates by Age, Sex, and Race
 
 ![Multiple Line Chart Dataset 3 Question EC](dataset3_ec_excel.png)
 
+The multiple line chart is ideal for this analysis, as it enables the concurrent visualization of two related but distinct datasets: life expectancy and infant mortality rate. This chart allows an efficient examination of potential correlations between these two factors over time. The chart displays the normalized trends of both life expectancy and infant mortality rate from 1980 to 1999. The blue line represents the trend in normalized life expectancy. The orange line represents the trend in normalized infant mortality rate.
+
+Idiom: Multiple Line Chart / Mark: Dots
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| Year | Key, Temporal | Horizontal Position (X-axis) |
+| Normalized Value | Value, Quantitative | Vertical Position (Y-axis) |
+| Life Expectancy/Infant Mortality | Key, Categorical | Color Hue (Third Channel) |
+
 The data was manipulated using python. The life expectancy and infant mortality rate data were 2 separate data which were merged using python. The data was normalized on a similar scale as both values were in different units. The life expectancy was in years while the infant mortality rate was per 100,000 population. These values were normalized were brought in range from ***'0-1'***, with ***'0'*** being the lowest value and ***'1'*** being the highest value.
 
 The data after normalizing was extracted from google colab and used in MS Excel to create the chart.
@@ -125,15 +134,6 @@ scaled_life_expectancy = scale_data(merged_data['Total_x'])
 scaled_mortality_rate = scale_data(merged_data['Total_y'])
 
 ```
-
-The multiple line chart is ideal for this analysis, as it enables the concurrent visualization of two related but distinct datasets: life expectancy and infant mortality rate. This format allows for an efficient examination of potential correlations between these two factors over time. The chart displays the normalized trends of both life expectancy and infant mortality rate from 1980 to 1999. The blue line represents the trend in normalized life expectancy. The orange line represents the trend in normalized infant mortality rate.
-
-Idiom: Multiple Line Chart / Mark: Dots
-| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
-| --- |---| --- |
-| Year | Key, Temporal | Horizontal Position (X-axis) |
-| Normalized Value | Value, Quantitative | Vertical Position (Y-axis Right) |
-| Life Expectancy/Infant Mortality | Key, Categorical | Color Hue (Third Channel) |
 
 The chart's key findings are as follows:
 
@@ -283,6 +283,30 @@ Distinct categories, including "Total Male," "Total Female," "Total White," and 
 Table 118 - Death Rates for Major Causes of Death--States and Island Areas
 
 ![Multiple Line Chart Dataset 2 Question 1](dataset2_q1_excel.png)
+
+A vertical bar chart was chosen for this representation, with "State" positioned along the x-axis and "Age-Adjusted Death Rate per 100,000 Population" along the y-axis. A bar chart is the ideal choice for visualizing age-adjusted death rates by state due to its ability to compare categorical data, highlight rankings, and provide a clear, visually impactful representation of the data. It simplifies the task of identifying states with the highest and lowest death rates, making it an excellent choice for this specific dataset and analysis.
+
+Idiom: Bar Chart / Mark: Line
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| State | Key, Categorical | Horizontal Position (X-axis) |
+| Age-Adjusted Death Rate per 100,000 Population | Value, Quantitative | Vertical Position (Y-axis) |
+
+To create the chart, we used Excel. There wasn't much cleaning or manipulation to be done. First, from the dataset "State" and "Total" columns were selected. The data in these columns were sorted in descending order and simply from that data, a vertical bar chart was created in Excel. The resulting bar chart visually represents the variation in age-adjusted death rates across different U.S. states. The chart allows for a quick comparison of these rates and highlights the states with the most significant health challenges.
+
+The chart's key findings are as follows:
+
+- The chart shows that Mississippi has the highest age-adjusted death rate, with approximately 961.2 deaths per 100,000 population.
+
+- States in the Southern region, including Alabama, Louisiana, and Oklahoma, also exhibit high death rates.
+
+- States in the Northeast and West regions, such as Hawaii, Minnesota, California, and New York, tend to have lower age-adjusted death rates.
+
+- The District of Columbia, despite its small size, has a relatively high death rate compared to other states.
+
+Based on this analysis, several conclusions can be drawn, including significant variations in death rates across states, regional disparities in health outcomes, and the need for targeted interventions to address health challenges in specific areas.
+
+**The Excel File for this chart, [dataset2_q1_excel.xlsx](dataset2_q1_excel.xlsx)**
 
 ## References
 
