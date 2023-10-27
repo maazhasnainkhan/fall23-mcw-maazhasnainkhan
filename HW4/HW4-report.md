@@ -146,6 +146,8 @@ scaled_mortality_rate = scale_data(merged_data['Total_y'])
 
 The datasets were then merged based on the 'Year' column to combine the relevant information. A custom scaling function (scale_data) is defined to normalize the data. Normalization scales the data to a common range ***'0-1'***, making it easier to compare two different datasets with different units and scales.
 
+**The Excel File for this chart, [dataset3_ec_excel.xlsx](dataset3_ec_excel.xlsx)**
+
 ## References
 
 * First DataSet CSV File, [dataset_1.csv](dataset_1.csv)
