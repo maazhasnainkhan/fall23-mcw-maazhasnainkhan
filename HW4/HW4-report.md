@@ -282,7 +282,7 @@ Distinct categories, including "Total Male," "Total Female," "Total White," and 
 
 Table 118 - Death Rates for Major Causes of Death--States and Island Areas
 
-![Multiple Line Chart Dataset 2 Question 1](dataset2_q1_excel.png)
+![Bar Chart Dataset 2 Question 1](dataset2_q1_excel.png)
 
 A vertical bar chart was chosen for this representation, with "State" positioned along the x-axis and "Age-Adjusted Death Rate per 100,000 Population" along the y-axis. A bar chart is the ideal choice for visualizing age-adjusted death rates by state due to its ability to compare categorical data, highlight rankings, and provide a clear, visually impactful representation of the data. It simplifies the task of identifying states with the highest and lowest death rates, making it an excellent choice for this specific dataset and analysis.
 
@@ -307,6 +307,16 @@ The chart's key findings are as follows:
 Based on this analysis, several conclusions can be drawn, including significant variations in death rates across states, regional disparities in health outcomes, and the need for targeted interventions to address health challenges in specific areas.
 
 **The Excel File for this chart, [dataset2_q1_excel.xlsx](dataset2_q1_excel.xlsx)**
+
+### Question 2
+
+**Is this ordering different if you compare deaths due to disease vs. deaths due to accident, injury, and assault? In other words, which states are more hazardous to your health vs. which states are the most dangerous?**
+
+![Bar Chart Dataset 2 Question 2](dataset2_q2_excel1.png)
+
+![Bar Chart Dataset 2 Question 2](dataset2_q2_excel2.png)
+
+![Bar Chart Dataset 2 Question 2](dataset2_q2_excel3.png)
 
 ## References
 
