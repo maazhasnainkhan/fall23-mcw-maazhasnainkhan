@@ -99,27 +99,7 @@ Table 102 - Expectation of Life at Birth, and Projections
 
 Table 107 - Death Rates by Age, Sex, and Race
 
-![Dual Axis Line Chart Dataset 3 Question EC](dataset3_ec_excel.png)
-
-The dual axis line chart is ideal for this analysis, as it enables the concurrent visualization of two related but distinct datasets: life expectancy and infant mortality rate. This format allows for an efficient examination of potential correlations between these two factors over time. The chart displays the normalized trends of both life expectancy and infant mortality rate from 1980 to 1999. The blue line represents the trend in normalized life expectancy. The red line represents the trend in normalized infant mortality rate.
-
-Idiom: Dual Axis Line Chart / Mark: Dots
-| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
-| --- |---| --- |
-| Year | Key, Temporal | Horizontal Position (X-axis) |
-| Infant Mortality Normalized | Value, Quantitative | Vertical Position (Y-axis Right) |
-| Life Expectancy Normalized | Value, Quantitative | Vertical Position (Y-axis Left) |
-| Life Expectancy/Infant Mortality | Key, Categorical | Color Hue (Third Channel) |
-
-The chart's key findings are as follows:
-
-- If infant mortality rates are high, it may have a negative impact on life expectancy, which could be observed as a decrease in life expectancy.
-
-- Conversely, as infant mortality rates decrease, life expectancy tends to increase.
-
-- The chart demonstrates a general trend of improving life expectancy and decreasing infant mortality rates from 1980 to 1999.
-
-The dual axis line chart is instrumental in analyzing how changes in infant mortality may correspond to changes in overall population health and life expectancy, highlighting the importance of reducing infant mortality for the well-being of a population.
+![Multiple Line Chart Dataset 3 Question EC](dataset3_ec_excel.png)
 
 The data was manipulated using python. The life expectancy and infant mortality rate data were 2 separate data which were merged using python. The data was normalized on a similar scale as both values were in different units. The life expectancy was in years while the infant mortality rate was per 100,000 population. These values were normalized were brought in range from ***'0-1'***, with ***'0'*** being the lowest value and ***'1'*** being the highest value.
 
@@ -145,6 +125,25 @@ scaled_life_expectancy = scale_data(merged_data['Total_x'])
 scaled_mortality_rate = scale_data(merged_data['Total_y'])
 
 ```
+
+The multiple line chart is ideal for this analysis, as it enables the concurrent visualization of two related but distinct datasets: life expectancy and infant mortality rate. This format allows for an efficient examination of potential correlations between these two factors over time. The chart displays the normalized trends of both life expectancy and infant mortality rate from 1980 to 1999. The blue line represents the trend in normalized life expectancy. The orange line represents the trend in normalized infant mortality rate.
+
+Idiom: Multiple Line Chart / Mark: Dots
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| Year | Key, Temporal | Horizontal Position (X-axis) |
+| Normalized Value | Value, Quantitative | Vertical Position (Y-axis Right) |
+| Life Expectancy/Infant Mortality | Key, Categorical | Color Hue (Third Channel) |
+
+The chart's key findings are as follows:
+
+- If infant mortality rates are high, it may have a negative impact on life expectancy, which could be observed as a decrease in life expectancy.
+
+- Conversely, as infant mortality rates decrease, life expectancy tends to increase.
+
+- The chart demonstrates a general trend of improving life expectancy and decreasing infant mortality rates from 1980 to 1999.
+
+The multiple line chart is instrumental in analyzing how changes in infant mortality may correspond to changes in overall population health and life expectancy, highlighting the importance of reducing infant mortality for the life expectancy to be increased.
 
 **The CSV File for the normalized data is, [dataset3_normalized_data.csv](dataset3_normalized_data.csv)**
 
