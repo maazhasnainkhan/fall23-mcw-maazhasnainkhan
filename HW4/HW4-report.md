@@ -319,7 +319,9 @@ plt.show()
 ```
 
 **The First CSV File for this chart is, [dataset3_q1.csv](dataset3_q1.csv)** 
+
 **The Second CSV File for this chart is, [dataset3_q2.csv](dataset3_q2.csv)** 
+
 **The CSV File for the normalized data is, [dataset3_normalized_data.csv](dataset3_normalized_data.csv)**
 
 ##### Explanation
