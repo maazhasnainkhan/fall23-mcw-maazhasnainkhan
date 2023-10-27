@@ -4,12 +4,14 @@ Maaz Hasnain Khan
 
 Due: October 25, 2023
 
-### NOTE:
+#### NOTE:
 It has to be noted that the data was cleaned before plotting of charts and only meaningful data was extracted from each dataset for specific questions. The cleaned data are located in separate files named with the dataset and question number.
 
 ## Dataset 3
 
-**Q1:** Using Table 102, compare life expectancy for people born between 1970-1999 for the four categories, "Male", "Female", "White", "Black".
+### Question 1:
+
+**Using Table 102, compare life expectancy for people born between 1970-1999 for the four categories, "Male", "Female", "White", "Black".**
 
 Table 102 - Expectation of Life at Birth, and Projections
 
@@ -22,7 +24,7 @@ Idiom: Multiple Line Chart / Mark: Dots
 | --- |---| --- |
 | Year | Key, Temporal | Horizontal Position (X-axis) |
 | Life Expectancy (Years) | Value, Quantitative | Vertical Position (Y-axis) |
-| Demographics | Key, Categorical | Color Hue (Third Channel) |
+| Sex/Race | Key, Categorical | Color Hue (Third Channel) |
 
 The x-axis denotes the years, spanning from 1970 to 1999, facilitating a temporal analysis. On the y-axis, life expectancy is represented, offering insight into the average expected age at birth for individuals in each of the specified categories.
 
@@ -38,7 +40,9 @@ In conclusion, the chart effectively presents the changing trends in life expect
 
 **The Excel File for this chart, [dataset3_q1_excel.xlsx](dataset3_q1_excel.xlsx)**
 
-**Q2:** Using Table 107, compare infant mortality rates (under 1 year) for these same categories between 1980-1999.
+### Question 2:
+
+**Using Table 107, compare infant mortality rates (under 1 year) for these same categories between 1980-1999.**
 
 Table 107 - Death Rates by Age, Sex, and Race
 
@@ -51,7 +55,9 @@ Idiom: Multiple Line Chart / Mark: Dots
 | --- |---| --- |
 | Year | Key, Temporal | Horizontal Position (X-axis) |
 | Infant Mortality Rate (per 100,000 population) | Value, Quantitative | Vertical Position (Y-axis) |
-| Demographics | Key, Categorical | Color Hue (Third Channel) |
+| Sex/Race | Key, Categorical | Color Hue (Third Channel) |
+
+To create this chart, we had to manipulate and normalize the data. We did so in excel simply. The raw data contained total white male & female and total black male & female death rates for different years. We simply used the *sum* formula in excel to create the total male, total female, total white and total black columns.
 
 The x-axis of the chart represents the years from 1980 to 1999. While the y-axis represents the infant mortality rate. This rate is calculated as the number of infant deaths per 100,000 population within each category.
 
@@ -65,9 +71,15 @@ The chart's key findings are as follows:
 
 In conclusion, the chart illustrates a positive overall trend of decreasing infant mortality rates from 1980 to 1999. However, it also highlights disparities based on gender and race, with males and Black infants experiencing higher mortality rates.
 
+#### NOTE:
+
+I saw the Q/A cafe discussion in canvas after plotting this chart. I have used the same categories for question 2 which I used in question 1 as was mentioned in the instruction.
+
 **The Excel File for this chart, [dataset3_q2_excel.xlsx](dataset3_q2_excel.xlsx)**
 
-**Further Questions:** What further questions does this prompt?  What hypotheses do you have about what the answers might be?  Are there other tables that might help you address these questions?
+### Further Questions:
+
+**What further questions does this prompt?  What hypotheses do you have about what the answers might be?  Are there other tables that might help you address these questions?**
 
 ***Question:*** Why have life expectancy and infant mortality rates changed over time? What factors have contributed to these changes?
 
@@ -77,10 +89,56 @@ In conclusion, the chart illustrates a positive overall trend of decreasing infa
 
 ***Hypotheses:*** Regions with better access to healthcare and more robust public health systems may exhibit higher life expectancy and lower infant mortality. To investigate  this hypothesis, you would need regional or state-level data on healthcare infrastructure, public health expenditures, and the availability of healthcare facilities.
 
-**Extra Credit [2 points]:** Combine the data from Tables 102 and 107 to investigate how infant mortality might affect overall life expectancy.
+### Extra Credit [2 Points]
 
+**Combine the data from Tables 102 and 107 to investigate how infant mortality might affect overall life expectancy.**
 
+Table 102 - Expectation of Life at Birth, and Projections
 
+Table 107 - Death Rates by Age, Sex, and Race
+
+![Multiple Line Chart Dataset 3 Question 2](dataset3_ec_excel.png)
+
+The dual axis line chart is ideal for this analysis, as it enables the concurrent visualization of two related but distinct datasets: life expectancy and infant mortality rate. This format allows for an efficient examination of potential correlations between these two factors over time. The chart displays the normalized trends of both life expectancy and infant mortality rate from 1980 to 1999. The blue line represents the trend in normalized life expectancy. The red line represents the trend in normalized infant mortality rate.
+
+The chart provides a visual representation of the relation between infant mortality and life expectancy. It becomes evident that as infant mortality rates decrease, life expectancy tends to increase. Conversely, higher infant mortality rates can have a negative impact on life expectancy. The chart demonstrates a general trend of improving life expectancy and decreasing infant mortality rates from 1980 to 1999. The dual axis line chart is instrumental in analyzing how changes in infant mortality may correspond to changes in overall population health and life expectancy, highlighting the importance of reducing infant mortality for the well-being of a population.
+
+The data was manipulated using python. The life expectancy and infant mortality rate data were 2 separate data which were merged using python. The data was normalized on a similar scale as both values were in different units. The life expectancy was in years while the infant mortality rate was per 100,000 population. These values were normalized were brought in range from ***'0-1'***, with ***'0'*** being the lowest value and ***'1'*** being the highest value.
+
+The data after normalizing was extracted from google colab and used in MS Excel to create the chart.
+
+##### Data Manipulation Code
+
+```
+
+# Mount Google Drive to access your dataset
+drive.mount("/content/drive", force_remount=True)
+
+# Assuming you have already read the datasets from Google Drive
+life_expectancy_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q1.csv")
+mortality_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q2.csv")
+
+# Merge the datasets based on the 'Year' column
+merged_data = pd.merge(life_expectancy_data, mortality_data, on='Year')
+merged_data['Year'] = merged_data['Year'].astype(int).astype(str)
+
+# Create a figure with two subplots
+fig, ax1 = plt.subplots(figsize=(12, 6))
+
+# Define a custom scaling function to normalize the data
+def scale_data(data):
+    min_data = min(data)
+    max_data = max(data)
+    return [(x - min_data) / (max_data - min_data) for x in data]
+
+# Normalize the data for life expectancy and infant mortality rate
+scaled_life_expectancy = scale_data(merged_data['Total_x'])
+scaled_mortality_rate = scale_data(merged_data['Total_y'])
+
+```
+##### Explanation
+
+The datasets were then merged based on the 'Year' column to combine the relevant information. A custom scaling function (scale_data) is defined to normalize the data. Normalization scales the data to a common range ***'0-1'***, making it easier to compare two different datasets with different units and scales.
 
 ## References
 
