@@ -113,8 +113,6 @@ The data after normalizing was extracted from google colab and used in MS Excel 
 
 # Mount Google Drive to access your dataset
 drive.mount("/content/drive", force_remount=True)
-
-# Assuming you have already read the datasets from Google Drive
 life_expectancy_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q1.csv")
 mortality_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q2.csv")
 
@@ -122,16 +120,13 @@ mortality_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q2.csv"
 merged_data = pd.merge(life_expectancy_data, mortality_data, on='Year')
 merged_data['Year'] = merged_data['Year'].astype(int).astype(str)
 
-# Create a figure with two subplots
-fig, ax1 = plt.subplots(figsize=(12, 6))
-
-# Define a custom scaling function to normalize the data
+# Define a custom scaling
 def scale_data(data):
     min_data = min(data)
     max_data = max(data)
     return [(x - min_data) / (max_data - min_data) for x in data]
 
-# Normalize the data for life expectancy and infant mortality rate
+# Normalize the data
 scaled_life_expectancy = scale_data(merged_data['Total_x'])
 scaled_mortality_rate = scale_data(merged_data['Total_y'])
 
