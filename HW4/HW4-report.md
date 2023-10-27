@@ -26,6 +26,8 @@ Idiom: Multiple Line Chart / Mark: Dots
 | Life Expectancy (Years) | Value, Quantitative | Vertical Position (Y-axis) |
 | Sex/Race | Key, Categorical | Color Hue (Third Channel) |
 
+To create this chart, we didn't really had to clean or manipulate the data as the raw data file was good enough. We just simply created the chart in Excel after selecting the required columns.
+
 The x-axis denotes the years, spanning from 1970 to 1999, facilitating a temporal analysis. On the y-axis, life expectancy is represented, offering insight into the average expected age at birth for individuals in each of the specified categories.
 
 The chart's key findings are as follows:
@@ -101,6 +103,14 @@ Table 107 - Death Rates by Age, Sex, and Race
 
 The dual axis line chart is ideal for this analysis, as it enables the concurrent visualization of two related but distinct datasets: life expectancy and infant mortality rate. This format allows for an efficient examination of potential correlations between these two factors over time. The chart displays the normalized trends of both life expectancy and infant mortality rate from 1980 to 1999. The blue line represents the trend in normalized life expectancy. The red line represents the trend in normalized infant mortality rate.
 
+Idiom: Dual Axis Line Chart / Mark: Dots
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| Year | Key, Temporal | Horizontal Position (X-axis) |
+| Infant Mortality Normalized | Value, Quantitative | Vertical Position (Y-axis Right) |
+| Life Expectancy Normalized | Value, Quantitative | Vertical Position (Y-axis Left) |
+| Life Expectancy/Infant Mortality | Key, Categorical | Color Hue (Third Channel) |
+
 The chart's key findings are as follows:
 
 - If infant mortality rates are high, it may have a negative impact on life expectancy, which could be observed as a decrease in life expectancy.
@@ -119,22 +129,18 @@ The data after normalizing was extracted from google colab and used in MS Excel 
 
 ```
 
-# Mount Google Drive to access your dataset
 drive.mount("/content/drive", force_remount=True)
 life_expectancy_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q1.csv")
 mortality_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q2.csv")
 
-# Merge the datasets based on the 'Year' column
 merged_data = pd.merge(life_expectancy_data, mortality_data, on='Year')
 merged_data['Year'] = merged_data['Year'].astype(int).astype(str)
 
-# Define a custom scaling
 def scale_data(data):
     min_data = min(data)
     max_data = max(data)
     return [(x - min_data) / (max_data - min_data) for x in data]
 
-# Normalize the data
 scaled_life_expectancy = scale_data(merged_data['Total_x'])
 scaled_mortality_rate = scale_data(merged_data['Total_y'])
 
@@ -144,9 +150,120 @@ scaled_mortality_rate = scale_data(merged_data['Total_y'])
 
 ##### Explanation
 
-The datasets were then merged based on the 'Year' column to combine the relevant information. A custom scaling function (scale_data) is defined to normalize the data. Normalization scales the data to a common range ***'0-1'***, making it easier to compare two different datasets with different units and scales.
+The datasets were merged based on the 'Year' column and converted to string data type to combine the relevant information. A custom scaling function (scale_data) is defined to normalize the data. Normalization scales the data to a common range ***'0-1'***, making it easier to compare two different datasets with different units and scales.
 
 **The Excel File for this chart, [dataset3_ec_excel.xlsx](dataset3_ec_excel.xlsx)**
+
+### [4 points] Re-create the charts you created for your chosen dataset using Python or Vega-Lite.
+
+**Using Table 102, compare life expectancy for people born between 1970-1999 for the four categories, "Male", "Female", "White", "Black".**
+
+![Multiple Line Chart Dataset 3 Question 1](dataset3_q1_python.png)
+
+##### Code
+
+```
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from google.colab import drive
+from matplotlib.lines import Line2D
+
+drive.mount("/content/drive", force_remount=True)
+life_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q1.csv")
+
+grouped_data = life_data.groupby('Year').mean().reset_index()
+
+sns.set(style="whitegrid")
+
+plt.figure(figsize=(12, 6))
+
+categories = ['Total Male', 'Total Female', 'Total White', 'Total Black']
+colors = ['blue', 'orange', 'green', 'red']
+
+legend_elements = []
+
+for category, color in zip(categories, colors):
+    line = sns.lineplot(data=grouped_data, x='Year', y=category, label=category, color=color, marker='o')
+
+    legend_elements.append(Line2D([0], [0], color=color, label=category, marker='o', markersize=5))
+
+plt.xlabel("Year")
+plt.ylabel("Life Expectancy (Years)")
+plt.title("Life Expectancy Comparison (1970-1999)")
+
+plt.legend(handles=legend_elements)
+
+plt.xticks(grouped_data['Year'], rotation=90)
+
+plt.show()
+
+```
+
+**The CSV File for this chart is, [dataset3_q1.csv](dataset3_q1.csv)** 
+
+##### Explanation
+
+The dataset is read into a Pandas DataFrame and grouped by year, calculating the mean life expectancy values for each category per year. This grouping allows for a more structured analysis of how life expectancy has changed over time for different demographic groups.
+
+The line chart is created with Seaborn and Matplotlib, featuring categories with distinct colors: "Total Male" (blue), "Total Female" (orange), "Total White" (green), and "Total Black" (red). The chart visually conveys the life expectancy trends over the years, emphasizing the variations in life expectancy for these different categories. Each category is represented by a line connecting data points, and markers indicate specific data points for each year.
+
+The custom legend is added to the chart, enhancing its readability by associating each line with its category label and marker. The x-axis labels are rotated for better visibility, and labels for the x-axis, y-axis, and the chart title are included to provide context for the data.
+
+**Using Table 107, compare infant mortality rates (under 1 year) for these same categories between 1980-1999.**
+
+![Multiple Line Chart Dataset 3 Question 2](dataset3_q2_python.png)
+
+##### Code
+
+```
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from google.colab import drive
+
+drive.mount("/content/drive", force_remount=True)
+
+deaths_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset3_q2.csv")
+
+deaths_data['Year'] = deaths_data['Year'].astype(int).astype(str)
+
+sns.set(style="whitegrid")
+
+plt.figure(figsize=(12, 6))
+
+categories = ['Total Male', 'Total Female', 'Total White', 'Total Black']
+colors = ['blue', 'orange', 'green', 'red']
+
+legend_elements = []
+
+for category, color in zip(categories, colors):
+    sns.lineplot(data=deaths_data, x='Year', y=category, label=category, color=color, marker='o')
+
+    legend_elements.append(plt.Line2D([0], [0], color=color, label=category, marker='o', markersize=5))
+
+plt.xlabel("Year")
+plt.ylabel("Infant Mortality Rate (per 100,000 population)")
+plt.title("Infant Mortality Rate Comparison (1980-1999)")
+
+plt.legend(handles=legend_elements)
+
+plt.show()
+
+
+```
+
+**The CSV File for this chart is, [dataset3_q2.csv](dataset3_q2.csv)** 
+
+##### Explanation
+
+The dataset is read into a Pandas DataFrame and the 'Year' column is converted to strings to ensure proper formatting and interpretation.
+
+The style of the chart is set using Seaborn, which creates a white grid background, contributing to the chart's clarity. Matplotlib is employed to define the dimensions of the chart, ensuring that it is appropriately sized for viewing and analysis.
+
+Distinct categories, including "Total Male," "Total Female," "Total White," and "Total Black," are assigned specific colors for easy differentiation. The code creates custom legend elements that are associated with lines and markers, enhancing the chart's readability and interpretability. A loop is used to plot the infant mortality rates for each category, creating lines that connect data points for each year, with markers highlighting specific data points.
 
 ## References
 
@@ -170,22 +287,6 @@ The datasets were then merged based on the 'Year' column to combine the relevant
 https://stackoverflow.com/questions/76644454/is-there-an-alternate-for-palette-while-plotting-barplot-through-seaborn-objec
 https://stackoverflow.com/questions/74715767/how-to-rotate-the-xticks-with-seaborn-objects
 https://stackoverflow.com/questions/53694724/how-to-prevent-matplotlib-from-showing-decimal-years-in-horizontal-axis
-
-
-
-
-
-
-
-
-***FIRST CHART USING SEABORN***
-The dataset is read into a Pandas DataFrame and grouped by year, calculating the mean life expectancy values for each category per year. This grouping allows for a more structured analysis of how life expectancy has changed over time for different demographic groups.
-
-The line chart is crafted with Seaborn and Matplotlib, featuring categories with distinct colors: "Total Male" (blue), "Total Female" (orange), "Total White" (green), and "Total Black" (red). The chart visually conveys the life expectancy trends over the years, emphasizing the variations in life expectancy for these different categories. Each category is represented by a line connecting data points, and markers indicate specific data points for each year.
-
-The custom legend is added to the chart, enhancing its readability by associating each line with its category label and marker. The x-axis labels are rotated for better visibility, and labels for the x-axis, y-axis, and the chart title are included to provide context for the data.
-
-
 
 ***SECOND CHART USING SEABORN***
 The provided Python code generates a line chart that serves as a visual representation for comparing infant mortality rates across various demographic categories from the years 1980 to 1999. The data used in this analysis is sourced from a dataset stored in a Google Drive file named "dataset3_q2.csv." The code leverages Python libraries, including Pandas, Seaborn, Matplotlib, and Google Colab, to read the data, manipulate it, and create the visual chart.
