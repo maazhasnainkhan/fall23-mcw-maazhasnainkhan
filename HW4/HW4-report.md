@@ -36,7 +36,7 @@ The chart's key findings are as follows:
 
 - "Total White" generally demonstrates a higher life expectancy than "Total Black," reflecting disparities in life expectancy along racial lines.
 
-- The chart reveals the variations in life expectancy from year to year. It shows a constant upward trend as the years go by indicating the increase in life expectancy for all demographics. This maybe due to several factors including betterment of the healthcare facilities and modern medicine.
+- The chart reveals the variations in life expectancy from year to year. It shows a constant upward trend as the years go by indicating the increase in life expectancy for all demographics. This may be due to several factors including betterment of the healthcare facilities and modern medicine.
 
 In conclusion, the chart effectively presents the changing trends in life expectancy over a 30-year period, offering valuable insights into the differences among demographic groups and changes in life expectancy during this time frame.
 
@@ -59,7 +59,7 @@ Idiom: Multiple Line Chart / Mark: Dots
 | Infant Mortality Rate (per 100,000 population) | Value, Quantitative | Vertical Position (Y-axis) |
 | Sex/Race | Key, Categorical | Color Hue (Third Channel) |
 
-To create this chart, we had to manipulate and normalize the data. We did so in excel simply. The raw data contained total white male & female and total black male & female death rates for different years. We simply used the *sum* formula in excel to create the total male, total female, total white and total black columns.
+To create this chart, we had to manipulate and normalize the data. We did so in excel simply. The raw data contained total white male & female and total black male & female death rates for different years. We simply used the *sum* formula in Excel to create the total male, total female, total white and total black columns.
 
 The x-axis of the chart represents the years from 1980 to 1999. While the y-axis represents the infant mortality rate. This rate is calculated as the number of infant deaths per 100,000 population within each category.
 
@@ -364,7 +364,7 @@ Idiom: Grouped Bar Chart / Mark: Line
 
 ![Bar Chart Dataset 2 Question 2](dataset2_q2_excel2.png)
 
-This chart was created using the same data in the previous chart. However, we only plotted data for the 'State' column and the 'Age-Adjusted Death Rates for Diseases Deaths' column. The x-axis denotes the states while the y-axis represents the Age-Adjusted Death Rates for Diseases Deaths per 100,000 population. This charts helps us analyze the deaths rates caused by diseases in different states.
+This chart was created using the same data in the previous chart. However, we only plotted data for the 'State' column and the 'Age-Adjusted Death Rates for Diseases Deaths' column. The x-axis denotes the states while the y-axis represents the Age-Adjusted Death Rates for Diseases Deaths per 100,000 population. This chart helps us analyze the death rates caused by diseases in different states.
 
 Idiom: Bar Chart / Mark: Line
 | Data: Attribute | Data: Attribute Type  | Encode: Channel | 
@@ -374,7 +374,7 @@ Idiom: Bar Chart / Mark: Line
 
 ![Bar Chart Dataset 2 Question 2](dataset2_q2_excel3.png)
 
-This chart was also created using the same data in the previous chart. However, we only plotted data for the 'State' column and the 'Age-Adjusted Death Rates for Accidental Deaths' column. The x-axis denotes the states while the y-axis represents the Age-Adjusted Death Rates for Accidental Deaths per 100,000 population. This charts helps us analyze the deaths rates caused by accidents in different states.
+This chart was also created using the same data in the previous chart. However, we only plotted data for the 'State' column and the 'Age-Adjusted Death Rates for Accidental Deaths' column. The x-axis denotes the states while the y-axis represents the Age-Adjusted Death Rates for Accidental Deaths per 100,000 population. This chart helps us analyze the death rates caused by accidents in different states.
 
 Idiom: Bar Chart / Mark: Line
 | Data: Attribute | Data: Attribute Type  | Encode: Channel | 
@@ -386,11 +386,11 @@ The three chart's key findings are as follows:
 
 - The state with the highest number of deaths due to diseases is Mississippi. Mississippi is followed by Alabama, Oklahoma, and Kentucky, which also have relatively high mortality rates due to diseases. This shows that these cities are the most unhealthy to live in.
 
-- States with lower mortality rates from diseases include Minnesota, Colorado, Utah, and Hawaii. This helps us reach the conclusion that these cities are comaparatively healthier to live in.
+- States with lower mortality rates from diseases include Minnesota, Colorado, Utah, and Hawaii. This helps us reach the conclusion that these cities are comparatively  healthier to live in.
 
 - The state with the highest number of deaths due to accidents is again Mississippi. Mississippi is followed by Louisiana, New Mexico, and Wyoming, which have relatively high mortality rates due to accidents. This shows that these cities are the most unsafe to live in.
 
-- States with lower mortality rates from accidents include Massachusetts, New York, New Jersey, and Hawaii.This helps us reach the conclusion that these cities are comaparatively safe to live in.
+- States with lower mortality rates from accidents include Massachusetts, New York, New Jersey, and Hawaii. This helps us reach the conclusion that these cities are comparatively  safe to live in.
 
 However, it's essential to remember that these conclusions are based solely on the provided mortality data and do not account for all factors that contribute to health and safety in a state. A comprehensive assessment would require consideration of various other socioeconomic, healthcare, and lifestyle factors.
 
