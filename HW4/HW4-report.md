@@ -312,11 +312,87 @@ Based on this analysis, several conclusions can be drawn, including significant 
 
 **Is this ordering different if you compare deaths due to disease vs. deaths due to accident, injury, and assault? In other words, which states are more hazardous to your health vs. which states are the most dangerous?**
 
+To answer this question. Three bar charts were plotted for better analysis of the data. However, before the plotting, the data had to be manipulated in such a way that all the columns containing data of deaths by diseases and deaths by accidents become separate and their values added to create two new columns named 'Deaths due to diseases deaths' and 'Deaths due to accidents deaths'. Later these two columns along with 'State' column were used to plot the charts. The data was manipulated using Python. The code for this manipulation is below:
+
+##### Code
+
+```
+
+drive.mount("/content/drive", force_remount=True)
+deaths_data = pd.read_csv("/content/drive/MyDrive/CS_625_HW4/dataset2.csv")
+
+disease_death_columns = ['Diseases of heart', 'Malignant neoplasms (cancer)', 'Cerebrovascular diseases',
+                         'Chronic lower respiratory disease', 'Diabetes mellitus', "Alzheimer's disease",
+                         'Influenza and pneumonia', 'Nephritis, nephrotic syndrome and nephrosis', 'Human immunodeficiency virus (HIV)']
+accidental_death_columns = ['Total Accidents', 'Motor vehicle accidents', 'By firearms',
+                           'Intentional self-harm (suicide)', 'Assault (homicide)']
+
+valid_disease_death_columns = deaths_data[disease_death_columns].select_dtypes(include=['number'])
+deaths_data['Age-Adjusted Death Rates for Diseases Deaths'] = valid_disease_death_columns.sum(axis=1)
+
+valid_accidental_death_columns = deaths_data[accidental_death_columns].select_dtypes(include=['number'])
+deaths_data['Age-Adjusted Death Rates for Accidental Deaths'] = valid_accidental_death_columns.sum(axis=1)
+
+```
+
+**The CSV File for this chart is, [dataset2_q2.csv](dataset2_q2.csv)**
+
+##### Explanation
+
+We first read the dataset from a CSV file named "dataset2.csv" and loads this data into a Pandas DataFrame. Then two lists, diseases_death_columns and accidental_death_columns, are defined. These lists contain the names of columns that represent different causes of death within the dataset. diseases_death_columnsis designed to include causes of deaths due to diseases, such as heart diseases, cancer, and respiratory diseases, while accidental_death_columns encompasses causes of accidental deaths, including accidents and suicides. After defining the columns we add all the columns in each category and put the resulting value in two new columns, namely, 'Age-Adjusted Death Rates for Diseases Deaths' and 'Age-Adjusted Death Rates for Accidental Deaths'. After this we extract this data from google colab and use MS Excel to plot the charts below:
+
 ![Bar Chart Dataset 2 Question 2](dataset2_q2_excel1.png)
+
+First, we create a grouped bar chart because it allows us to compare two different categories (Age-Adjusted Death Rates for Diseases Deaths per 100,000 Population and Age-Adjusted Death Rates for Accidental Deaths per 100,000 Population) for each state side by side. This type of chart is useful when we want to compare multiple related categories within each data point. In this case, we are comparing the number of deaths due to different causes for each state.
+
+The chart shows the Age Adjusted Death Rate by State, with two bars for each state. The blue bars represent the "Diseases Deaths" category, and the red bars represent the "Accidents Deaths" category. The x-axis represents the states, and the y-axis represents the number of deaths.
+
+We can easily see the variations in the age-adjusted death rates for diseases deaths and age-adjusted death rates for accidental deaths across different states. But it's hard to tell which state is the highest or lowest. To find this we created two additional charts which individually show the age-adjusted death rates for diseases/ deaths and age-adjusted death rates for accidental deaths across different states.
+
+Idiom: Grouped Bar Chart / Mark: Line
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| States | Key, Categorical | Horizontal Position (X-axis) |
+| Age-Adjusted Death Rate per 100,000 Population | Value, Quantitative | Vertical Position (Y-axis) |
+| Diseases Deaths OR Accidental Deaths | Key, Categorical | Color Hue (Third Channel) |
 
 ![Bar Chart Dataset 2 Question 2](dataset2_q2_excel2.png)
 
+This chart was created using the same data in the previous chart. However, we only plotted data for the 'State' column and the 'Age-Adjusted Death Rates for Diseases Deaths' column. The x-axis denotes the states while the y-axis represents the Age-Adjusted Death Rates for Diseases Deaths per 100,000 population. This charts helps us analyze the deaths rates caused by diseases in different states.
+
+Idiom: Bar Chart / Mark: Line
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| States | Key, Categorical | Horizontal Position (X-axis) |
+| Age-Adjusted Death Rates for Diseases Deaths | Value, Quantitative | Vertical Position (Y-axis) |
+
 ![Bar Chart Dataset 2 Question 2](dataset2_q2_excel3.png)
+
+This chart was also created using the same data in the previous chart. However, we only plotted data for the 'State' column and the 'Age-Adjusted Death Rates for Accidental Deaths' column. The x-axis denotes the states while the y-axis represents the Age-Adjusted Death Rates for Accidental Deaths per 100,000 population. This charts helps us analyze the deaths rates caused by accidents in different states.
+
+Idiom: Bar Chart / Mark: Line
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| States | Key, Categorical | Horizontal Position (X-axis) |
+| Age-Adjusted Death Rates for Accidental Deaths | Value, Quantitative | Vertical Position (Y-axis) |
+
+The three chart's key findings are as follows:
+
+- The state with the highest number of deaths due to diseases is Mississippi. Mississippi is followed by Alabama, Oklahoma, and Kentucky, which also have relatively high mortality rates due to diseases. This shows that these cities are the most unhealthy to live in.
+
+- States with lower mortality rates from diseases include Minnesota, Colorado, Utah, and Hawaii. This helps us reach the conclusion that these cities are comaparatively healthier to live in.
+
+- The state with the highest number of deaths due to accidents is again Mississippi. Mississippi is followed by Louisiana, New Mexico, and Wyoming, which have relatively high mortality rates due to accidents. This shows that these cities are the most unsafe to live in.
+
+- States with lower mortality rates from accidents include Massachusetts, New York, New Jersey, and Hawaii.This helps us reach the conclusion that these cities are comaparatively safe to live in.
+
+However, it's essential to remember that these conclusions are based solely on the provided mortality data and do not account for all factors that contribute to health and safety in a state. A comprehensive assessment would require consideration of various other socioeconomic, healthcare, and lifestyle factors.
+
+**The Excel File for this chart, [dataset2_q2_excel.xlsx](dataset2_q2_excel.xlsx)**
+
+### Further Questions:
+
+
 
 ## References
 
