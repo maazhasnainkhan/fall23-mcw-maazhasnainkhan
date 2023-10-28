@@ -392,11 +392,19 @@ However, it's essential to remember that these conclusions are based solely on t
 
 ### Further Questions:
 
+***Question:*** Which disease has the highest death rate? What is the most common accidental death cause? What is the leading cause of death in different States?
 
+***Hypotheses:*** Heart Disease could be the disease which causes the most number of deaths. This should be true as heart disease is also the biggest cause of death world-wide. The most common accidental death cause could be motor vehicle accidents. It could also be suicide or homicide. As far as the leading cause whether disease caused or accidental is concerned, in my personal opinion it could be heart disease. These findings can be checked with the current dataset as it is enough to answer these questions.
+
+***Question:*** Are there socioeconomic factors that correlate with the higher death rates in some states?
+
+***Hypotheses:*** States with lower access to healthcare or lower socioeconomic status may experience higher death rates. To investigate  this hypothesis, you would need regional or state-level data on healthcare infrastructure, public health expenditures, and income and poverty levels by state.
 
 ## References
 
-* First DataSet CSV File, [dataset_1.csv](dataset_1.csv)
+* Third Dataset Raw, [dataset_3_raw.xls](dataset_3_raw.xls)
+* Third Dataset EC Raw, [dataset_3_ec_raw.xls](dataset_3_ec_raw.xls)
+* Third Dataset EC Raw, [dataset_3_ec_raw.xls](dataset_3_ec_raw.xls)
 * Second Data Set CSV File, [Organ-Transplant-Cleaned.csv](Organ-Transplant-Cleaned.csv)
 * First Data Set Raw File, [Cancer-Data-Raw.xls](Cancer-Data-Raw.xls)
 * Second Data Set Raw File, [Organ-Transplant-Raw.xls](Organ-Transplant-Data-Raw.xls)
@@ -410,9 +418,12 @@ However, it's essential to remember that these conclusions are based solely on t
 * Python Charts, <https://python-charts.com/seaborn/grid/>
 * Anaconda, <https://anaconda.cloud/seaborn-objects-system>
 * Github, <https://github.com/mwaskom/seaborn/issues/3146>
-* SaturnCloud, <https://saturncloud.io/blog/adding-text-relative-to-axes-in-seaborn-and-matplotlib-a-guide/>
-* Stackoverflow, <https://stackoverflow.com/questions/41511334/adding-text-to-each-subplot-in-seaborn>
-* United States Census Bureau, <https://www.census.gov/library/publications/2011/compendia/statab/131ed.html>
-https://stackoverflow.com/questions/76644454/is-there-an-alternate-for-palette-while-plotting-barplot-through-seaborn-objec
-https://stackoverflow.com/questions/74715767/how-to-rotate-the-xticks-with-seaborn-objects
-https://stackoverflow.com/questions/53694724/how-to-prevent-matplotlib-from-showing-decimal-years-in-horizontal-axis
+* Medium, <https://pub.towardsai.net/understanding-pandas-melt-pd-melt-362954f8c125?gi=2b8bd101398b>
+* Stackoverflow, <https://stackoverflow.com/questions/76644454/is-there-an-alternate-for-palette-while-plotting-barplot-through-seaborn-objec>
+* Stackoverflow, <https://stackoverflow.com/questions/74715767/how-to-rotate-the-xticks-with-seaborn-objects>
+* Stackoverflow, <https://stackoverflow.com/questions/53694724/how-to-prevent-matplotlib-from-showing-decimal-years-in-horizontal-axis>
+* United States Census Bureau, <https://www.census.gov/library/publications/2009/compendia/statab/129ed/births-deaths-marriages-divorces.html>
+* United States Census Bureau, <https://www.census.gov/library/publications/2009/compendia/statab/129ed/population.html>
+
+
+
