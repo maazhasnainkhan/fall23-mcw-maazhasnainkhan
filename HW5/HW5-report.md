@@ -8,7 +8,7 @@ Due: November 8, 2023
 
 ### Boxplot: Show the distributions of the population of all states in 1980, 2000 (either April or July), and 2008
 
-
+![boxplot](boxplot.png)
 
 ## References
 
