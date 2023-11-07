@@ -10,7 +10,7 @@ Due: November 8, 2023
 
 ### Boxplot: Show the distributions of the population of all states in 1980, 2000 (either April or July), and 2008
 
-For the boxplot we had to first extract the data from the raw file. This was done using Excel as we had to only extract four (4) columns, namely, 'State', 'Population in 1980', 'Population in 2000' and 'Population in 2008'. After this we had to conver the values of population from string to number and then multiply it by 1000 as the population was given in thousands. This was done using Open Refine GREL Function. The GREL used is written below:
+For the boxplot we had to first extract the data from the raw file. This was done using MS Excel as we had to only extract four (4) columns, namely, 'State', 'Population in 1980', 'Population in 2000' and 'Population in 2008'. After this we had to convert the values of population from string to number and then multiply it by 1000 as the population was given in thousands. This was done using Open Refine GREL Function. The GREL used is written below:
 
 ```
 
@@ -345,6 +345,34 @@ In conclusion, the charts provide a clear picture of how the populations of Cali
 **Urbanization:** The observed trends may also reflect the urbanization of these states, with people moving from rural areas to cities in search of better amenities and quality of life.
 
 In summary, factors such as economic opportunities, business environments, lifestyle preferences, and public policies can all contribute to the observed population dynamics in California, Texas, and Florida. Further analysis and research can be conducted to validate these hypotheses and gain a deeper understanding of the underlying reasons for the population shifts in these states.
+
+### Population Distribution According to Population Density
+
+For the analysis regarding population density two raw datasets were used:
+
+- Dataset 1: Table 12 - Resident Population--States (pg. 21 in PDF)
+
+- Dataset 2: Table 13 - State Population--Rank, Percent Change, And Population Density (pg. 22 in PDF)
+
+From these two datasets a new CSV file was created having the columns 'State', 'State Code', 'Population in 2008' and 'Population Density in 2008'. The columns were extracted simply using MS Excel. After this we had to convert the values of population and population density from string to number and then multiply only the population by 1000 as the population was given in thousands. This was done using Open Refine GREL Function. The GREL used is written below:
+
+```
+
+toNumber(value.replace(",", ""))
+
+```
+This GREL converted both columns from string to numbers. Then we used another GREL function to multiply the population by thousand.
+
+```
+
+value*1000
+
+```
+After converting the values into numbers and multiplying the population by 1000, we extracted the CSV file and uploaded it into Google Drive to use it in Google Colaboratory Notebook.
+
+![choropleth_population_density](choropleth_population_density.png)
+
+![scatterplot_population_density](scatterplot_population_density.png)
 
 ## References
 
