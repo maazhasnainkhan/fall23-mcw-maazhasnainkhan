@@ -80,23 +80,23 @@ The boxplot created represents the distribution of population data for the years
 - **Whiskers:** Vertical lines connecting the box to the minimum and maximum data values within 1.5 times the IQR (Interquartile Range).
 - **Outliers:** Individual data points falling outside the whiskers, indicating extreme or unusual values.
 
-#### Advantages of the Boxplot Chart for Showing Population Distributions:
+#### Advantages Of The Boxplot Chart For Showing Population Distributions:
 
-**Clear Overview of Distribution:** The boxplot provides a clear visual summary of the population distribution, showing the median, quartiles, and outliers for each year. This allows for a quick understanding of the central tendency and spread of populations in different years for each state.
+**Clear Overview Of Distribution:** The boxplot provides a clear visual summary of the population distribution, showing the median, quartiles, and outliers for each year. This allows for a quick understanding of the central tendency and spread of populations in different years for each state.
 
-**Easy to Compare Distributions:** With boxplots for multiple years displayed side by side, it's easy to compare the population distributions across different years for each state. This is particularly useful for identifying trends and changes in population over time.
+**Comparative Analysis:** With boxplots for multiple years displayed side by side, it's easy to compare the population distributions across different years for each state. This is particularly useful for identifying trends and changes in population over time.
 
 **Identifying Outliers:** Boxplots make it easy to identify states with unusually high or low populations in a specific year by marking outliers as individual data points. This information is valuable for pinpointing states with exceptional population characteristics.
 
-**Compact and Space-Efficient:** Boxplots are space-efficient, allowing you to represent multiple distributions in a single chart. This is especially advantageous when you want to compare a large number of states and years without cluttering the chart.
+**Compact And Space-Efficient:** Boxplots are space-efficient, allowing you to represent multiple distributions in a single chart. This is especially advantageous when you want to compare a large number of states and years without cluttering the chart.
 
-#### Disadvantages of the Boxplot Chart for Showing Population Distributions:
+#### Disadvantages Of The Boxplot Chart For Showing Population Distributions:
 
 **Limited Detail:** While boxplots provide a high-level summary of the population distribution, they may lack the level of detail necessary to understand the exact shape of the distribution, such as the presence of multiple modes or skewness. You might miss finer nuances that other chart types, like histograms, can reveal.
 
 **Exact Values Not Evident:** Boxplots do not readily display the exact population values, making it challenging to read specific data points. If precise values are crucial, additional charts or tools may be needed to provide detailed information.
 
-#### Simple Observations from the Chart:
+#### Simple Observations From The Chart:
 
 - The median population for most states tends to increase from 1980 to 2008, indicating general population growth across the country over the years.
 
@@ -111,6 +111,87 @@ In summary, the boxplot chart provides a concise summary of population distribut
 For the eCDF and Histogram the same CSV file was used as in the Boxplot. Therefore, we will not discuss the cleaning steps again here.
 
 ![histogram](histogram.png) ![eCDF](eCDF.png)
+
+##### Code
+
+```
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from google.colab import drive
+
+drive.mount("/content/drive", force_remount=True)
+data = pd.read_csv("/content/drive/MyDrive/CS_625/CS_625_HW5/dataset1-boxplot-csv.csv")
+
+pop_2008 = data['2008'] / 1e6
+
+plt.figure(figsize=(10, 6))
+plt.hist(pop_2008, bins=50, edgecolor='k', alpha=0.7)
+plt.title("Population Distribution in 2008")
+plt.xlabel("Population (in Millions)")
+plt.ylabel("Frequency (States)")
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.show()
+
+plt.figure(figsize=(10, 6))
+sns.ecdfplot(pop_2008, marker='', linestyle='-')
+plt.title("eCDF of Population in 2008")
+plt.xlabel("Population (in Millions)")
+plt.ylabel("ECDF")
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.show()
+
+```
+
+##### Explanation
+
+The code utilizes the pandas, matplotlib, and seaborn libraries to analyze and visualize population data from the year 2008. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The population values for 2008 are extracted and converted into millions for more intuitive presentation. The code then creates two separate plots.
+
+The first plot is a histogram, generated using Matplotlib, to depict the distribution of population values in 2008. This histogram is divided into 50 bins to provide a detailed view of the data distribution. This code generates a histogram, with proper title and labels.
+
+The second plot, an empirical cumulative distribution function (eCDF) plot, is created using Seaborn. This plot illustrates how the data is cumulatively distributed, forming a step-like graph. Similar to the histogram plot, it includes titles and axis labels.
+
+In essence, these visualizations offer insights into the distribution and cumulative distribution of population data for the year 2008, allowing for a clearer understanding of how populations were distributed among the states during the year 2008.
+
+The histogram visually represents the population distribution in U.S. for the year 2008, with the x-axis indicating population in millions and the y-axis showing the frequency of states falling within each population range. The eCDF plot, on the other hand, depicts the cumulative distribution of population, where the x-axis displays population values, and the y-axis represents the cumulative probability of states having a population less than or equal to a given value.
+
+
+#### Advantages Of The Histogram In Relation To The Population Distribution Chart:
+
+**Clear Overview Of Distribution:** The histogram offers a clear visual representation of the population distribution, making it easy to see the frequency of states falling within specific population ranges. This is valuable for understanding how populations are distributed.
+
+**Comparative Analysis:** The histogram allows for straightforward comparisons between states, enabling you to quickly identify differences in population sizes and patterns in the distribution.
+
+**Key Feature Identification:** By examining the histogram, you can easily spot central tendencies, common population ranges, and states with unusually high or low populations. This aids in identifying significant population characteristics within the data.
+
+#### Disadvantages Of The Histogram In Relation To The Population Distribution Chart:
+
+**Limited Detail:** The histogram may not provide intricate details about the shape of the population distribution. For example, it might not reveal whether the distribution is unimodal, bimodal, skewed, or multimodal.
+
+**Exact Values Not Evident:** The histogram doesn't readily display the exact population values for individual states. If precise values are important, additional charts or data exploration tools may be needed to extract this information from the dataset.
+
+#### Advantages Of The eCDF In Relation To The Population Distribution Chart:
+
+**Cumulative Overview:** The eCDF offers a cumulative view of the population distribution, showcasing the proportion of states with populations less than or equal to a given value. This is helpful for understanding cumulative trends.
+
+**Visualizing Percentiles:** It provides a clear way to visualize percentiles, making it easy to see, for example, what percentage of states have populations below a specific value.
+
+#### Disadvantages Of The eCDF In Relation To The Population Distribution Chart:
+
+**Limited Detail:** Similar to the histogram, the eCDF may not reveal detailed information about the shape of the distribution, such as the presence of multiple modes or skewness.
+
+**Exact Values Not Evident:** The eCDF plot does not display the precise population values for individual states. For examining specific data points, you would need to cross-reference with the original dataset.
+
+In summary, the histogram provides a clear view of the population distribution, facilitates comparisons, and aids in identifying key features. However, it might not offer fine-grained insights into the distribution's shape or specific data values. The eCDF plot, on the other hand, offers a cumulative perspective, making it suitable for visualizing percentiles and cumulative trends but also lacking in details about the distribution's shape and specific data values.
+
+#### Simple Observations from the Charts:
+
+- From the histogram, it's evident that the majority of states have populations below 10 million in 2008, while a few states have significantly larger populations.
+
+- The eCDF chart shows that nearly 58% of U.S. states had populations below 5 million in 2008. However, these states collectively accounted for only 22.38% of the total U.S. population for the year 2008, highlighting a disparity in population distribution.
+
+- If we look at states below 10 million population 84% of U.S. states had populations under 10 million. These 42 states collectively accounted for 52% of the total U.S. population, totaling 157.72 million. This means that the rest of the 48% of the total U.S. lives in the rest of remaining 8 states. This reveals a notable concentration of the U.S. population in a smaller number of states with larger populations.
 
 ## References
 
