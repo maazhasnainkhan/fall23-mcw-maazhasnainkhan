@@ -4,6 +4,8 @@ Maaz Hasnain Khan
 
 Due: November 8, 2023
 
+# Part 1: Create Distribution Charts
+
 ## Dataset 1: Table 12 - Resident Population--States (pg. 21 in PDF)
 
 ### Boxplot: Show the distributions of the population of all states in 1980, 2000 (either April or July), and 2008
@@ -110,7 +112,9 @@ In summary, the boxplot chart provides a concise summary of population distribut
 
 For the eCDF and Histogram the same CSV file was used as in the Boxplot. Therefore, we will not discuss the cleaning steps again here.
 
-![histogram](histogram.png) ![eCDF](eCDF.png)
+![histogram](histogram.png)
+
+![eCDF](eCDF.png)
 
 ##### Code
 
@@ -192,6 +196,18 @@ In summary, the histogram provides a clear view of the population distribution, 
 - The eCDF chart shows that nearly 58% of U.S. states had populations below 5 million in 2008. However, these states collectively accounted for only 22.38% of the total U.S. population for the year 2008, highlighting a disparity in population distribution.
 
 - If we look at states below 10 million population 84% of U.S. states had populations under 10 million. These 42 states collectively accounted for 52% of the total U.S. population, totaling 157.72 million. This means that the rest of the 48% of the total U.S. lives in the rest of remaining 8 states. This reveals a notable concentration of the U.S. population in a smaller number of states with larger populations.
+
+# Part 2: Further Analysis
+
+### Use the charts that you created in Part 1 to guide further investigation of the data. State at least 2 interesting findings about the data and explain how you used one or more of the distribution charts to guide the investigation into this finding.
+
+#### Dramatic Increase In Population From Year 1980 to 2008
+
+For these charts the same CSV file was used as in the Boxplot, eCDF and Histogram. Therefore, we will not discuss the cleaning steps again here.
+
+![scatterplot_population_increase](scatterplot_population_increase.png)
+
+![barchart_population_increase](barchart_population_increase.png)
 
 ## References
 
