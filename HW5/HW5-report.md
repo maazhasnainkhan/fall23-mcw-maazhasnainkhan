@@ -106,6 +106,12 @@ The boxplot created represents the distribution of population data for the years
 
 In summary, the boxplot chart provides a concise summary of population distributions for different years, making it easy to compare and identify outliers. However, it lacks the level of detail that other charts, such as histograms, can provide, and exact values are not immediately apparent from the chart.
 
+### eCDF and histogram: Show the distribution of the population of all states in one of the years (your chart title must indicate which year)
+
+For the eCDF and Histogram the same CSV file was used as in the Boxplot. Therefore, we will not discuss the cleaning steps again here.
+
+![histogram](histogram.png) ![eCDF](eCDF.png)
+
 ## References
 
 * Third Dataset Raw, [dataset_3_raw.xls](dataset_3_raw.xls)
