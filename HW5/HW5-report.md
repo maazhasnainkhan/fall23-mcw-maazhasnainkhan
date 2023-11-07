@@ -82,7 +82,7 @@ The boxplot created represents the distribution of population data for the years
 - **Whiskers:** Vertical lines connecting the box to the minimum and maximum data values within 1.5 times the IQR (Interquartile Range).
 - **Outliers:** Individual data points falling outside the whiskers, indicating extreme or unusual values.
 
-#### Advantages Of The Boxplot Chart For Showing Population Distributions:
+### Advantages Of The Boxplot Chart For Showing Population Distributions:
 
 **Clear Overview Of Distribution:** The boxplot provides a clear visual summary of the population distribution, showing the median, quartiles, and outliers for each year. This allows for a quick understanding of the central tendency and spread of populations in different years for each state.
 
@@ -92,13 +92,13 @@ The boxplot created represents the distribution of population data for the years
 
 **Compact And Space-Efficient:** Boxplots are space-efficient, allowing you to represent multiple distributions in a single chart. This is especially advantageous when you want to compare a large number of states and years without cluttering the chart.
 
-#### Disadvantages Of The Boxplot Chart For Showing Population Distributions:
+### Disadvantages Of The Boxplot Chart For Showing Population Distributions:
 
 **Limited Detail:** While boxplots provide a high-level summary of the population distribution, they may lack the level of detail necessary to understand the exact shape of the distribution, such as the presence of multiple modes or skewness. You might miss finer nuances that other chart types, like histograms, can reveal.
 
 **Exact Values Not Evident:** Boxplots do not readily display the exact population values, making it challenging to read specific data points. If precise values are crucial, additional charts or tools may be needed to provide detailed information.
 
-#### Simple Observations From The Chart:
+### Simple Observations From The Chart:
 
 - The median population for most states tends to increase from 1980 to 2008, indicating general population growth across the country over the years.
 
@@ -161,7 +161,7 @@ In essence, these visualizations offer insights into the distribution and cumula
 The histogram visually represents the population distribution in U.S. for the year 2008, with the x-axis indicating population in millions and the y-axis showing the frequency of states falling within each population range. The eCDF plot, on the other hand, depicts the cumulative distribution of population, where the x-axis displays population values, and the y-axis represents the cumulative probability of states having a population less than or equal to a given value.
 
 
-#### Advantages Of The Histogram In Relation To The Population Distribution Chart:
+### Advantages Of The Histogram In Relation To The Population Distribution Chart:
 
 **Clear Overview Of Distribution:** The histogram offers a clear visual representation of the population distribution, making it easy to see the frequency of states falling within specific population ranges. This is valuable for understanding how populations are distributed.
 
@@ -169,19 +169,19 @@ The histogram visually represents the population distribution in U.S. for the ye
 
 **Key Feature Identification:** By examining the histogram, you can easily spot central tendencies, common population ranges, and states with unusually high or low populations. This aids in identifying significant population characteristics within the data.
 
-#### Disadvantages Of The Histogram In Relation To The Population Distribution Chart:
+### Disadvantages Of The Histogram In Relation To The Population Distribution Chart:
 
 **Limited Detail:** The histogram may not provide intricate details about the shape of the population distribution. For example, it might not reveal whether the distribution is unimodal, bimodal, skewed, or multimodal.
 
 **Exact Values Not Evident:** The histogram doesn't readily display the exact population values for individual states. If precise values are important, additional charts or data exploration tools may be needed to extract this information from the dataset.
 
-#### Advantages Of The eCDF In Relation To The Population Distribution Chart:
+### Advantages Of The eCDF In Relation To The Population Distribution Chart:
 
 **Cumulative Overview:** The eCDF offers a cumulative view of the population distribution, showcasing the proportion of states with populations less than or equal to a given value. This is helpful for understanding cumulative trends.
 
 **Visualizing Percentiles:** It provides a clear way to visualize percentiles, making it easy to see, for example, what percentage of states have populations below a specific value.
 
-#### Disadvantages Of The eCDF In Relation To The Population Distribution Chart:
+### Disadvantages Of The eCDF In Relation To The Population Distribution Chart:
 
 **Limited Detail:** Similar to the histogram, the eCDF may not reveal detailed information about the shape of the distribution, such as the presence of multiple modes or skewness.
 
@@ -189,7 +189,7 @@ The histogram visually represents the population distribution in U.S. for the ye
 
 In summary, the histogram provides a clear view of the population distribution, facilitates comparisons, and aids in identifying key features. However, it might not offer fine-grained insights into the distribution's shape or specific data values. The eCDF plot, on the other hand, offers a cumulative perspective, making it suitable for visualizing percentiles and cumulative trends but also lacking in details about the distribution's shape and specific data values.
 
-#### Simple Observations from the Charts:
+### Simple Observations from the Charts:
 
 - From the histogram, it's evident that the majority of states have populations below 10 million in 2008, while a few states have significantly larger populations.
 
@@ -201,7 +201,7 @@ In summary, the histogram provides a clear view of the population distribution, 
 
 ### Use the charts that you created in Part 1 to guide further investigation of the data. State at least 2 interesting findings about the data and explain how you used one or more of the distribution charts to guide the investigation into this finding.
 
-#### Dramatic Increase In Population From Year 1980 to 2008
+### Dramatic Increase In Population From Year 1980 to 2008
 
 For these charts the same CSV file was used as in the Boxplot, eCDF and Histogram. Therefore, we will not discuss the cleaning steps again here.
 
@@ -306,11 +306,11 @@ To prepare the data for visualization, the code melts the dataset, which means i
 
 The code then generates a bar plot using seaborn's barplot function. The x-axis represents the states (California, Texas, and Florida), the y-axis shows the population in millions, and the bars are grouped by year (1980, 2000, and 2008) and color-coded accordingly. A custom formatting function is applied to the y-axis labels to display population numbers in millions (M). This generates a bar chart with proper axes and labels.
 
-#### Analysis
+### Analysis
 
 The two charts offer valuable insights into the population changes of U.S. states over a specific time period (1980 to 2008) and allow for a deeper analysis of the data. First we'll discuss these charts separately and then finally give our hypotheses on the basis of that analysis.
 
-#### Scatter Plot
+### Scatter Plot
 
 The scatter plot compares the population of the U.S. states for the years 1980 and 2008. It provides a visual representation of how the populations of these these states evolved over time. The color of each data point represents the population increase during this period.
 
@@ -320,7 +320,7 @@ The scatter plot compares the population of the U.S. states for the years 1980 a
 
 **Population Increase Variation:** The color gradient (via the color bar) provides a visual understanding of the magnitude of population increase. Darker colors indicate higher population increases. It demonstrates that California experienced the most substantial population increase among the three states.
 
-#### Bar Chart
+### Bar Chart
 
 The bar chart presents the population data for California, Texas, and Florida for the years 1980, 2000, and 2008.
 
@@ -334,7 +334,7 @@ The bar chart presents the population data for California, Texas, and Florida fo
 
 In conclusion, the charts provide a clear picture of how the populations of California, Texas, and Florida evolved over a specific time frame. They allow for various analyses, including relative growth rates, yearly comparisons, and the overall population size of each state. It's apparent that California had the most substantial population increase and maintained the highest population among the three states. However, it has to be taken into account that California's population was already very large and that increase might just have been relative to that.
 
-#### Hypotheses
+### Hypotheses
 
 **Economic Opportunities:** One reason for California's substantial population growth could be the state's robust economy, driven by the technology and entertainment industries. People may have moved there in search of better job opportunities and higher income.
 
