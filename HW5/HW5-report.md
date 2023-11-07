@@ -22,6 +22,8 @@ After converting the values into numbers and multiplying them by 1000, we extrac
 
 ![boxplot](boxplot.png)
 
+To see the charts go to **[Google Colaboratory Notebook](https://colab.research.google.com/drive/1BhHmJPChmDjoL2rRhJJo6cb-Dm1Uozw9?usp=sharing).**
+
 ##### Code
 
 ```
@@ -116,6 +118,8 @@ For the eCDF and Histogram the same CSV file was used as in the Boxplot. Therefo
 
 ![eCDF](eCDF.png)
 
+To see the charts go to **[Google Colaboratory Notebook](https://colab.research.google.com/drive/1BhHmJPChmDjoL2rRhJJo6cb-Dm1Uozw9?usp=sharing).**
+
 ##### Code
 
 ```
@@ -208,6 +212,8 @@ For these charts the same CSV file was used as in the Boxplot, eCDF and Histogra
 ![scatterplot_population_increase](scatterplot_population_increase.png)
 
 ![barchart_population_increase](barchart_population_increase.png)
+
+To see the charts go to **[Google Colaboratory Notebook](https://colab.research.google.com/drive/1BhHmJPChmDjoL2rRhJJo6cb-Dm1Uozw9?usp=sharing).**
 
 ##### Code For Scatter Plot
 
@@ -322,7 +328,7 @@ The scatter plot compares the population of the U.S. states for the years 1980 a
 
 ### Bar Chart
 
-The bar chart presents the population data for California, Texas, and Florida for the years 1980, 2000, and 2008.
+The bar chart represents the population data for California, Texas, and Florida for the years 1980, 2000, and 2008.
 
 **Comparison of States:** This chart makes it easy to compare the populations of California, Texas, and Florida directly. California consistently had the highest population throughout the years, followed by Texas and then Florida. This reflects the states' relative sizes.
 
@@ -376,7 +382,132 @@ After converting the values into numbers and multiplying the population by 1000,
 
 The charts created are interactive. To see the charts go to **[Google Colaboratory Notebook](https://colab.research.google.com/drive/1BhHmJPChmDjoL2rRhJJo6cb-Dm1Uozw9?usp=sharing).**
 
+##### Code For Choropleth Chart
 
+```
+
+import pandas as pd
+import plotly.express as px
+from google.colab import drive
+
+drive.mount('/content/drive', force_remount=True)
+data = pd.read_csv("/content/drive/MyDrive/CS_625/CS_625_HW5/dataset1_popdensity.csv")
+
+def format_hover_data(state, population, density):
+    return f'State: {state}<br>Population: {population / 1e6:.2f}M'
+
+data['CustomHoverData'] = data.apply(lambda row: format_hover_data(row['State'], row['Population in 2008'], row['Population Density in 2008']), axis=1)
+
+fig = px.choropleth(
+    data,
+    locations="State Code",
+    color="Population Density in 2008",
+    locationmode="USA-states",
+    scope="usa",
+    title="Population and Population Density in 2008 by US State",
+    color_continuous_midpoint=610,
+    hover_data=["State", "CustomHoverData"],
+)
+
+fig.show()
+
+```
+
+##### Explanation
+
+The code ulitlizes Python libraries, including Pandas for data manipulation and Plotly Express for interactive data visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population and population density data for the year 2008. The *format_hover_data* function is defined to create a custom tooltip or hover data for each state on the map. It takes the state's name, population, and population density as input and formats the data in a readable way. This custom hover data will provide information about the state's name, population (in millions), and population density in 2008.
+
+Next, the choropleth map is created using Plotly Express. It specifies the dataset, the location information (in this case, the state code, which is a common way to represent states on maps), and the color data (population density in 2008). The locationmode is set to "USA-states" to indicate that the map represents U.S. states.
+
+The resulting choropleth map allows users to interactively explore and understand population density variations across U.S. states in 2008. It provides a clear visual representation of which states have higher or lower population densities, making it a valuable tool for data analysis and interpretation.
+
+##### Code For Scatter Plot
+
+```
+
+import pandas as pd
+import plotly.express as px
+import matplotlib.pyplot as plt
+from google.colab import drive
+
+drive.mount('/content/drive')
+data = pd.read_csv("/content/drive/MyDrive/CS_625/CS_625_HW5/dataset1_popdensity.csv")
+
+data = data.sort_values(by="Population Density in 2008", ascending=False)
+
+top_states = data.head(3)
+
+fig = px.scatter(
+    data,
+    x="Population in 2008",
+    y="Population Density in 2008",
+    size="Population in 2008",
+    color="Population Density in 2008",
+    hover_name="State",
+    title="Population, Density, and Area by U.S. State in 2008"
+)
+
+for i, row in top_states.iterrows():
+    annotation_text = f"{row['State']} ({row['Population Density in 2008']})"
+    bold_text = f"<b>{annotation_text}</b>"
+    fig.add_annotation(
+        x=row["Population in 2008"],
+        y=row["Population Density in 2008"],
+        text=bold_text,
+        showarrow=True,
+        arrowhead=4,
+        font=dict(size=15)
+    )
+
+fig.show()
+
+```
+
+##### Explanation
+
+The code ulitlizes Python libraries, including Pandas for data manipulation, Matplotlib and Plotly Express for interactive data visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population and population density data for the year 2008. It's then sorted in descending order based on "Population Density in 2008." This sorting arranges the data in such a way that states with the highest population density appear at the top of the DataFrame.
+
+The top_states DataFrame is created to store the top three states with the highest population density. These states are identified based on the sorted dataset.
+
+The code proceeds to create a scatter plot using Plotly Express. This scatter plot visualizes the relationship between "Population in 2008" on the x-axis, "Population Density in 2008" on the y-axis, and the size and color of data points, respectively. For a more informative representation of the top three states with the highest population density, the code adds custom annotations for these states.
+
+All in all, this creates an interactive scatter plot that allows users to explore the population and population density data for U.S. states in 2008.
+
+### Analysis
+
+The two charts offer valuable insights into the population distribution of U.S. states in terms of population density and allow for a deeper analysis of the data. First we'll discuss these charts separately and then finally give our hypotheses on the basis of that analysis.
+
+### Choropleth
+
+The choropleth map color-codes U.S. states based on their population density in 2008. It allows for an immediate visual comparison of population density variations across states.
+
+**Population Density Distribution:** The map clearly illustrates that population density varies significantly across states. For instance, highly populated states like California and New Jersey have brighter color shades, indicating high population density, while sparsely populated states like Alaska and Montana are much darker in color, signifying lower population density. The map reveals that several East Coast states, including New Jersey, Connecticut, and Rhode Island, have notably high population density. This regional trend suggests that the East Coast generally exhibits higher population density compared to inland or western states.
+
+**Urban vs. Rural:** The map can help identify urban and rural regions. States with high population density are more likely to have urban centers, while states with low density are likely to have more rural areas.
+
+**Coastal vs. Inland:** States with coastlines tend to have higher population density due to factors such as economic opportunities and accessibility.
+
+### Scatterplot
+
+The scatter plot displays the population in 2008 on the x-axis and the population density in 2008 on the y-axis. The point size represents the population, and the color represents population density.
+
+**Cluster Identification:** By observing the scatter plot, we can identify clusters of states with varying characteristics. Some states have high population and high density, while others have high population but lower density. States with low population and density are evident as well. The scatter plot shows that states on the East Coast, such as New Jersey, Massachusetts, and Rhode Island, exhibit higher population density.
+
+**Outliers:** Outlying states are also visible. For instance, California stands out with a high population and high density, while Alaska stands out with low population and extremely low density.
+
+**Correlations:** The plot suggests a relationship between population size and density. Some states have high population and high density, while others have low population and low density. Understanding these correlations can provide insights into state development and urban planning.
+
+### Hypotheses
+
+**Economic Opportunities:** States with higher population density, like California and New Jersey, may offer greater economic opportunities, including better job prospects and higher wages. This can attract a larger population.
+
+**Urbanization:** Regions with high population density are often associated with urbanization and industrial development. These states may have more extensive urban areas and infrastructure.
+
+**Coastal Locations:** States with coastlines, such as California and New Jersey, tend to have higher population density due to their appeal for both residents and tourists. Coastal areas often offer a wide range of job opportunities and amenities.
+
+**Historical Colonization:** One possible explanation for the higher population density on the East Coast is historical. Many of the earliest European settlements and colonization efforts in the United States began on the East Coast. This initial concentration of settlers and subsequent population growth could have left a lasting impact on population density. The presence of historical cities, ports, and infrastructure may have contributed to ongoing urbanization and population density in these states. This historical context may continue to shape the population landscape today.
+
+In conclusion, the analysis of U.S. state population density in 2008, through both the choropleth map and scatter plot, reveals an intricate interplay of factors influencing regional demographic patterns. Economic opportunities, urbanization, coastal locations, and historical colonization stand out as key drivers of population density variations. Notably, the historical significance of the East Coast as an early hub for colonization has left a lasting impact on the region's high population density. Further research can help us delve deeper into these factors, providing a richer understanding of population dynamics in the United States.
 
 ## References
 
