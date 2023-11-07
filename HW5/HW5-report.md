@@ -374,7 +374,7 @@ After converting the values into numbers and multiplying the population by 1000,
 
 ![scatterplot_population_density](scatterplot_population_density.png)
 
-The charts created are interactive. To see the charts go to **[Google Colaboratory Notebook]**(https://colab.research.google.com/drive/1BhHmJPChmDjoL2rRhJJo6cb-Dm1Uozw9?usp=sharing).
+The charts created are interactive. To see the charts go to **[Google Colaboratory Notebook](https://colab.research.google.com/drive/1BhHmJPChmDjoL2rRhJJo6cb-Dm1Uozw9?usp=sharing).**
 
 
 
