@@ -209,6 +209,141 @@ For these charts the same CSV file was used as in the Boxplot, eCDF and Histogra
 
 ![barchart_population_increase](barchart_population_increase.png)
 
+##### Code For Scatter Plot
+
+```
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
+from google.colab import drive
+
+drive.mount("/content/drive", force_remount=True)
+data = pd.read_csv("/content/drive/MyDrive/CS_625/CS_625_HW5/dataset1-boxplot-csv.csv")
+
+data['Population Increase'] = data['2008'] - data['1980']
+
+data = data.sort_values(by='Population Increase', ascending=False)
+
+top_states = data.head(3)
+
+def millions(x, pos):
+    return f'{x/1e6:.1f}M'
+
+plt.figure(figsize=(12, 8))
+scatter = plt.scatter(data['1980'], data['2008'], c=data['Population Increase'], cmap='coolwarm', s=100)
+plt.title('Population Increase (1980-2008) by State')
+plt.xlabel('Population in 1980')
+plt.ylabel('Population in 2008')
+plt.grid(True)
+
+
+cbar = plt.colorbar(scatter, format=FuncFormatter(millions))
+cbar.set_label('Population Increase (1980-2008)')
+
+for i, row in top_states.iterrows():
+    plt.annotate(row['State'], (row['1980'], row['2008']), fontsize=10, alpha=0.7, weight='bold', color='black')
+
+plt.gca().yaxis.set_major_formatter(FuncFormatter(millions))
+plt.gca().xaxis.set_major_formatter(FuncFormatter(millions))
+
+plt.show()
+
+```
+
+##### Explanation
+
+The code ulitlizes the python libraries like pandas and matplotlib to create a meaningful visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population data for the years 1980 and 2008. The code calculates the population increase for each state during this time frame by subtracting the 1980 population from the 2008 population, adding this information as a new column to the dataset.
+
+Next, the code sorts the dataset in descending order based on the population increase, helping to identify the states with the most significant population growth during this period. It then selects the top three states with the highest population increase and creates a scatter plot. The x-axis represents the population in 1980, the y-axis represents the population in 2008, and the color of the data points indicates the population increase, with a color bar for reference. Additionally, it highlights the names of the top three states on the scatter plot, providing further context to the data. The code employs custom formatting functions to display population numbers in millions (M) and generates a scatter plot with proper title and axes labels.
+
+##### Code For Bar Chart
+
+```
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
+from google.colab import drive
+
+drive.mount("/content/drive", force_remount=True)
+data = pd.read_csv("/content/drive/MyDrive/CS_625/CS_625_HW5/dataset1-boxplot-csv.csv")
+
+data['State'] = data['State'].str.strip()
+
+states_to_plot = ['California', 'Texas', 'Florida']
+selected_data = data[data['State'].isin(states_to_plot)]
+
+melted_data = selected_data.melt(id_vars=['State'], var_name='Year', value_name='Population')
+
+sns.set(style="whitegrid")
+
+plt.figure(figsize=(12, 8))
+barplot = sns.barplot(x='State', y='Population', hue='Year', data=melted_data)
+
+plt.title('Population in California, Texas, and Florida For The Year 1980, 2000 and 2008')
+plt.xlabel('State')
+plt.ylabel('Population (in millions)')
+
+def millions_formatter(x, pos):
+    return f'{x / 1e6:.1f}M'
+
+y_formatter = FuncFormatter(millions_formatter)
+barplot.yaxis.set_major_formatter(y_formatter)
+
+plt.legend(title='Year')
+
+plt.show()
+
+```
+
+##### Explanation
+
+The code utilizes Python with libraries like pandas, seaborn, and matplotlib to generate a bar chart. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population data. The code then selects the specific states (California, Texas, and Florida) for analysis and creates a new dataset.
+
+To prepare the data for visualization, the code melts the dataset, which means it reshapes it from a wide format, with separate columns for each year, into a long format. This transformation consolidates the population values for each state-year combination into a single column, making it easier to work with and plot. The melted data is used for creating the bar chart.
+
+The code then generates a bar plot using seaborn's barplot function. The x-axis represents the states (California, Texas, and Florida), the y-axis shows the population in millions, and the bars are grouped by year (1980, 2000, and 2008) and color-coded accordingly. A custom formatting function is applied to the y-axis labels to display population numbers in millions (M). This generates a bar chart with proper axes and labels.
+
+#### Analysis
+
+The two charts offer valuable insights into the population changes of U.S. states over a specific time period (1980 to 2008) and allow for a deeper analysis of the data. First we'll discuss these charts separately and then finally give our hypotheses on the basis of that analysis.
+
+#### Scatter Plot
+
+The scatter plot compares the population of the U.S. states for the years 1980 and 2008. It provides a visual representation of how the populations of these these states evolved over time. The color of each data point represents the population increase during this period.
+
+**Population Growth Trends:** The chart reveals that California had the highest population of the three states throughout the observed years. It also shows that California, Texas and Florida experienced a dramatic population growth. California and Texas, in particular, had substantial increases, with California leading in population size. Florida also exhibited significant growth but started with a smaller base population.
+
+**Relative Population Changes:** By comparing the positions of the data points, we can observe that California's population increased the most during the period, followed by Texas and then Florida. This highlights the significant population growth in California and Texas.
+
+**Population Increase Variation:** The color gradient (via the color bar) provides a visual understanding of the magnitude of population increase. Darker colors indicate higher population increases. It demonstrates that California experienced the most substantial population increase among the three states.
+
+#### Bar Chart
+
+The bar chart presents the population data for California, Texas, and Florida for the years 1980, 2000, and 2008.
+
+**Comparison of States:** This chart makes it easy to compare the populations of California, Texas, and Florida directly. California consistently had the highest population throughout the years, followed by Texas and then Florida. This reflects the states' relative sizes.
+
+**Population Growth Over Time:** The bar chart illustrates the population growth for each state during the observed years. It shows that California's population increased significantly over the period, Texas experienced substantial growth, and Florida had a steady increase.
+
+**Yearly Changes:** By comparing bars for each state from 1980 to 2008, you can see how populations changed over time. California's population grew the most during this period, while Florida's population saw the most significant increase in the 2000s.
+
+**Magnitude of Population:** The chart does not only show population changes but also the magnitude of populations for each state. For example, you can see that California's population is significantly larger than that of Texas and Florida.
+
+In conclusion, the charts provide a clear picture of how the populations of California, Texas, and Florida evolved over a specific time frame. They allow for various analyses, including relative growth rates, yearly comparisons, and the overall population size of each state. It's apparent that California had the most substantial population increase and maintained the highest population among the three states. However, it has to be taken into account that California's population was already very large and that increase might just have been relative to that.
+
+#### Hypotheses
+
+**Economic Opportunities:** One reason for California's substantial population growth could be the state's robust economy, driven by the technology and entertainment industries. People may have moved there in search of better job opportunities and higher income.
+
+**Migration Patterns:** Texas' significant population growth, especially from 1980 to 2000, may be attributed to its business-friendly environment and relatively lower cost of living, attracting individuals and families from other states.
+
+**Retirement Destinations:** Florida's population increase could be influenced by its reputation as a retirement destination due to its warm climate and lack of state income tax, making it appealing to retirees and senior citizens.
+
+**Urbanization:** The observed trends may also reflect the urbanization of these states, with people moving from rural areas to cities in search of better amenities and quality of life.
+
 ## References
 
 * Third Dataset Raw, [dataset_3_raw.xls](dataset_3_raw.xls)
