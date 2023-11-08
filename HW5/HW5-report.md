@@ -10,7 +10,7 @@ Due: November 8, 2023
 
 ### Boxplot: Show the distributions of the population of all states in 1980, 2000 (either April or July), and 2008
 
-For the boxplot we had to first extract the data from the raw file. This was done using MS Excel as we had to only extract four (4) columns, namely, 'State', 'Population in 1980', 'Population in 2000' and 'Population in 2008'. After this we had to convert the values of population from string to number and then multiply it by 1000 as the population was given in thousands. This was done using Open Refine GREL Function. The GREL used is written below:
+For the boxplot, we had to first extract the data from the raw file. This was done using MS Excel as we had to only extract four (4) columns, namely, 'State', 'Population in 1980', 'Population in 2000' and 'Population in 2008'. After this, we had to convert the values of the population from string to number and then multiply it by 1000 as the population was given in thousands. This was done using Open Refine GREL Function. The GREL used is written below:
 
 ```
 
@@ -18,7 +18,7 @@ toNumber(value.replace(",", ""))*1000
 
 ```
 
-After converting the values into numbers and multiplying them by 1000, we extracted the CSV file and uploaded it into Google Drive to use it in Google Colaboratory Notebook.
+After converting the values into numbers and multiplying them by 1000, we extracted the CSV file and uploaded it to Google Drive to use it in the Google Colaboratory Notebook.
 
 ![boxplot](boxplot.png)
 
@@ -74,7 +74,7 @@ plt.show()
 
 ##### Explanation
 
-The code utilizes the pandas, matplotlib, and seaborn libraries to create a boxplot that represents population data by year. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The code defines variables for the population data of the years 1980, 2000, and 2008, as well as a variable to store state names. A custom tick label formatter is used to display population values in millions on the y-axis. The code then creates a boxplot, with proper title and labels. It identifies outliers in the data for each year and annotates these outliers with their corresponding state names. Finally, the code displays the boxplot with state names as annotations.
+The code utilizes the Pandas, Matplotlib, and Seaborn libraries to create a boxplot that represents population data by year. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The code defines variables for the population data of the years 1980, 2000, and 2008, as well as a variable to store state names. A custom tick label formatter is used to display population values in millions on the y-axis. The code then creates a boxplot, with proper title and labels. It identifies outliers in the data for each year and annotates these outliers with their corresponding state names. Finally, the code displays the boxplot with state names as annotations.
 
 The boxplot created represents the distribution of population data for the years 1980, 2000, and 2008 across various U.S. states. The figure is split into three parts: showing a boxplot, one for each of the mentioned years. The boxplot displays the following key statistics for each year:
 
@@ -112,7 +112,7 @@ In summary, the boxplot chart provides a concise summary of population distribut
 
 ### eCDF and histogram: Show the distribution of the population of all states in one of the years (your chart title must indicate which year)
 
-For the eCDF and Histogram the same CSV file was used as in the Boxplot. Therefore, we will not discuss the cleaning steps again here.
+For the eCDF and Histogram, the same CSV file was used as in the Boxplot. Therefore, we will not discuss the cleaning steps again here.
 
 ![histogram](histogram.png)
 
@@ -154,7 +154,7 @@ plt.show()
 
 ##### Explanation
 
-The code utilizes the pandas, matplotlib, and seaborn libraries to analyze and visualize population data from the year 2008. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The population values for 2008 are extracted and converted into millions for more intuitive presentation. The code then creates two separate plots.
+The code utilizes the Pandas, Matplotlib, and Seaborn libraries to analyze and visualize population data from the year 2008. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The population values for 2008 are extracted and converted into millions for a more intuitive presentation. The code then creates two separate plots.
 
 The first plot is a histogram, generated using Matplotlib, to depict the distribution of population values in 2008. This histogram is divided into 50 bins to provide a detailed view of the data distribution. This code generates a histogram, with proper title and labels.
 
@@ -162,10 +162,10 @@ The second plot, an empirical cumulative distribution function (eCDF) plot, is c
 
 In essence, these visualizations offer insights into the distribution and cumulative distribution of population data for the year 2008, allowing for a clearer understanding of how populations were distributed among the states during the year 2008.
 
-The histogram visually represents the population distribution in U.S. for the year 2008, with the x-axis indicating population in millions and the y-axis showing the frequency of states falling within each population range. The eCDF plot, on the other hand, depicts the cumulative distribution of population, where the x-axis displays population values, and the y-axis represents the cumulative probability of states having a population less than or equal to a given value.
+The histogram visually represents the population distribution in the U.S. for the year 2008, with the x-axis indicating the population in millions and the y-axis showing the frequency of states falling within each population range. The eCDF plot, on the other hand, depicts the cumulative distribution of population, where the x-axis displays population values, and the y-axis represents the cumulative probability of states having a population less than or equal to a given value.
 
 
-### Advantages Of The Histogram In Relation To The Population Distribution Chart:
+### Advantages Of The Histogram For Showing Population Distributions:
 
 **Clear Overview Of Distribution:** The histogram offers a clear visual representation of the population distribution, making it easy to see the frequency of states falling within specific population ranges. This is valuable for understanding how populations are distributed.
 
@@ -173,19 +173,19 @@ The histogram visually represents the population distribution in U.S. for the ye
 
 **Key Feature Identification:** By examining the histogram, you can easily spot central tendencies, common population ranges, and states with unusually high or low populations. This aids in identifying significant population characteristics within the data.
 
-### Disadvantages Of The Histogram In Relation To The Population Distribution Chart:
+### Disadvantages Of The Histogram For Showing Population Distributions:
 
 **Limited Detail:** The histogram may not provide intricate details about the shape of the population distribution. For example, it might not reveal whether the distribution is unimodal, bimodal, skewed, or multimodal.
 
 **Exact Values Not Evident:** The histogram doesn't readily display the exact population values for individual states. If precise values are important, additional charts or data exploration tools may be needed to extract this information from the dataset.
 
-### Advantages Of The eCDF In Relation To The Population Distribution Chart:
+### Advantages Of The eCDF For Showing Population Distributions:
 
 **Cumulative Overview:** The eCDF offers a cumulative view of the population distribution, showcasing the proportion of states with populations less than or equal to a given value. This is helpful for understanding cumulative trends.
 
 **Visualizing Percentiles:** It provides a clear way to visualize percentiles, making it easy to see, for example, what percentage of states have populations below a specific value.
 
-### Disadvantages Of The eCDF In Relation To The Population Distribution Chart:
+### Disadvantages Of The eCDF For Showing Population Distributions:
 
 **Limited Detail:** Similar to the histogram, the eCDF may not reveal detailed information about the shape of the distribution, such as the presence of multiple modes or skewness.
 
@@ -195,7 +195,7 @@ In summary, the histogram provides a clear view of the population distribution, 
 
 ### Simple Observations from the Charts:
 
-- From the histogram, it's evident that the majority of states have populations below 10 million in 2008, while a few states have significantly larger populations.
+- From the histogram, it's evident that the majority of states had populations below 10 million in 2008, while a few states had significantly larger populations.
 
 - The eCDF chart shows that nearly 58% of U.S. states had populations below 5 million in 2008. However, these states collectively accounted for only 22.38% of the total U.S. population for the year 2008, highlighting a disparity in population distribution.
 
@@ -205,9 +205,9 @@ In summary, the histogram provides a clear view of the population distribution, 
 
 ### Use the charts that you created in Part 1 to guide further investigation of the data. State at least 2 interesting findings about the data and explain how you used one or more of the distribution charts to guide the investigation into this finding.
 
-### Dramatic Increase In Population From Year 1980 to 2008
+### Dramatic Increase In Population From The Year 1980 to 2008
 
-For these charts the same CSV file was used as in the Boxplot, eCDF and Histogram. Therefore, we will not discuss the cleaning steps again here.
+For these charts, the same CSV file was used as in the Boxplot, eCDF and Histogram. Therefore, we will not discuss the cleaning steps again here.
 
 ![scatterplot_population_increase](scatterplot_population_increase.png)
 
@@ -259,7 +259,7 @@ plt.show()
 
 ##### Explanation
 
-The code ulitlizes the python libraries like pandas and matplotlib to create a meaningful visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population data for the years 1980 and 2008. The code calculates the population increase for each state during this time frame by subtracting the 1980 population from the 2008 population, adding this information as a new column to the dataset.
+The code utilizes the python libraries like Pandas and Matplotlib to create a meaningful visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population data for the years 1980 and 2008. The code calculates the population increase for each state during this time frame by subtracting the 1980 population from the 2008 population and adding this information as a new column to the dataset.
 
 Next, the code sorts the dataset in descending order based on the population increase, helping to identify the states with the most significant population growth during this period. It then selects the top three states with the highest population increase and creates a scatter plot. The x-axis represents the population in 1980, the y-axis represents the population in 2008, and the color of the data points indicates the population increase, with a color bar for reference. Additionally, it highlights the names of the top three states on the scatter plot, providing further context to the data. The code employs custom formatting functions to display population numbers in millions (M) and generates a scatter plot with proper title and axes labels.
 
@@ -306,19 +306,19 @@ plt.show()
 
 ##### Explanation
 
-The code utilizes Python with libraries like pandas, seaborn, and matplotlib to generate a bar chart. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population data. The code then selects the specific states (California, Texas, and Florida) for analysis and creates a new dataset.
+The code utilizes Python with libraries like Pandas, Seaborn, and Matplotlib to generate a bar chart. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population data. The code then selects the specific states (California, Texas, and Florida) for analysis and creates a new dataset.
 
 To prepare the data for visualization, the code melts the dataset, which means it reshapes it from a wide format, with separate columns for each year, into a long format. This transformation consolidates the population values for each state-year combination into a single column, making it easier to work with and plot. The melted data is used for creating the bar chart.
 
-The code then generates a bar plot using seaborn's barplot function. The x-axis represents the states (California, Texas, and Florida), the y-axis shows the population in millions, and the bars are grouped by year (1980, 2000, and 2008) and color-coded accordingly. A custom formatting function is applied to the y-axis labels to display population numbers in millions (M). This generates a bar chart with proper axes and labels.
+The code then generates a bar plot using Seaborn's barplot function. The x-axis represents the states (California, Texas, and Florida), the y-axis shows the population in millions, and the bars are grouped by year (1980, 2000, and 2008) and color-coded accordingly. A custom formatting function is applied to the y-axis labels to display population numbers in millions (M). This generates a bar chart with proper axes and labels.
 
 ### Analysis
 
-The two charts offer valuable insights into the population changes of U.S. states over a specific time period (1980 to 2008) and allow for a deeper analysis of the data. First we'll discuss these charts separately and then finally give our hypotheses on the basis of that analysis.
+The two charts offer valuable insights into the population changes of U.S. states over a specific time period (1980 to 2008) and allow for a deeper analysis of the data. First, we'll discuss these charts separately and then finally give our hypotheses based on that analysis.
 
 ### Scatter Plot
 
-The scatter plot compares the population of the U.S. states for the years 1980 and 2008. It provides a visual representation of how the populations of these these states evolved over time. The color of each data point represents the population increase during this period.
+The scatter plot compares the population of the U.S. states for the years 1980 and 2008. It provides a visual representation of how the populations of these states evolved over time. The color of each data point represents the population increase during this period.
 
 **Population Growth Trends:** The chart reveals that California had the highest population of the three states throughout the observed years. It also shows that California, Texas and Florida experienced a dramatic population growth. California and Texas, in particular, had substantial increases, with California leading in population size. Florida also exhibited significant growth but started with a smaller base population.
 
@@ -360,14 +360,14 @@ For the analysis regarding population density two raw datasets were used:
 
 - Dataset 2: Table 13 - State Population--Rank, Percent Change, And Population Density (pg. 22 in PDF)
 
-From these two datasets a new CSV file was created having the columns 'State', 'State Code', 'Population in 2008' and 'Population Density in 2008'. The columns were extracted simply using MS Excel. After this we had to convert the values of population and population density from string to number and then multiply only the population by 1000 as the population was given in thousands. This was done using Open Refine GREL Function. The GREL used is written below:
+From these two datasets a new CSV file was created having the columns 'State', 'State Code', 'Population in 2008' and 'Population Density in 2008'. The columns were extracted simply using MS Excel. After this, we had to convert the values of population and population density from string to number and then multiply only the population by 1000 as the population was given in thousands. This was done using Open Refine GREL Function. The GREL used is written below:
 
 ```
 
 toNumber(value.replace(",", ""))
 
 ```
-This GREL converted both columns from string to numbers. Then we used another GREL function to multiply the population by thousand.
+This GREL converted both columns from string to numbers. Then we used another GREL function to multiply the population by a thousand.
 
 ```
 
@@ -415,7 +415,7 @@ fig.show()
 
 ##### Explanation
 
-The code ulitlizes Python libraries, including Pandas for data manipulation and Plotly Express for interactive data visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population and population density data for the year 2008. The *format_hover_data* function is defined to create a custom tooltip or hover data for each state on the map. It takes the state's name, population, and population density as input and formats the data in a readable way. This custom hover data will provide information about the state's name, population (in millions), and population density in 2008.
+The code utilizes Python libraries, including Pandas for data manipulation and Plotly Express for interactive data visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population and population density data for the year 2008. The *format_hover_data* function is defined to create a custom tooltip or hover data for each state on the map. It takes the state's name, population, and population density as input and formats the data in a readable way. This custom hover data will provide information about the state's name, population (in millions), and population density in 2008.
 
 Next, the choropleth map is created using Plotly Express. It specifies the dataset, the location information (in this case, the state code, which is a common way to represent states on maps), and the color data (population density in 2008). The locationmode is set to "USA-states" to indicate that the map represents U.S. states.
 
@@ -465,7 +465,7 @@ fig.show()
 
 ##### Explanation
 
-The code ulitlizes Python libraries, including Pandas for data manipulation, Matplotlib and Plotly Express for interactive data visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population and population density data for the year 2008. It's then sorted in descending order based on "Population Density in 2008." This sorting arranges the data in such a way that states with the highest population density appear at the top of the DataFrame.
+The code utilizes Python libraries, including Pandas for data manipulation, Matplotlib and Plotly Express for interactive data visualization. The data, contained in a CSV file, is loaded into a Pandas DataFrame. The CSV file contains state-wise population and population density data for the year 2008. It's then sorted in descending order based on "Population Density in 2008." This sorting arranges the data in such a way that states with the highest population density appear at the top of the DataFrame.
 
 The top_states DataFrame is created to store the top three states with the highest population density. These states are identified based on the sorted dataset.
 
@@ -475,13 +475,13 @@ All in all, this creates an interactive scatter plot that allows users to explor
 
 ### Analysis
 
-The two charts offer valuable insights into the population distribution of U.S. states in terms of population density and allow for a deeper analysis of the data. First we'll discuss these charts separately and then finally give our hypotheses on the basis of that analysis.
+The two charts offer valuable insights into the population distribution of U.S. states in terms of population density and allow for a deeper analysis of the data. First, we'll discuss these charts separately and then finally give our hypotheses based on that analysis.
 
 ### Choropleth
 
 The choropleth map color-codes U.S. states based on their population density in 2008. It allows for an immediate visual comparison of population density variations across states.
 
-**Population Density Distribution:** The map clearly illustrates that population density varies significantly across states. For instance, highly populated states like California and New Jersey have brighter color shades, indicating high population density, while sparsely populated states like Alaska and Montana are much darker in color, signifying lower population density. The map reveals that several East Coast states, including New Jersey, Connecticut, and Rhode Island, have notably high population density. This regional trend suggests that the East Coast generally exhibits higher population density compared to inland or western states.
+**Population Density Distribution:** The map clearly illustrates that population density varies significantly across states. For instance, highly populated states like California and New Jersey have brighter color shades, indicating high population density, while sparsely populated states like Alaska and Montana are much darker in color, signifying lower population density. The map reveals that several East Coast states, including New Jersey, Connecticut, and Rhode Island, have notably high population densities. This regional trend suggests that the East Coast generally exhibits higher population density compared to inland or western states.
 
 **Urban vs. Rural:** The map can help identify urban and rural regions. States with high population density are more likely to have urban centers, while states with low density are likely to have more rural areas.
 
@@ -491,11 +491,11 @@ The choropleth map color-codes U.S. states based on their population density in 
 
 The scatter plot displays the population in 2008 on the x-axis and the population density in 2008 on the y-axis. The point size represents the population, and the color represents population density.
 
-**Cluster Identification:** By observing the scatter plot, we can identify clusters of states with varying characteristics. Some states have high population and high density, while others have high population but lower density. States with low population and density are evident as well. The scatter plot shows that states on the East Coast, such as New Jersey, Massachusetts, and Rhode Island, exhibit higher population density.
+**Cluster Identification:** By observing the scatter plot, we can identify clusters of states with varying characteristics. Some states have a high population and high density, while others have a high population but lower density. States with low population and density are evident as well. The scatter plot shows that states on the East Coast, such as New Jersey, Massachusetts, and Rhode Island, exhibit higher population density.
 
-**Outliers:** Outlying states are also visible. For instance, California stands out with a high population and high density, while Alaska stands out with low population and extremely low density.
+**Outliers:** Outlying states are also visible. For instance, California stands out with a high population and high density, while Alaska stands out with a low population and extremely low density.
 
-**Correlations:** The plot suggests a relationship between population size and density. Some states have high population and high density, while others have low population and low density. Understanding these correlations can provide insights into state development and urban planning.
+**Correlations:** The plot suggests a relationship between population size and density. Some states have a high population and high density, while others have a low population and low density. Understanding these correlations can provide insights into state development and urban planning.
 
 ### Hypotheses
 
@@ -503,7 +503,7 @@ The scatter plot displays the population in 2008 on the x-axis and the populatio
 
 **Urbanization:** Regions with high population density are often associated with urbanization and industrial development. These states may have more extensive urban areas and infrastructure.
 
-**Coastal Locations:** States with coastlines, such as California and New Jersey, tend to have higher population density due to their appeal for both residents and tourists. Coastal areas often offer a wide range of job opportunities and amenities.
+**Coastal Locations:** States with coastlines, such as California and New Jersey, tend to have higher population density due to their appeal to both residents and tourists. Coastal areas often offer a wide range of job opportunities and amenities.
 
 **Historical Colonization:** One possible explanation for the higher population density on the East Coast is historical. Many of the earliest European settlements and colonization efforts in the United States began on the East Coast. This initial concentration of settlers and subsequent population growth could have left a lasting impact on population density. The presence of historical cities, ports, and infrastructure may have contributed to ongoing urbanization and population density in these states. This historical context may continue to shape the population landscape today.
 
