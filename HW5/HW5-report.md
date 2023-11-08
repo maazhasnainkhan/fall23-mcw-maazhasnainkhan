@@ -511,29 +511,22 @@ In conclusion, the analysis of U.S. state population density in 2008, through bo
 
 ## References
 
-* Third Dataset Raw, [dataset_3_raw.xls](dataset_3_raw.xls)
-* Third Dataset EC Raw, [dataset_3_ec_raw.xls](dataset_3_ec_raw.xls)
-* Second Dataset Raw, [dataset_2_raw.xls](dataset_2_raw.xls)
-* Python File, [CS_625_HW4_Final.ipynb](CS_625_HW4_Final.ipynb)
-* Third Dataset Question 1 Excel File, [dataset3_q1_excel.xlsx](dataset3_q1_excel.xlsx)
-* Third Dataset Question 2 Excel File, [dataset3_q2_excel.xlsx](dataset3_q2_excel.xlsx)
-* Third Dataset EC Normalized Data CSV, [dataset3_normalized_data.csv](dataset3_normalized_data.csv)
-* Third Dataset EC Excel File, [dataset3_ec_excel.xlsx](dataset3_ec_excel.xlsx)
-* Third Dataset Question 1 CSV File (EC Recreation Python), [dataset3_q1.csv](dataset3_q1.csv)
-* Third Dataset Question 2 CSV File (EC Recreation Python), [dataset3_q2.csv](dataset3_q2.csv)
-* Second Dataset Question 1 Excel File (EC Extra Dataset), [dataset2_q1_excel.xlsx](dataset2_q1_excel.xlsx)
-* Second Dataset Question 2 CSV File (EC Extra Dataset), [dataset2_q2.csv](dataset2_q2.csv)
-* Second Dataset Question 2 Excel File (EC Extra Dataset), [dataset2_q2_excel.xlsx](dataset2_q2_excel.xlsx)
-* Seaborn, <https://seaborn.pydata.org/>
-* Microsoft Support, <https://support.microsoft.com/en-us/office/video-create-a-chart-4d95c6a5-42d2-4cfc-aede-0ebf01d409a8>
-* Ablebits, <https://www.ablebits.com/office-addins-blog/make-bar-graph-excel/#:~:text=Making%20a%20bar%20graph%20in,type%20you%20want%20to%20insert.>
-* Ablebits, <https://www.ablebits.com/office-addins-blog/excel-charts-title-axis-legend/>
-* Medium, <https://pub.towardsai.net/understanding-pandas-melt-pd-melt-362954f8c125?gi=2b8bd101398b>
-* Stackoverflow, <https://stackoverflow.com/questions/60625159/using-pandas-dataframe-melt-with-seaborn-barplot>
-* Stackoverflow, <https://stackoverflow.com/questions/76644454/is-there-an-alternate-for-palette-while-plotting-barplot-through-seaborn-objec>
-* Stackoverflow, <https://stackoverflow.com/questions/74715767/how-to-rotate-the-xticks-with-seaborn-objects>
-* Stackoverflow, <https://stackoverflow.com/questions/53694724/how-to-prevent-matplotlib-from-showing-decimal-years-in-horizontal-axis>
-* United States Census Bureau, <https://www.census.gov/library/publications/2009/compendia/statab/129ed/births-deaths-marriages-divorces.html>
+* First Dataset Raw, [dataset_1_raw.xls](dataset_1_raw.xls)
+* Second Dataset EC Raw, [dataset_2_raw.xls](dataset_2_raw.xls)
+* Python File, [CS_625_HW5.ipynb](CS_625_HW5.ipynb)
+* First CSV (Boxplot, eCDF, Histogram, Scatter plot (Matplotlib), Barchart), [dataset1-boxplot-csv.csv](dataset1-boxplot-csv.csv)
+* Second CSV (Choropleth, Scatter plot (Plotly)), [dataset1_popdensity.csv](dataset1_popdensity.csv)
+* Seaborn, <https://seaborn.pydata.org/generated/seaborn.boxplot.html>
+* Seaborn, <https://seaborn.pydata.org/generated/seaborn.ecdfplot.html>
+* Seaborn, <https://seaborn.pydata.org/generated/seaborn.histplot.html>
+* Plotly, <https://plotly.com/python/reference/layout/annotations/>
+* Plotly, <https://plotly.com/python/choropleth-maps/>
+* Plotly, <https://plotly.com/python/line-and-scatter/>
+* Medium, <https://lisandroabulatif.medium.com/create-charts-maps-and-scatter-matrix-with-plotly-and-google-colab-55a5303326ab>
+* Youtube, <https://www.youtube.com/watch?v=oACIIEh6cgY>
+* Stackoverflow, <https://stackoverflow.com/questions/60199939/how-to-format-plotly-title-in-python-as-bold-when-the-title-is-a-variable>
+* Stackoverflow, <https://stackoverflow.com/questions/71328058/add-more-than-two-variables-in-hover-text-of-plotly-object-with-more-than-one-tr>
+* Stackoverflow, <https://stackoverflow.com/questions/71104827/plotly-express-choropleth-map-custom-color-continuous-scale>
 * United States Census Bureau, <https://www.census.gov/library/publications/2009/compendia/statab/129ed/population.html>
 
 
