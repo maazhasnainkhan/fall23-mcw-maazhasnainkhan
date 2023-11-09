@@ -520,13 +520,16 @@ In conclusion, the analysis of U.S. state population density in 2008, through bo
 * Seaborn, <https://seaborn.pydata.org/generated/seaborn.ecdfplot.html>
 * Seaborn, <https://seaborn.pydata.org/generated/seaborn.histplot.html>
 * Plotly, <https://plotly.com/python/reference/layout/annotations/>
+* Plotly, <https://plotly.com/python/text-and-annotations/>
 * Plotly, <https://plotly.com/python/choropleth-maps/>
 * Plotly, <https://plotly.com/python/line-and-scatter/>
 * Medium, <https://lisandroabulatif.medium.com/create-charts-maps-and-scatter-matrix-with-plotly-and-google-colab-55a5303326ab>
 * Youtube, <https://www.youtube.com/watch?v=oACIIEh6cgY>
+* Youtube, <https://www.youtube.com/watch?v=sXuoikhChYo>
 * Stackoverflow, <https://stackoverflow.com/questions/60199939/how-to-format-plotly-title-in-python-as-bold-when-the-title-is-a-variable>
 * Stackoverflow, <https://stackoverflow.com/questions/71328058/add-more-than-two-variables-in-hover-text-of-plotly-object-with-more-than-one-tr>
 * Stackoverflow, <https://stackoverflow.com/questions/71104827/plotly-express-choropleth-map-custom-color-continuous-scale>
+* Stackoverflow, <https://stackoverflow.com/questions/50067301/make-plotly-annotation-font-bold>
 * United States Census Bureau, <https://www.census.gov/library/publications/2009/compendia/statab/129ed/population.html>
 
 
