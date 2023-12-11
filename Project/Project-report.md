@@ -66,7 +66,24 @@ influenza_df = influenza_df[sum_inf_a_b == influenza_df["INF_ALL"]]
 
 influenza_df = influenza_df[influenza_df['SPEC_PROCESSED_NB'] != 0]
 
+influenza_df['ISO_WEEKSTARTDATE'] = pd.to_datetime(influenza_df['ISO_WEEKSTARTDATE'])
+
+years_to_explore = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+filtered_df = influenza_df[influenza_df['ISO_YEAR'].isin(years_to_explore)].copy()
+
+filtered_df['Month'] = filtered_df['ISO_WEEKSTARTDATE'].dt.month_name()
+filtered_df['Year'] = filtered_df['ISO_YEAR']
+
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+filtered_df['Month'] = pd.Categorical(filtered_df['Month'], categories=month_order, ordered=True)
+
+agg_df = filtered_df.groupby(['HEMISPHERE', 'Year', 'Month']).agg({'INF_ALL': 'sum'}).reset_index()
+
 ```
+
+#### Explanation
+
+First, the data is loaded from a CSV file, and missing values in specified columns are replaced with zeros. Unnecessary columns are then removed, and certain columns are converted to numeric types. Rows with missing values in a crucial column 'SPEC_PROCESSED_NB' (Specimen Processed for Influenza) are dropped. This column is crucial as it will help us in filtering the data which doesn't add up. The subsequent steps involve intricate filtering. Rows are retained where the sum of 'INF_ALL' (Total Positive Influenza Cases) and 'INF_NEGATIVE' (Total Negative Influenza Cases) matches the 'SPEC_PROCESSED_NB' (Specimen Processed for Influenza) value. Becuase if they don't match then there is something worng, therefore, it was decided that it is better to drop these rows. Similarly, further filtering is done to ensure that the sums of specific sets of columns containing subtypes of Influenza Type A and Influenza Type B align with their parent columns. A final filter is applied to keep only the rows where the sum of 'INF_A' (Influenza Type A) and 'INF_B' (Influenza Type B) equals the 'INF_ALL' (Total Influenza Cases) column. Additionally, rows with 'SPEC_PROCESSED_NB' (Specimen Processed for Influenza) values not equal to zero are retained. This data still had some columns and rows which needed to be processed. But we will discuss that in Final Chart's code explanation as they are closely linked together.
 
 # Final Question
 
