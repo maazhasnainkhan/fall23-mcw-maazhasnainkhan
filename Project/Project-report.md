@@ -6,11 +6,17 @@ Due: December 11, 2023
 
 # Raw Data
 
-FluNet, an online platform initiated in 1997, serves as a vital tool for worldwide surveillance of influenza viruses. It plays a crucial role in monitoring and understanding the global spread of these viruses by collecting and providing virological data, such as the count of influenza viruses categorized by subtype. This information is instrumental in interpreting epidemiological data. By using data acquired through FluNet, we will employ data science techniques to analyze influenza virus trends and create visualizations. This will help us gain insights into the virus's global spread, evolution, and impact. We will explore seasonal patterns, map geographic distribution and other trends. By distilling this complex data into comprehensible visuals, we aim to contribute valuable information for public health preparedness, vaccine development, and strategies to mitigate influenza's impact on a global scale.
+FluNet, an online platform initiated in 1997, serves as a vital tool for worldwide surveillance of influenza viruses. It plays a crucial role in monitoring and understanding the global spread of these viruses by collecting and providing virological data, such as the count of influenza viruses categorized by subtype. This information is instrumental in interpreting epidemiological data. By using data acquired through FluNet, we will employ data science & data visualization techniques to analyze influenza virus trends post pre and post COVID-19 era.
 
 **[Global Influenza Programme - FluNet](https://www.who.int/tools/flunet)**
 
+# Final Question
 
+**Q. Has the relaxation of COVID-19 restrictions influenced the resurgence of influenza, and what patterns emerge when examining influenza cases both during and in the aftermath of pandemic-related lockdowns in Northern Hemisphere (NH) and Southern Hemisphere (SH)?**
+
+# Final Chart
+
+![CS625 Final Project Final Chart](CS625_Final_Project_Final_Chart.png)
 
 ## References
 
