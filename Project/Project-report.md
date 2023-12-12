@@ -93,6 +93,171 @@ First, the data is loaded from a CSV file, and missing values in specified colum
 
 ![CS625 Final Project Final Chart](CS625_Final_Project_Final_Chart.png)
 
+## Final Chart Code
+
+```
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def format_yaxis_labels(value, _):
+    return "{:,.0f}K".format(value / 1000)
+
+influenza_df['ISO_WEEKSTARTDATE'] = pd.to_datetime(influenza_df['ISO_WEEKSTARTDATE'])
+
+years_to_plot = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+filtered_df = influenza_df[influenza_df['ISO_YEAR'].isin(years_to_plot)].copy()
+
+filtered_df['Month'] = filtered_df['ISO_WEEKSTARTDATE'].dt.month_name()
+filtered_df['Year'] = filtered_df['ISO_YEAR']
+
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+filtered_df['Month'] = pd.Categorical(filtered_df['Month'], categories=month_order, ordered=True)
+
+line_colors = ['blue', 'green', 'red']
+
+plt.figure(figsize=(15, 15))
+
+agg_df = filtered_df.groupby(['HEMISPHERE', 'Year', 'Month']).agg({'INF_ALL': 'sum'}).reset_index()
+
+avg_df_nh = agg_df[(agg_df['HEMISPHERE'] == 'NH') & (agg_df['Year'].isin([2015, 2016, 2017, 2018, 2019]))].groupby(['Month']).agg({'INF_ALL': 'mean'}).reset_index()
+avg_df_sh = agg_df[(agg_df['HEMISPHERE'] == 'SH') & (agg_df['Year'].isin([2015, 2016, 2017, 2018, 2019]))].groupby(['Month']).agg({'INF_ALL': 'mean'}).reset_index()
+
+nh_annotations = [
+    ("1. Emergence of COVID coincides with decrease in flu and reduction below previous years’ average. (Mar 2020)", "March", 2020),
+    ("2. England along with most European Countries lift COVID Restrictions. (Jan 2022)", "January", 2022),
+    ("3. End of COVID restrictions in most Asian Countries. (Sep 2022)", "September", 2022),
+    ("4. Travel restrictions lifted in Canada. (Oct 2022)", "October", 2022),
+    ("5. European Countries start lifting COVID restrictions. (Nov 2022)", "November", 2022)
+]
+
+plt.suptitle("From Lockdown to Outbreak: A Tale of Post-COVID Freedom and Rising Influenza Cases", fontsize=16, fontweight='bold')
+
+plt.subplot(2, 1, 1)
+sns.lineplot(x='Month', y='INF_ALL', hue='Year', data=agg_df[(agg_df['HEMISPHERE'] == 'NH') & (~agg_df['Year'].isin([2015, 2016, 2017, 2018, 2019]))], marker='o', palette=line_colors)
+sns.lineplot(x='Month', y='INF_ALL', data=avg_df_nh, marker='o', color='black', linestyle='--', label='2015-2019 Avg')
+
+plt.xlabel('Month')
+plt.ylabel('Number of Cases')
+plt.title('Monthly Influenza Cases in the Northern Hemisphere (NH) - 2015 to 2022')
+plt.xticks(rotation=45)
+plt.legend(title="Year", loc="upper center", bbox_to_anchor=(0.5, 1.20), ncol=3)
+
+for year in years_to_plot:
+    flu_season_months = ['October', 'November', 'December', 'January', 'February', 'March', 'April', 'May']
+    for month in flu_season_months:
+        plt.axvspan(month_order.index(month) - 0.5, month_order.index(month) + 0.5, color='lightyellow', alpha=0.5)
+
+for i, (annotation, month, year) in enumerate(nh_annotations, 1):
+    x_pos = month_order.index(month)
+    y_pos = agg_df[(agg_df['HEMISPHERE'] == 'NH') & (agg_df['Year'] == year) & (agg_df['Month'] == month)]['INF_ALL'].values[0]
+
+    plt.annotate(f'{i}', xy=(x_pos, y_pos), xytext=(x_pos + 0.2, y_pos),
+                 arrowprops=dict(facecolor='black', arrowstyle='wedge,tail_width=0.7', alpha=0.5),
+                 bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'), fontsize=14)
+
+plt.gca().get_yaxis().set_major_formatter(plt.FuncFormatter(format_yaxis_labels))
+plt.grid(axis='y', linestyle='dotted', alpha=0.7)
+
+sh_annotations = [
+    ("1. Emergence of COVID coincides with decrease in flu and reduction below previous years’ average. (Mar 2020)", "March", 2020),
+    ("2. End of COVID restrictions in Australia and New Zealand. (Jan 2022)", "January", 2022),
+    ("3. End of COVID restrictions in South American Countries. (Feb 2022)", "February", 2022),
+    ("4. South Africa along with other African Countries end COVID restrictions. (Jun 2022)", "June", 2022),
+    ("5. Ease of COVID restrictions in South East Asian Countries. (Sep 2022)", "September", 2022)
+]
+
+plt.subplot(2, 1, 2)
+sns.lineplot(x='Month', y='INF_ALL', hue='Year', data=agg_df[(agg_df['HEMISPHERE'] == 'SH') & (~agg_df['Year'].isin([2015, 2016, 2017, 2018, 2019]))], marker='o', palette=line_colors)
+sns.lineplot(x='Month', y='INF_ALL', data=avg_df_sh, marker='o', color='black', linestyle='--', label='2015-2019 Avg')
+
+plt.xlabel('Month')
+plt.ylabel('Number of Cases')
+plt.title('Monthly Influenza Cases in the Southern Hemisphere (SH) - 2015 to 2022')
+plt.xticks(rotation=45)
+plt.legend(title="Year", loc="upper center", bbox_to_anchor=(0.5, 1.20), ncol=3)
+
+for year in years_to_plot:
+    flu_season_months = ['May', 'June', 'July', 'August', 'September', 'October']
+    for month in flu_season_months:
+        plt.axvspan(month_order.index(month) - 0.5, month_order.index(month) + 0.5, color='lightyellow', alpha=0.5)
+
+for i, (annotation, month, year) in enumerate(sh_annotations, 1):
+    x_pos = month_order.index(month)
+    y_pos = agg_df[(agg_df['HEMISPHERE'] == 'SH') & (agg_df['Year'] == year) & (agg_df['Month'] == month)]['INF_ALL'].values[0]
+
+    plt.annotate(f'{i}', xy=(x_pos, y_pos), xytext=(x_pos + 0.2, y_pos),
+                 arrowprops=dict(facecolor='black', arrowstyle='wedge,tail_width=0.7', alpha=0.5),
+                 bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'), fontsize=14)
+
+plt.gca().get_yaxis().set_major_formatter(plt.FuncFormatter(format_yaxis_labels))
+plt.grid(axis='y', linestyle='dotted', alpha=0.7)
+
+plt.tight_layout()
+
+figtext_y_position = 0.8
+plt.figtext(1.0, figtext_y_position + 0.08, "1. Emergence of COVID coincides with decrease in flu and reduction below previous years’ average. (Mar 2020)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position + 0.03, "2. England along with most European Countries lift COVID Restrictions. (Jan 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.02, "3. End of COVID restrictions in most Asian Countries. (Sep 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.07, "4. Travel restrictions lifted in Canada. (Oct 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.12, "5. European Countries start lifting COVID restrictions. (Nov 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.17, "*For the years 2020 and 2021, flu rates remained lower than previous years’", fontsize=14, fontweight='bold', bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.22, "*Lifting COVID restrictions resulted in high Influenza cases in NH", fontsize=14, fontweight='bold', bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+
+plt.figtext(1.0, figtext_y_position - 0.40, "1. Emergence of COVID coincides with decrease in flu and reduction below previous years’ average. (Mar 2020)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.45, "2. End of COVID restrictions in Australia and New Zealand. (Jan 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.50, "3. End of COVID restrictions in South American Countries. (Feb 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.55, "4. South Africa along with other African Countries end COVID restrictions. (Jun 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.60, "5. Ease of COVID restrictions in South East Asian Countries. (Sep 2022)", fontsize=14, bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.65, "*For the years 2020 and 2021, flu rates remained lower than previous years’", fontsize=14, fontweight='bold', bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+plt.figtext(1.0, figtext_y_position - 0.70, "*Lifting COVID restrictions resulted in abnormal trend of Influenza cases in SH", fontsize=14, fontweight='bold', bbox=dict(boxstyle='round', facecolor='lightblue', edgecolor='blue'))
+
+plt.figtext(0.84, 0.01, '*Shaded Area Indicates Peak Flu Season', ha='center', va='center', fontsize=14, fontweight='bold', color='black')
+
+plt.show()
+
+```
+
+#### Explanation
+
+To create this chart we have used Matplotlib, and Seaborn libraries to create a Multiple Line Chart of influenza cases spanning from 2015 to 2022. Initially, the code modifies the influenza dataset by focusing on time-related details. First, we change the column 'ISO_WEEKSTARTDATE' (Date of Sample Test) to a format that makes it easier to work with dates. After that, a subset of the data is created, including only the years 2015 to 2022. This is done by looking at the 'ISO_YEAR' (Year) column in the original dataset. Next, two new columns are added to this subset. One column, 'Month,' gets its values from the month names in the 'ISO_WEEKSTARTDATE' (Date of Sample Test) column. The other column, 'Year,' takes its values from the 'ISO_YEAR' (Year) column. To make sure the months are in the correct order when visualizing the data, the 'Month' column is turned into a special type that follows a specific sequence, going from 'January' to 'December'.
+
+The code then generates two subplots, one for the Northern Hemisphere (NH) and the other for the Southern Hemisphere (SH). Each subplot depicts monthly influenza cases, with individual years (2020, 2021, and 2022) represented by distinct colored lines, while the years 2015 to 2019 are averaged and portrayed as a single black dotted line. The x-axis denotes months, the y-axis represents the total number of inlfuenza cases, the colors represent the years, and the title for each subplot specifies the hemisphere. The charts are shaded with yellow regions indicating peak flu seasons. Important events related to COVID-19, such as the emergence of the pandemic and the lifting of restrictions, are marked with annotations. The NH subplot underscores the correlation between eased COVID-19 measures and an increase in influenza cases. Conversely, the SH subplot exhibits an abnormal trend post-COVID restrictions. The code concludes with additional textual annotations emphasizing the observed trends and providing context to the plotted data.
+
+To see the charts go to **[Google Colaboratory Notebook](https://colab.research.google.com/drive/1nazt4QLD9pucsnBnjHBnVpJdL78tZp3Y?usp=sharing).**
+
+Idiom: Multiple Line Chart / Mark: Dots
+| Data: Attribute | Data: Attribute Type  | Encode: Channel | 
+| --- |---| --- |
+| Months | Key, Temporal | Horizontal Position (X-axis) |
+| Total Number of Influenza Cases | Value, Quantitative | Vertical Position (Y-axis) |
+| Year | Key, Temporal | Color Hue (Third Channel) |
+
+# Chart Interpretation in Context of the Question
+
+The chart titled "From Lockdown to Outbreak: A Tale of Post-COVID Freedom and Rising Influenza Cases" looks into the intricate relationship between the COVID-19 pandemic and the resurgence of influenza cases worldwide. The primary question guiding this exploration is: "Has the relaxation of COVID-19 restrictions influenced the resurgence of influenza, and what patterns emerge when examining influenza cases during and after pandemic-related lockdowns in the Northern Hemisphere (NH) and Southern Hemisphere (SH)?"
+
+So how does this chart actually answers this question? Well, actually the chart provides a visual narrative of influenza cases spanning from 2015 to 2022, capturing the years preceding and following the emergence of COVID-19. The x-axis represents months, the y-axis indicates the number of influenza cases, and the black dotted line represents the average influenza cases during the pre-COVID era (2015-2019) in both hemispheres. Colored lines represent influenza cases from 2020 to 2022.
+
+The black dotted line in the Northern Hemisphere serves as a baseline, depicting the typical pattern of flu cases pre-COVID. A noticeable dip in March 2020 corresponds to the emergence of COVID-19. As COVID restrictions started to be lifted in January 2022, influenza cases surged, deviating from the pre-COVID pattern. The chart highlights key events, such as the lifting of COVID restrictions in England and European countries in January 2022 and the subsequent peak in influenza cases.
+
+Similarly, in the Southern Hemisphere, the black dotted line represents the pre-COVID flu pattern. The chart reveals an abnormal trend post-COVID, with influenza cases rising even during the off-peak flu season. As COVID restrictions lifted in January 2022 in Australia, New Zealand, and South American countries, a distinct rise in influenza cases occurred, deviating from the pre-COVID pattern.
+
+So, addressing the primary question, the chart strongly suggests a connection between the relaxation of COVID-19 restrictions and the resurgence of influenza in both hemispheres. The deviation from pre-COVID patterns aligns with the timing of COVID restrictions being lifted. Another reason is the potential impact of weakened immune systems during lockdowns, contributing to the observed trends. During lockdowns people stopped socializing and were confined to their homes. Since, being confined in homes means less exposure to outside worlds, in turn meaning less exposure to viruses and bacteria causing their immune systems to get weakened. Therefore, once the lockdowns and restrictions were lifted, people were more susceptible to contracting the influenza virus.
+
+Influenza patterns post-COVID exhibit a nuanced relationship with the easing of restrictions. The surge in cases aligns with the timing of relaxation, suggesting a potential interplay between COVID measures and influenza dynamics. The abnormal trends observed post-COVID tells us that there indeed is a relation between COVID-19 restrictions and rise of influenza cases.
+
+The headline, "From Lockdown to Outbreak," aptly encapsulates the journey depicted in the chart. It effectively communicates the transition from pandemic lockdowns to the resurgence of influenza cases, capturing the essence of the complex interplay between COVID-19 and influenza.
+
+# Final Thoughts
+
+The development process of creating the visualization, "From Lockdown to Outbreak," was a fascinating journey that unfolded over several days. It involved meticulous data analysis, chart design, and exploration of the nuanced relationship between COVID-19 restrictions and influenza patterns.
+
+The process started with data collection and cleaning, ensuring the accuracy and relevance of the information. This phase, while crucial, was filled with lots of hardships due to the ill-structured dataset. The subsequent challedge was how to effectively communicate insights into a visually compelling chart. The most time-consuming aspect was dedicated to accurately plotting the black dotted line, symbolizing the average influenza cases in the pre-COVID era (2015-2019). Creating this baseline required careful consideration of the data and meticulous calculations. Ensuring that the line accurately represented the average cases during the specified period demanded precision and accuracy. Iterative adjustments were made to align the line with historical trends while allowing for meaningful comparison with post-COVID influenza cases. In total, the development of the visualization took approximately 3 days, excluding the initial data cleaning and the final refinements to enhance the chart's aesthetic appeal.
+
+While the visualization provides valuable insights into the interplay between COVID-19 restrictions and influenza dynamics, it is essential to acknowledge its limitations. Further research is warranted to explore additional hidden trends and contributing factors. Possible areas of investigation could include the impact of vaccination rates, population density, and varying healthcare infrastructures on influenza patterns.
+
 ## References
 
 * First Dataset Raw, [dataset_1_raw.xls](dataset_1_raw.xls)
