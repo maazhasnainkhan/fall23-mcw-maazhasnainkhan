@@ -6,7 +6,7 @@ Due: December 11, 2023
 
 # Raw Data
 
-FluNet, an online platform initiated in 1997, serves as a vital tool for worldwide surveillance of influenza viruses. It plays a crucial role in monitoring and understanding the global spread of these viruses by collecting and providing virological data, such as the count of influenza viruses categorized by subtype. This information is instrumental in interpreting epidemiological data. By using data acquired through FluNet, we will employ data science & data visualization techniques to analyze influenza virus trends post pre and post COVID-19 era.
+FluNet, an online platform initiated in 1997, serves as a vital tool for worldwide surveillance of influenza viruses. It plays a crucial role in monitoring and understanding the global spread of these viruses by collecting and providing virological data, such as the count of influenza viruses categorized by subtype. This information is instrumental in interpreting epidemiological data. By using data acquired through FluNet, we will employ data science & data visualization techniques to analyze influenza virus trends post pre and post COVID-19 era. The raw dataset can be accessed through the link below:
 
 **[Global Influenza Programme - FluNet](https://www.who.int/tools/flunet)**
 
@@ -260,7 +260,7 @@ While the visualization provides valuable insights into the interplay between CO
 
 ## References
 
-* First Dataset Raw, [dataset_1_raw.xls](dataset_1_raw.xls)
+* Raw Dataset, [Raw Dataset](Raw_Dataset)
 * Second Dataset EC Raw, [dataset_2_raw.xls](dataset_2_raw.xls)
 * Python File, [CS_625_HW5.ipynb](CS_625_HW5.ipynb)
 * First CSV (Boxplot, eCDF, Histogram, Scatter plot (Matplotlib), Barchart), [dataset1-boxplot-csv.csv](dataset1-boxplot-csv.csv)
