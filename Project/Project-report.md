@@ -254,32 +254,64 @@ The headline, "From Lockdown to Outbreak," aptly encapsulates the journey depict
 
 The development process of creating the visualization, "From Lockdown to Outbreak," was a fascinating journey that unfolded over several days. It involved meticulous data analysis, chart design, and exploration of the nuanced relationship between COVID-19 restrictions and influenza patterns.
 
-The process started with data collection and cleaning, ensuring the accuracy and relevance of the information. This phase, while crucial, was filled with lots of hardships due to the ill-structured dataset. The subsequent challedge was how to effectively communicate insights into a visually compelling chart. The most time-consuming aspect was dedicated to accurately plotting the black dotted line, symbolizing the average influenza cases in the pre-COVID era (2015-2019). Creating this baseline required careful consideration of the data and meticulous calculations. Ensuring that the line accurately represented the average cases during the specified period demanded precision and accuracy. Iterative adjustments were made to align the line with historical trends while allowing for meaningful comparison with post-COVID influenza cases. In total, the development of the visualization took approximately 3 days, excluding the initial data cleaning and the final refinements to enhance the chart's aesthetic appeal.
+The process started with data collection and cleaning, ensuring the accuracy and relevance of the information. This phase, while crucial, was filled with lots of hardships due to the ill-structured dataset. The subsequent challenge was how to effectively communicate insights into a visually compelling chart. The most time-consuming aspect was dedicated to accurately plotting the black dotted line, symbolizing the average influenza cases in the pre-COVID era (2015-2019). Creating this baseline required careful consideration of the data and meticulous calculations. Ensuring that the line accurately represented the average cases during the specified period demanded precision and accuracy. Iterative adjustments were made to align the line with historical trends while allowing for meaningful comparison with post-COVID influenza cases. In total, the development of the visualization took approximately 3 days, excluding the initial data cleaning and the final refinements to enhance the chart's aesthetic appeal.
 
 While the visualization provides valuable insights into the interplay between COVID-19 restrictions and influenza dynamics, it is essential to acknowledge its limitations. Further research is warranted to explore additional hidden trends and contributing factors. Possible areas of investigation could include the impact of vaccination rates, population density, and varying healthcare infrastructures on influenza patterns.
 
 ## References
 
-* Raw Dataset, [Raw Dataset](Raw_Dataset.csv)
-* Second Dataset EC Raw, [dataset_2_raw.xls](dataset_2_raw.xls)
-* Python File, [CS_625_HW5.ipynb](CS_625_HW5.ipynb)
-* First CSV (Boxplot, eCDF, Histogram, Scatter plot (Matplotlib), Barchart), [dataset1-boxplot-csv.csv](dataset1-boxplot-csv.csv)
-* Second CSV (Choropleth, Scatter plot (Plotly)), [dataset1_popdensity.csv](dataset1_popdensity.csv)
-* Seaborn, <https://seaborn.pydata.org/generated/seaborn.boxplot.html>
-* Seaborn, <https://seaborn.pydata.org/generated/seaborn.ecdfplot.html>
-* Seaborn, <https://seaborn.pydata.org/generated/seaborn.histplot.html>
-* Plotly, <https://plotly.com/python/reference/layout/annotations/>
-* Plotly, <https://plotly.com/python/text-and-annotations/>
-* Plotly, <https://plotly.com/python/choropleth-maps/>
-* Plotly, <https://plotly.com/python/line-and-scatter/>
-* Medium, <https://lisandroabulatif.medium.com/create-charts-maps-and-scatter-matrix-with-plotly-and-google-colab-55a5303326ab>
-* Youtube, <https://www.youtube.com/watch?v=oACIIEh6cgY>
-* Youtube, <https://www.youtube.com/watch?v=sXuoikhChYo>
-* Stackoverflow, <https://stackoverflow.com/questions/60199939/how-to-format-plotly-title-in-python-as-bold-when-the-title-is-a-variable>
-* Stackoverflow, <https://stackoverflow.com/questions/71328058/add-more-than-two-variables-in-hover-text-of-plotly-object-with-more-than-one-tr>
-* Stackoverflow, <https://stackoverflow.com/questions/71104827/plotly-express-choropleth-map-custom-color-continuous-scale>
-* Stackoverflow, <https://stackoverflow.com/questions/50067301/make-plotly-annotation-font-bold>
-* United States Census Bureau, <https://www.census.gov/library/publications/2009/compendia/statab/129ed/population.html>
-
-
-
+* Final Chart, [Final Chart](CS625_Final_Project_Final_Chart.png)
+* Raw Influenza Dataset, [Raw Influenza Dataset](Raw_Dataset.csv)
+* Filtered Influenza Data, [Filtered Influenza Data](influenza_df.csv)
+* Final Influenza Data, [Final Influenza Data](agg_df.csv)
+* Line Chart Sketch, [Line Chart Sketch](Line_Chart_Sketch.jpeg)
+* Bar Chart Sketch, [Bar Chart Sketch](Bar_Chart_Sketch.jpeg)
+* Google Colaboratory Notebook, [Google Colaboratory Notebook](CS_625_Data_Visualization_Project.ipynb)
+* Final Video Presentation, [Final Video Presentation](CS625_Final_Project_Video_Presentation.mp4)
+* Pandas, <https://pandas.pydata.org/docs/reference/api/pandas.Categorical.html>
+* Pandas, <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html>
+* Pandas, <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.agg.html>
+* Pandas, <https://pandas.pydata.org/docs/reference/api/pandas.Series.dt.month_name.html>
+* Pandas, <https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html>
+* Seaborn, <https://seaborn.pydata.org/generated/seaborn.lineplot.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figtext.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.get_yaxis.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.axis.Axis.set_major_formatter.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.gca.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html>
+* Matplotlib, <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvspan.html>
+* Stackoverflow, <https://stackoverflow.com/questions/55767312/how-to-position-suptitle>
+* Stackoverflow, <https://stackoverflow.com/questions/13112103/using-figtext-in-python>
+* Stackoverflow, <https://stackoverflow.com/questions/25119193/matplotlib-pyplot-axes-formatter>
+* Stackoverflow, <https://stackoverflow.com/questions/45381589/how-does-plt-gca-work-internally>
+* Stackoverflow, <https://stackoverflow.com/questions/47122340/is-there-a-way-to-annotate-each-point-on-a-scatter-with-a-list-of-strings>
+* Stackoverflow, <https://stackoverflow.com/questions/36423221/matplotlib-axvspan-solid-fill>
+* Stackoverflow, <https://stackoverflow.com/questions/52308749/how-do-i-create-a-multiline-plot-using-seaborn>
+* Stackoverflow, <https://stackoverflow.com/questions/48000487/how-to-use-agg-method-to-calculate-the-column-average-in-pandas>
+* Stackoverflow, <https://stackoverflow.com/questions/71731100/pandas-groupby-syntax-explanation>
+* Stackoverflow, <https://stackoverflow.com/questions/37625334/convert-month-int-to-month-name-in-pandas>
+* Stackoverflow, <https://stackoverflow.com/questions/40511476/how-to-properly-use-funcformatterfunc>
+* Youtube, <https://www.youtube.com/watch?v=NWiRelBdwyk>
+* Youtube, <https://www.youtube.com/watch?v=td8d9eERyTY>
+* Youtube, <https://www.youtube.com/watch?v=Pry6_wn6DDw>
+* Youtube, <https://www.youtube.com/watch?v=wp2-dEe2St4>
+* Youtube, <https://www.youtube.com/watch?v=VRmXto2YA2I>
+* University of Cambridge, <https://www.cam.ac.uk/research/news/seasonal-immunity-activity-of-thousands-of-genes-differs-from-winter-to-summer>
+* Medium, <https://balaji4u.medium.com/adding-annotations-to-seaborn-plots-5e5b134140c8>
+* Bloomberg, <https://www.bloomberg.com/news/articles/2022-09-23/asia-save-china-is-finally-lifting-its-last-pandemic-rules>
+* CNN, <https://www.cnn.com/travel/article/asia-covid-reopening-china-intl-hnk-mic/index.html>
+* U.S. Embassy SA, <https://za.usembassy.gov/covid-19-information/#:~:text=On%20June%2022%2C%202022%2C%20the,Government%20of%20South%20Africa's%20announcement%20.>
+* Los Angeles Times, <https://www.latimes.com/world-nation/story/2022-04-28/latin-american-nations-ease-restrictions-covid-cases-drop>
+* CNBC, <https://www.cnbc.com/2022/02/11/european-countries-scrap-covid-rules-despite-warnings-its-too-soon.html>
+* EuroNews, <https://www.euronews.com/2022/02/23/covid-19-in-europe-italy-to-end-state-of-emergency-and-ease-restrictions-in-april>
+* Wikipedia, <https://en.wikipedia.org/wiki/Flu_season>
+* Wikipedia, <https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Europe>
+* Wikipedia, <https://en.wikipedia.org/wiki/U.S._state_and_local_government_responses_to_the_COVID-19_pandemic>
+* Wikipedia, <https://en.wikipedia.org/wiki/COVID-19_lockdowns>
+* Wikipedia, <https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Australia>
+* TIME, <https://time.com/6248365/flu-influenza-winter-2023-bad-covid-19>
+* Reuters, <https://www.reuters.com/world/us/us-seeing-most-flu-hospitalizations-cases-decade-cdc-says-2022-12-05>
+* Reuters, <https://www.reuters.com/world/asia-pacific/singapore-relax-more-covid-curbs-including-overseas-arrivals-2022-03-24>
+* IHME, <https://covid19.healthdata.org/global?view=infections-testing&tab=trend&test=infections>
