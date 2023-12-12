@@ -8,7 +8,7 @@ Due: December 11, 2023
 
 FluNet, an online platform initiated in 1997, serves as a vital tool for worldwide surveillance of influenza viruses. It plays a crucial role in monitoring and understanding the global spread of these viruses by collecting and providing virological data, such as the count of influenza viruses categorized by subtype. This information is instrumental in interpreting epidemiological data. Using data acquired through FluNet, we will apply data science and data visualization techniques to analyze influenza virus trends in the pre and post-COVID-19 era. The raw dataset can be accessed through the link below:
 
-**[Raw Dataset Link: Global Influenza Programme - FluNet](https://www.who.int/tools/flunet)**
+Raw Dataset Link: **[Global Influenza Programme - FluNet](https://www.who.int/tools/flunet)**
 
 ## Data Wrangling/Cleaning
 
